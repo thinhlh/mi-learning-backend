@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Category } from "../category/category.entity";
 
 @Entity()
 export class Article {
@@ -14,12 +15,15 @@ export class Article {
     @Column()
     thumbnail: string;
 
-    @Column("timestamp", {
-        nullable: true,
-        default: new Date()
-    })
+    @CreateDateColumn()
     createdDate: Date;
 
     @Column()
     url: string;
+
+    // @ManyToOne(fetch = FetchType.EAGER)
+    // private Category category;
+
+    @ManyToOne(() => Category, category => category.id)
+    category: Category;
 }
