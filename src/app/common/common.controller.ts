@@ -5,11 +5,9 @@ import { ApiResponse, ApiTags } from "@nestjs/swagger";
 @Controller()
 export class CommonController {
 
-    @ApiTags("Tag")
-    @ApiResponse({ status: HttpStatus.FORBIDDEN, description: "Forbidden" })
     @Get("/")
-    root(@Query('any', ParseIntPipe) anything: number) {
-        return "Success! " + anything;
+    root() {
+        return "Success!";
     }
 
 }

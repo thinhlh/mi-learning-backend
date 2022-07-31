@@ -1,6 +1,7 @@
-import { INestApplication, ValidationPipe } from '@nestjs/common';
+import { BadRequestException, HttpException, HttpStatus, INestApplication, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationError } from 'class-validator';
 import { AppModule } from './app/app.module';
 import { CustomExceptionFilter } from './config/filters/custom-exception.filter';
 import { ErrorResponseInterceptor } from './config/interceptors/error-response.interceptor';
@@ -24,7 +25,7 @@ async function appConfig(app: INestApplication) {
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
     forbidNonWhitelisted: true,
-    transform: true, // Automatically transform to desired type
+    transform: true, // Automatically transform to desired type,
   }))
 
   swaggerConfig(app);

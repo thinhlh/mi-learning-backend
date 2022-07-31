@@ -6,12 +6,9 @@ import { BaseResponse } from "../dto/base.response";
 export class CustomExceptionFilter implements ExceptionFilter {
     catch(exception: any, host: ArgumentsHost) {
 
-        console.log(exception);
-
         const context = host.switchToHttp();
         const request = context.getRequest<Request>();
         const response = context.getResponse<Response>();
-
 
         if (exception instanceof HttpException) {
             const status = exception.getStatus();
@@ -21,6 +18,7 @@ export class CustomExceptionFilter implements ExceptionFilter {
                 message: exception.message,
                 data: null,
             }
+
             response
                 .status(status)
                 .json(body);

@@ -1,4 +1,6 @@
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from "@nestjs/common";
+import { classToPlain, plainToClass } from "class-transformer";
+import { isArray, isObject } from "class-validator";
 import { map, Observable } from "rxjs";
 import { BaseResponse } from "src/config/dto/base.response";
 
@@ -8,13 +10,15 @@ export class ResponseTransformInterceptor<T> implements NestInterceptor<T, BaseR
         return next
             .handle()
             .pipe(
-                map(data => (
-                    {
-                        success: true,
-                        message: null,
-                        data: data
-                    }
-                )));
+                map(
+                    data => (
+                        {
+                            success: true,
+                            message: null,
+                            data: data
+                        }
+                    )
+                )
+            );
     }
-
 }

@@ -1,4 +1,5 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Schedule } from "../schedule/schedule.entity";
 import { User } from "../user/user.entity";
 
 @Entity()
@@ -10,4 +11,7 @@ export class Student {
     @OneToOne(() => User)
     @JoinColumn({ name: "id" })
     user: User;
+
+    @OneToMany(() => Schedule, schedule => schedule.student)
+    schedules: Schedule[];
 }

@@ -1,6 +1,7 @@
-import { Column, Entity, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Category } from "../category/category.entity";
 import { Section } from "../section/section.entity";
+import { Teacher } from "../teacher/teacher.entity";
 
 @Entity()
 export class Course {
@@ -29,9 +30,8 @@ export class Course {
     })
     price: number;
 
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // @JoinColumn(name = "teacher_id")
-    // private Teacher teacher;
+    @ManyToOne(() => Teacher, teacher => teacher.courses)
+    teacher: Teacher;
 
     @OneToMany(() => Section, section => section.course)
     sections: Section[];

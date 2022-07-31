@@ -13,11 +13,11 @@ import { ArticleModule } from './article/article.module';
         `./env/${process.env.NODE_ENV}.env`,
     }),
     TypeOrmModule.forRoot({
-      host: process.env.DATABASE_HOST,
-      username: process.env.DATABASE_USERNAME,
+      host: process.env.HOST,
+      username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      port: +process.env.DATABASE_PORT,
+      port: 5433,
 
       type: 'postgres',
       autoLoadEntities: true,

@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Student } from "../student/student.entity";
 import { ScheduleColor, ScheduleStatus } from "./schedule.constants";
 
 @Entity()
@@ -12,20 +13,18 @@ export class Schedule {
     @Column()
     note: string;
 
-    @Column({ type: "timestamptz", default: Date(), nullable: false })
+    @Column({ type: "timestamptz", nullable: false })
     dueDate: Date;
 
-    // @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    // @JoinColumn(name = "student_id")
-    // @JsonIgnore
-    // private Student student;
+    @ManyToOne(() => Student, student => student.schedules)
+    student: Student;
 
     @Column({ type: "enum", enum: ScheduleColor, default: ScheduleColor.BLUE })
     color: ScheduleColor;
 
 
     @Column({ nullable: true })
-    localtion: string;
+    location: string;
 
     @Column({ type: "enum", enum: ScheduleStatus, default: ScheduleStatus.PENDING })
     status: ScheduleStatus;
