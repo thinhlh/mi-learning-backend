@@ -42,13 +42,17 @@ export class ArticleService {
         if (!article) {
             throw new NotFoundException();
         } else {
-
+            return this.articleRepository.save(article);
         }
+    }
 
-
+    async deleteArticle(id: string): Promise<boolean> {
+        const result = await this.articleRepository.softDelete({ id: id });
+        return true;
     }
 
     private async preloadCategory(categoryId?: string): Promise<Category> {
         return await this.categoryRepository.preload({ id: categoryId })
     }
+
 }

@@ -1,4 +1,6 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus } from "@nestjs/common";
+import { classToPlain } from "class-transformer";
+import { isObject } from "class-validator";
 import { Request, Response } from "express";
 import { BaseResponse } from "../dto/base.response";
 
@@ -11,13 +13,14 @@ export class CustomExceptionFilter implements ExceptionFilter {
         const response = context.getResponse<Response>();
 
         if (exception instanceof HttpException) {
-            const status = exception.getStatus();
+            const status = exception.getStatus() ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
 
             const body: BaseResponse<any> = {
                 success: false,
-                message: exception.message,
+                message: this.getExceptionMessage(exception),
                 data: null,
             }
+
 
             response
                 .status(status)
@@ -33,5 +36,19 @@ export class CustomExceptionFilter implements ExceptionFilter {
                 .json(body);
         }
 
+    }
+
+    private getExceptionMessage(exception: HttpException): string {
+        const exceptionResponse = exception.getResponse();
+
+        if (exceptionResponse) {
+            if (isObject(exceptionResponse)) {
+                return classToPlain(exceptionResponse).message;
+            } else {
+                return exceptionResponse as string;
+            }
+        } else {
+            return exception.message
+        }
     }
 }

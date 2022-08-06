@@ -1,8 +1,4 @@
-import { Body, Controller, Get, Param, ParseUUIDPipe, Patch, Post, UseInterceptors } from "@nestjs/common";
-import { OmitType, PickType } from "@nestjs/swagger";
-import { classToPlain, Exclude, Expose, plainToClass, plainToInstance, TransformPlainToInstance } from "class-transformer";
-import e from "express";
-import { ResponseMapperInterceptor } from "src/config/interceptors/response-mapper.interceptor";
+import { Body, Controller, Delete, Get, Param, ParseUUIDPipe, Patch, Post, UseInterceptors } from "@nestjs/common";
 import { Article } from "./article.entity";
 import { ArticleService } from "./article.service";
 import { CreateArticleDTO } from "./dto/create-article.dto";
@@ -24,11 +20,14 @@ export class ArticleController {
         return this.articleService.createArticle(createArticleDTO);
     }
 
-    @Patch("/article/{id}")
-    async updateArticle(@Body() updateArticleDTO: UpdateArticleDTO, @Param('id', ParseUUIDPipe) id: string) {
-
+    @Patch("/article/:id")
+    async updateArticle(@Body() updateArticleDTO: UpdateArticleDTO, @Param('id', ParseUUIDPipe) id: string): Promise<Article> {
         return this.articleService.updateArticle(id, updateArticleDTO);
+    }
 
+    @Delete('/article/:id')
+    async deleteArticle(@Param('id') id: string): Promise<boolean> {
+        return this.articleService.deleteArticle(id);
     }
 
 }
