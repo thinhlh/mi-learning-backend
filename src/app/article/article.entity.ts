@@ -5,6 +5,7 @@ import { Category } from "../category/category.entity";
 @Entity()
 export class Article {
     @PrimaryGeneratedColumn("uuid")
+    @Expose()
     id: string;
 
     @Column()
