@@ -12,7 +12,7 @@ services:
     restart: always
     container_name: mi-learning-db
     ports:
-      - ${DATABASE_PORT}:5432
+      - "${DATABASE_PORT}:5432"
     environment:
       - POSTGRES_DB=${DATABASE_NAME}
       - POSTGRES_USER=${DATABASE_USER}

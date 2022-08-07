@@ -22,7 +22,7 @@ export class Article {
 
     @CreateDateColumn()
     @Expose()
-    createdDate: Date;
+    createdAt: Date;
 
     @Column()
     @Expose()

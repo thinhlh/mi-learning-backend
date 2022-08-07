@@ -1,5 +1,5 @@
-import { BadRequestException, HttpException, HttpStatus, INestApplication, ValidationPipe } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
+import { BadRequestException, ClassSerializerInterceptor, HttpException, HttpStatus, INestApplication, ValidationPipe } from '@nestjs/common';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationError } from 'class-validator';
 import { AppModule } from './app/app.module';
@@ -18,6 +18,7 @@ async function bootstrap() {
 async function appConfig(app: INestApplication) {
   app.setGlobalPrefix("/api")
   app.useGlobalInterceptors(
+    new ClassSerializerInterceptor(new Reflector(), {}),
     new ResponseTransformInterceptor(),
     new ErrorResponseInterceptor()
   );
@@ -25,7 +26,7 @@ async function appConfig(app: INestApplication) {
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true,
     forbidNonWhitelisted: true,
-    transform: true, // Automatically transform to desired type,
+    transform: true, // Automatically transform to desred type,
   }))
 
   swaggerConfig(app);

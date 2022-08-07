@@ -2,6 +2,7 @@ import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus } from
 import { classToPlain } from "class-transformer";
 import { isObject } from "class-validator";
 import { Request, Response } from "express";
+import { TypeORMError } from "typeorm";
 import { BaseResponse } from "../dto/base.response";
 
 @Catch()
@@ -12,29 +13,27 @@ export class CustomExceptionFilter implements ExceptionFilter {
         const request = context.getRequest<Request>();
         const response = context.getResponse<Response>();
 
-        if (exception instanceof HttpException) {
-            const status = exception.getStatus() ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
+        console.log(exception);
 
-            const body: BaseResponse<any> = {
-                success: false,
-                message: this.getExceptionMessage(exception),
-                data: null,
-            }
+        let status = HttpStatus.INTERNAL_SERVER_ERROR;
+        let message = ((exception as any).message.message) ? (exception as any).message.message : "Internal Server Error!";
 
 
-            response
-                .status(status)
-                .json(body);
-        } else {
-            const body: BaseResponse<any> = {
-                success: false,
-                message: "Internal server error.",
-                data: null,
-            }
-            response
-                .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .json(body);
+        switch (exception.constructor) {
+            case HttpException:
+                status = exception.getStatus() ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
+                break;
+            case TypeORMError:
         }
+
+        const body: BaseResponse<any> = {
+            success: false,
+            message: message,
+            data: null,
+        }
+        response
+            .status(HttpStatus.INTERNAL_SERVER_ERROR)
+            .json(body);
 
     }
 

@@ -10,7 +10,6 @@ export class ArticleController {
     constructor(private readonly articleService: ArticleService) { }
 
     @Get("/articles")
-    // @UseInterceptors(new ResponseMapperInterceptor(Article))
     async getArticles(): Promise<Article[]> {
         return this.articleService.getArticles();
     }
