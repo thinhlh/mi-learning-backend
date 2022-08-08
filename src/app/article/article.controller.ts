@@ -29,5 +29,10 @@ export class ArticleController {
         return this.articleService.deleteArticle(id);
     }
 
+    @Post("/article/restore/:id")
+    async restoreDeletedArticle(@Param('id', ParseUUIDPipe) id: string): Promise<any> {
+        return this.articleService.restoreDeletedArticle(id)
+    }
+
 }
 

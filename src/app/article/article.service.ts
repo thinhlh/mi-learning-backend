@@ -51,6 +51,11 @@ export class ArticleService {
         return true;
     }
 
+    async restoreDeletedArticle(id: string): Promise<any> {
+        await this.articleRepository.restore({ id: id });
+        return null;
+    }
+
     private async preloadCategory(categoryId?: string): Promise<Category> {
         return await this.categoryRepository.preload({ id: categoryId })
     }

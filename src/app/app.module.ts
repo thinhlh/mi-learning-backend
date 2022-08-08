@@ -5,6 +5,7 @@ import { CommonController } from './common/common.controller';
 import { ConfigModule } from '@nestjs/config';
 import { CategoryModule } from './category/category.module';
 import { ArticleModule } from './article/article.module';
+import { CourseModule } from './course/course.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { ArticleModule } from './article/article.module';
     }),
     ArticleModule,
     CategoryModule,
+    CourseModule,
   ],
 
   controllers: [CommonController]

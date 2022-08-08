@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, DeleteDateColumn, Entity, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Category } from "../category/category.entity";
 import { Section } from "../section/section.entity";
 import { Teacher } from "../teacher/teacher.entity";
@@ -43,4 +43,7 @@ export class Course {
 
     @ManyToOne(() => Category, category => category.courses)
     category: Category;
+
+    @DeleteDateColumn()
+    deletedAt: Date;
 }
