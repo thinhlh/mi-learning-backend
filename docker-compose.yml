@@ -5,15 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/db/Dockerfile
-      args:
-        DATABASE_NAME: ${DATABASE_NAME}
-        DATABASE_USER: ${DATABASE_USER}
-        DATABASE_PASSWORD: ${DATABASE_PASSWORD}
     restart: always
     container_name: mi-learning-db
     ports:
-      - "${DATABASE_PORT}:5432"
-    environment:
-      - POSTGRES_DB=${DATABASE_NAME}
-      - POSTGRES_USER=${DATABASE_USER}
-      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - "5432:5432"

@@ -13,6 +13,7 @@ export class ErrorResponseInterceptor implements NestInterceptor {
                 catchError(
                     err => throwError(
                         () => {
+
                             if (err instanceof BadRequestException) {
 
                                 const errorResponse = err.getResponse();
@@ -31,7 +32,7 @@ export class ErrorResponseInterceptor implements NestInterceptor {
                                     message: err,
                                     data: null,
                                 }),
-                                    +err.status,
+                                    +err.status ? err.status : HttpStatus.INTERNAL_SERVER_ERROR,
                                 );
                             }
                         }

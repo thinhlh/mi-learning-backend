@@ -14,12 +14,11 @@ import { CourseModule } from './course/course.module';
         `./env/${process.env.NODE_ENV}.env`,
     }),
     TypeOrmModule.forRoot({
-      host: process.env.HOST,
-      username: process.env.DATABASE_USER,
-      password: process.env.DATABASE_PASSWORD,
-      database: process.env.DATABASE_NAME,
-      port: 5433,
-
+      host: process.env.POSTGRES_HOST,
+      username: process.env.POSTGRES_USER,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_NAME,
+      port: +process.env.POSTGRES_PORT,
       type: 'postgres',
       autoLoadEntities: true,
       synchronize: process.env.NODE_ENV === 'dev' ? true : false,

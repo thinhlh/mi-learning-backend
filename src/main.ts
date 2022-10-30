@@ -20,7 +20,7 @@ async function appConfig(app: INestApplication) {
   app.useGlobalInterceptors(
     new ClassSerializerInterceptor(new Reflector(), {}),
     new ResponseTransformInterceptor(),
-    new ErrorResponseInterceptor()
+    // new ErrorResponseInterceptor()
   );
   app.useGlobalFilters(new CustomExceptionFilter());
   app.useGlobalPipes(new ValidationPipe({

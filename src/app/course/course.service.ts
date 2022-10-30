@@ -1,31 +1,40 @@
+import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
+import { CategoryService } from "../category/category.service";
 import { Section } from "../section/section.entity";
 import { Course } from "./course.entity";
 import { CreateCourseDTO } from "./dto/create-course.dto";
 import { UpdateCourseDTO } from "./dto/update-course.dto";
 
+@Injectable()
 export class CourseService {
     constructor(
         @InjectRepository(Course) private readonly courseRepository: Repository<Course>,
-        @InjectRepository(Category) private readonly categoryRepository: Repository<Category>,
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
+        private readonly categoryService: CategoryService,
     ) { }
 
+    async getCourse(id?: string): Promise<Course> {
+        if (id == null) return null
+
+        return this.courseRepository.findOneBy({ id: id })
+    }
 
     async getCourses(): Promise<Course[]> {
         return this.courseRepository.find();
     }
 
     async createCourse(createCourseDTO: CreateCourseDTO): Promise<Course> {
-        const course = this.courseRepository.create({
+        let course = this.courseRepository.create({
             ...createCourseDTO,
-            sections: await this.loadSections(createCourseDTO.sections),
-            category: await this.loadCategory(createCourseDTO.categoryId),
+            category: await this.categoryService.getCategory(createCourseDTO.categoryId),
+            sections: [],
         });
 
-        return this.courseRepository.save(course);
+        return await this.courseRepository.save(course);
+
     }
 
     async updateCourse(id: string, updateCourseDTO: UpdateCourseDTO): Promise<Course> {
@@ -34,11 +43,11 @@ export class CourseService {
             id: id,
             ...updateCourseDTO,
             sections: await this.loadSections(updateCourseDTO.sections),
-            category: await this.loadCategory(updateCourseDTO.categoryId),
+            category: await this.categoryService.getCategory(updateCourseDTO.categoryId),
         })
 
         if (course) {
-            return this.categoryRepository.save(course);
+            return this.courseRepository.save(course);
         }
     }
 
@@ -52,19 +61,6 @@ export class CourseService {
         await this.courseRepository.restore({ id: id });
 
         return null;
-    }
-
-    private async preloadCourse(id: string): Promise<Course> {
-        return
-    }
-
-
-    private async loadCategory(id: string): Promise<Category> {
-        return this.categoryRepository.findOne({
-            where: {
-                id: id
-            }
-        });
     }
 
     private async loadSections(ids: string[]): Promise<Section[]> {

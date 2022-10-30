@@ -16,6 +16,11 @@ export class CategoryService {
         return this.categoryRepository.find({});
     }
 
+    async getCategory(id?: string) {
+        if (id == null) return
+        return this.categoryRepository.findOneBy({ id: id });
+    }
+
     async createCategory(createCategoryDTO: CreateCategoryDTO): Promise<Category> {
 
         const category = this.categoryRepository.create(createCategoryDTO);

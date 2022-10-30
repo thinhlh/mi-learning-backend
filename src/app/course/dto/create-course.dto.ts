@@ -1,4 +1,4 @@
-import { IsCurrency, IsDecimal, IsOptional, IsPositive, IsString, IsUUID } from "class-validator";
+import { IsCurrency, IsDecimal, IsNumber, IsOptional, IsPositive, IsString, IsUUID, Min } from "class-validator";
 
 export class CreateCourseDTO {
     @IsString()
@@ -17,17 +17,13 @@ export class CreateCourseDTO {
     @IsOptional()
     icon: string;
 
-    @IsDecimal()
+    @IsNumber()
+    @Min(0)
     price: number;
 
     @IsUUID()
     @IsOptional()
     teacherId: string;
-
-    @IsUUID("all", {
-        each: true,
-    })
-    sections: string[];
 
     @IsUUID()
     categoryId: string;

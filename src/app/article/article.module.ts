@@ -2,6 +2,7 @@ import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { TypeORMError } from "typeorm";
 import { Category } from "../category/category.entity";
+import { CategoryModule } from "../category/category.module";
 import { Course } from "../course/course.entity";
 import { Lesson } from "../lesson/lesson.entity";
 import { Schedule } from "../schedule/schedule.entity";
@@ -15,7 +16,8 @@ import { ArticleService } from "./article.service";
 
 @Module({
     imports: [
-        TypeOrmModule.forFeature([Article, Category, Lesson, Section, Course, Student, User, Teacher, Schedule])
+        TypeOrmModule.forFeature([Article]),
+        CategoryModule,
     ],
     controllers: [ArticleController],
     providers: [ArticleService],

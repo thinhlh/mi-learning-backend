@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Category } from "../category/category.entity";
+import { CategoryService } from "../category/category.service";
 import { Article } from "./article.entity";
 import { CreateArticleDTO } from "./dto/create-article.dto";
 import { UpdateArticleDTO } from "./dto/update-article.dto";
@@ -9,7 +10,7 @@ import { UpdateArticleDTO } from "./dto/update-article.dto";
 export class ArticleService {
     constructor(
         @InjectRepository(Article) private readonly articleRepository: Repository<Article>,
-        @InjectRepository(Category) private readonly categoryRepository: Repository<Category>
+        private readonly categoryService: CategoryService,
     ) { }
 
     async getArticles(): Promise<Article[]> {
@@ -23,11 +24,13 @@ export class ArticleService {
     async createArticle(createArticleDTO: CreateArticleDTO): Promise<Article> {
         const article = this.articleRepository.create(createArticleDTO);
 
-        const category = await this.preloadCategory(createArticleDTO.categoryId);
-
-        if (category) {
-            article.category = category;
+        if (createArticleDTO.categoryId != null) {
+            const category = await this.preloadCategory(createArticleDTO.categoryId);
+            if (category) {
+                article.category = category;
+            }
         }
+
 
         return await this.articleRepository.save(article);
 
@@ -57,7 +60,7 @@ export class ArticleService {
     }
 
     private async preloadCategory(categoryId?: string): Promise<Category> {
-        return await this.categoryRepository.preload({ id: categoryId })
+        return this.categoryService.getCategory(categoryId)
     }
 
 }
