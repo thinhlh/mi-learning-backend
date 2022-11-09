@@ -1,8 +1,8 @@
 import { ArgumentsHost, BadRequestException, Catch, ExceptionFilter, HttpException, HttpStatus } from "@nestjs/common";
 import { classToPlain } from "class-transformer";
-import { isObject } from "class-validator";
+import { isArray, isObject } from "class-validator";
 import { Request, Response } from "express";
-import { TypeORMError } from "typeorm";
+import { QueryFailedError, TypeORMError } from "typeorm";
 import { BaseResponse } from "../dto/base.response";
 
 @Catch()
@@ -13,8 +13,6 @@ export class CustomExceptionFilter implements ExceptionFilter {
         const request = context.getRequest<Request>();
         const response = context.getResponse<Response>();
 
-        console.log(exception);
-
         let status = HttpStatus.INTERNAL_SERVER_ERROR;
         let message = "Internal Server Error!";
 
@@ -22,26 +20,39 @@ export class CustomExceptionFilter implements ExceptionFilter {
         switch (exception.constructor) {
             case BadRequestException:
                 status = (exception as BadRequestException).getStatus();
-                const response = (exception as BadRequestException).getResponse()
+                var exceptionResponse = (exception as BadRequestException).getResponse()
 
-                if (isObject(response)) {
-                    message = ((response as any).message as string[]).join("\n")
+                if (isObject(exceptionResponse)) {
+                    const rawMessage = (exceptionResponse as any).message
+                    if (isArray(rawMessage)) {
+                        message = (rawMessage as string[]).join("\n")
+                    } else {
+                        message = rawMessage
+                    }
                 } else {
-                    message = response
+                    message = exceptionResponse
                 }
                 break
             case HttpException:
                 status = exception.getStatus() ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
                 message = (exception as HttpException).message
+                console.log(message)
                 break;
             case TypeORMError:
                 status = HttpStatus.BAD_REQUEST
                 message = (exception as TypeORMError).message
+                break;
+            case QueryFailedError:
+                message = ((exception as QueryFailedError).driverError.detail)
+                status = HttpStatus.BAD_REQUEST
+                break;
             case String:
                 status = HttpStatus.INTERNAL_SERVER_ERROR
                 message = exception
+                break;
             default:
                 message = exception.toString()
+                break;
         }
 
         const body: BaseResponse<any> = {

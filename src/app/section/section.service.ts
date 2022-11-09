@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { CourseService } from "../course/course.service";
@@ -13,6 +13,17 @@ export class SectionService {
         private readonly courseService: CourseService,
     ) { }
 
+    async getSection(id: string): Promise<Section> {
+        return this.sectionRepository.findOne({
+            relations: {
+                lessons: true
+            },
+            where: {
+                id: id
+            }
+        })
+    }
+
     async getSections(): Promise<Section[]> {
         return this.sectionRepository.find({
             relations: {
@@ -22,9 +33,20 @@ export class SectionService {
     }
 
     async createSection(createSectionDTO: CreateSectionDTO): Promise<Section> {
+        const course = await this.courseService.getCourse(createSectionDTO.courseId);
+
+        if (!course) {
+            throw new NotFoundException("Course not found!")
+        }
+
+
+        if (course.sections.some((section) => section.title == createSectionDTO.title)) {
+            throw new BadRequestException("Section already exist in course!")
+        }
         const section = this.sectionRepository.create({
             ...createSectionDTO,
-            course: await this.courseService.getCourse(createSectionDTO.courseId),
+            course: course,
+            lessons: [],
         });
 
         return this.sectionRepository.save(section);
@@ -37,7 +59,7 @@ export class SectionService {
         });
 
         if (!section) {
-            throw new NotFoundException();
+            throw new NotFoundException("Section not found!");
         } else {
             return this.sectionRepository.save(section);
         }

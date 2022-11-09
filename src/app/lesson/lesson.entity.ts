@@ -17,6 +17,9 @@ export class Lesson {
     @ManyToOne(() => Section, section => section.lessons)
     section: Section;
 
+    @Column()
+    url: string;
+
     // @OneToOne(fetch = FetchType.EAGER)
     // @JoinColumn(referencedColumnName = "id")
     // private VideoLesson videoLesson;

@@ -16,7 +16,7 @@ export class CategoryService {
         return this.categoryRepository.find({});
     }
 
-    async getCategory(id?: string) {
+    async getCategory(id?: string): Promise<Category> {
         if (id == null) return
         return this.categoryRepository.findOneBy({ id: id });
     }

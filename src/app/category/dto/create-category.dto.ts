@@ -1,11 +1,10 @@
-import { IsString } from "class-validator";
+import { IsString, IsUrl } from "class-validator";
 
 export class CreateCategoryDTO {
 
     @IsString()
     readonly title: string;
 
-    @IsString()
+    @IsUrl()
     readonly background: string;
-
 }

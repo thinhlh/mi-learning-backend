@@ -1,7 +1,8 @@
-import { Body, Controller, Delete, Get, Param, ParseUUIDPipe, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, ParseUUIDPipe, Patch, Post, Query, ValidationPipe } from "@nestjs/common";
 import { Course } from "./course.entity";
 import { CourseService } from "./course.service";
 import { CreateCourseDTO } from "./dto/create-course.dto";
+import { GetCourseQuery } from "./dto/get-course.query";
 import { UpdateCourseDTO } from "./dto/update-course.dto";
 
 @Controller()
@@ -10,8 +11,8 @@ export class CourseController {
     constructor(private readonly courseService: CourseService) { }
 
     @Get("/courses")
-    async getCourses(): Promise<Course[]> {
-        return this.courseService.getCourses();
+    async getCourses(@Query() query: GetCourseQuery): Promise<Course[]> {
+        return this.courseService.getCourses(query);
     }
 
     @Post("/course")

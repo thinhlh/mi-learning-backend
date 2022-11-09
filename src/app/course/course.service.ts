@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
@@ -6,6 +6,7 @@ import { CategoryService } from "../category/category.service";
 import { Section } from "../section/section.entity";
 import { Course } from "./course.entity";
 import { CreateCourseDTO } from "./dto/create-course.dto";
+import { GetCourseQuery } from "./dto/get-course.query";
 import { UpdateCourseDTO } from "./dto/update-course.dto";
 
 @Injectable()
@@ -19,17 +20,35 @@ export class CourseService {
     async getCourse(id?: string): Promise<Course> {
         if (id == null) return null
 
-        return this.courseRepository.findOneBy({ id: id })
+        return this.courseRepository.findOne({
+            where: {
+                id: id
+            },
+            relations: {
+                sections: true
+            }
+        })
     }
 
-    async getCourses(): Promise<Course[]> {
-        return this.courseRepository.find();
+    async getCourses(query: GetCourseQuery): Promise<Course[]> {
+        return this.courseRepository.find({
+            relations: {
+                category: true,
+                sections: query.loadSections == null ? false : {
+                    lessons: query.loadLessons ?? false
+                },
+            },
+        });
     }
 
     async createCourse(createCourseDTO: CreateCourseDTO): Promise<Course> {
+        const category = await this.categoryService.getCategory(createCourseDTO.categoryId)
+        if (!category) {
+            throw new NotFoundException("Category not found!")
+        }
         let course = this.courseRepository.create({
             ...createCourseDTO,
-            category: await this.categoryService.getCategory(createCourseDTO.categoryId),
+            category: category,
             sections: [],
         });
 

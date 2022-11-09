@@ -1,6 +1,9 @@
+import { Transform, TransformFnParams } from "class-transformer";
 import { Column, DeleteDateColumn, Entity, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Category } from "../category/category.entity";
 import { Section } from "../section/section.entity";
+import { Student } from "../student/student.entity";
+import { StudentCourse } from "../student_course/student_course.entity";
 import { Teacher } from "../teacher/teacher.entity";
 
 @Entity()
@@ -8,7 +11,9 @@ export class Course {
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column()
+    @Column({
+        unique: true,
+    })
     title: string;
 
     @Column()
@@ -36,10 +41,8 @@ export class Course {
     @OneToMany(() => Section, section => section.course)
     sections: Section[];
 
-    // @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
-    // @Getter(value = AccessLevel.NONE)
-    // private Set<StudentCourse> students = new LinkedHashSet<>();
-
+    @OneToMany(() => StudentCourse, (studentCourse) => studentCourse.course)
+    studentCourses: StudentCourse[];
 
     @ManyToOne(() => Category, category => category.courses)
     category: Category;

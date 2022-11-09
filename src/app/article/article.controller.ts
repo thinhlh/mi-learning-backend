@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, ParseUUIDPipe, Patch, Post, UseInterceptors } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, ParseUUIDPipe, Patch, Post, UseInterceptors, Version } from "@nestjs/common";
 import { Article } from "./article.entity";
 import { ArticleService } from "./article.service";
 import { CreateArticleDTO } from "./dto/create-article.dto";

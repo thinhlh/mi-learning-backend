@@ -1,4 +1,4 @@
-import { IsCurrency, IsDecimal, IsNumber, IsOptional, IsPositive, IsString, IsUUID, Min } from "class-validator";
+import { IsCurrency, IsDecimal, IsNumber, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator";
 
 export class CreateCourseDTO {
     @IsString()
@@ -10,10 +10,10 @@ export class CreateCourseDTO {
     @IsPositive()
     length: number;
 
-    @IsString()
+    @IsUrl()
     background: string;
 
-    @IsString()
+    @IsUrl()
     @IsOptional()
     icon: string;
 

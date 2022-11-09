@@ -7,5 +7,7 @@ services:
       dockerfile: ./docker/db/Dockerfile
     restart: always
     container_name: mi-learning-db
+    env_file:
+      - ./env/dev.env
     ports:
-      - "5432:5432"
+      - 5433:5432

@@ -4,6 +4,6 @@ export class CreateSectionDTO {
     @IsString()
     title: string;
 
-    @IsString()
+    @IsUUID()
     courseId: string;
 }
