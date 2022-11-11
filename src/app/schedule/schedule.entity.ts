@@ -1,3 +1,4 @@
+import { Type } from "class-transformer";
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Student } from "../student/student.entity";
 import { ScheduleColor, ScheduleStatus } from "./schedule.constants";
@@ -14,6 +15,7 @@ export class Schedule {
     note: string;
 
     @Column({ type: "timestamptz", nullable: false })
+    @Type(() => Number)
     dueDate: Date;
 
     @ManyToOne(() => Student, student => student.schedules)

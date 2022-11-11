@@ -13,9 +13,10 @@ export class SectionService {
         private readonly courseService: CourseService,
     ) { }
 
-    async getSection(id: string): Promise<Section> {
+    async getSection(id: string, loadCourse: boolean = false): Promise<Section> {
         return this.sectionRepository.findOne({
             relations: {
+                course: loadCourse,
                 lessons: true
             },
             where: {
@@ -28,7 +29,7 @@ export class SectionService {
         return this.sectionRepository.find({
             relations: {
                 lessons: true,
-            }
+            },
         });
     }
 

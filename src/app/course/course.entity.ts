@@ -1,4 +1,4 @@
-import { Transform, TransformFnParams } from "class-transformer";
+import { Transform, TransformFnParams, Type } from "class-transformer";
 import { Column, DeleteDateColumn, Entity, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Category } from "../category/category.entity";
 import { Section } from "../section/section.entity";
@@ -48,5 +48,6 @@ export class Course {
     category: Category;
 
     @DeleteDateColumn()
+    @Type(() => Number)
     deletedAt: Date;
 }

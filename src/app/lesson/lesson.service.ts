@@ -1,7 +1,7 @@
 import { BadRequestException, Get, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { userInfo } from "os";
 import { Repository } from "typeorm";
+import { CourseService } from "../course/course.service";
 import { SectionService } from "../section/section.service";
 import { CreateLessonDTO } from "./dto/create-lesson.dto";
 import { UpdateLessonDTO } from "./dto/update-lesson.dto";
@@ -10,6 +10,7 @@ import { Lesson } from "./lesson.entity";
 @Injectable()
 export class LessonService {
     constructor(
+        private readonly courseService: CourseService,
         private readonly sectionService: SectionService,
         @InjectRepository(Lesson) private readonly lessonRepository: Repository<Lesson>,
     ) {
@@ -21,7 +22,7 @@ export class LessonService {
     }
 
     async createLesson(createLesstonDTO: CreateLessonDTO): Promise<Lesson> {
-        const section = await this.sectionService.getSection(createLesstonDTO.sectionId)
+        const section = await this.sectionService.getSection(createLesstonDTO.sectionId, true)
 
         if (!section) {
             throw new NotFoundException("Section not found!")
@@ -34,6 +35,7 @@ export class LessonService {
 
         const lesson = this.lessonRepository.create({
             ...createLesstonDTO,
+            lessonOrder: await this.courseService.getCurrentNumberOfLesson(section.course.id) + 1,
             section: section
         });
 

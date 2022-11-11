@@ -1,13 +1,10 @@
-import { BadRequestException, ClassSerializerInterceptor, HttpException, HttpStatus, INestApplication, ValidationPipe, VersioningType } from '@nestjs/common';
+import { ClassSerializerInterceptor, INestApplication, ValidationPipe, VersioningType } from '@nestjs/common';
 import { NestFactory, Reflector } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ValidationError } from 'class-validator';
 import { AppModule } from './app/app.module';
 import { CustomExceptionFilter } from './config/filters/custom-exception.filter';
-import { ErrorResponseInterceptor } from './config/interceptors/error-response.interceptor';
 import { ResponseTransformInterceptor } from './config/interceptors/response.interceptor';
-import * as express from 'express';
 import { join } from 'path';
 
 async function bootstrap() {
@@ -21,7 +18,9 @@ async function bootstrap() {
 async function appConfig(app: NestExpressApplication) {
   app.setGlobalPrefix("/api")
   app.useGlobalInterceptors(
-    new ClassSerializerInterceptor(new Reflector(), {}),
+    new ClassSerializerInterceptor(app.get(Reflector), {
+
+    }),
     new ResponseTransformInterceptor(),
     // new ErrorResponseInterceptor()
   );
@@ -45,6 +44,8 @@ async function appConfig(app: NestExpressApplication) {
     prefix: "/public",
   })
 
+  app.enableCors()
+
 
   swaggerConfig(app);
 
@@ -54,7 +55,6 @@ async function swaggerConfig(app: INestApplication) {
   const swaggerOption = new DocumentBuilder()
     .setTitle("Mi Learning API")
     .setDescription("Mi Learning API documentation")
-    .setBasePath("/api")
     .setVersion("1.0.0")
     .setContact("Hoang Thinh", "www.hoangthinh.me", "thinhlh0812@gmail.com")
     .build();

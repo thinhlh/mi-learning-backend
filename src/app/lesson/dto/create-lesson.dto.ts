@@ -8,10 +8,6 @@ export class CreateLessonDTO {
     @IsString()
     title: string;
 
-    @IsNumber()
-    @Min(0)
-    lessonOrder: number;
-
     @IsUrl()
     url: string;
 

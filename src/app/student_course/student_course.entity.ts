@@ -1,5 +1,6 @@
-import { Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+import { Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 import { Course } from "../course/course.entity";
+import { Rating } from "../rating/rating.entity";
 import { Student } from "../student/student.entity";
 
 @Entity()
@@ -16,4 +17,7 @@ export class StudentCourse {
 
     @ManyToOne(() => Course, (course) => course.studentCourses)
     course: Course
+
+    @OneToMany(() => Rating, (rating) => rating.studentCourse)
+    ratings: Rating[]
 }

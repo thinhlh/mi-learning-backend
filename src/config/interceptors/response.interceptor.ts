@@ -11,13 +11,36 @@ export class ResponseTransformInterceptor<T> implements NestInterceptor<T, BaseR
             .handle()
             .pipe(
                 map(
-                    data => (
-                        {
-                            success: true,
-                            message: null,
-                            data: data
-                        }
-                    )
+                    data => {
+                        // if (isArray(data)) {
+                        //     for (const index in ((data as unknown) as Array<any>)) {
+                        //         const item = data[index]
+                        //         for (const property in item) {
+                        //             const value = item[property] as unknown
+                        //             if (value instanceof Date) {
+                        //                 data[index][property] = (value as Date).getTime()
+                        //             }
+                        //         }
+                        //     }
+                        // } else {
+                        //     for (const property in data) {
+                        //         const value = data[property] as unknown
+                        //         if (value instanceof Date) {
+                        //             (data as unknown)[property] = (value as Date).getTime()
+                        //         }
+                        //     }
+                        // }
+
+
+
+                        return (
+                            {
+                                success: true,
+                                message: null,
+                                data: data
+                            }
+                        )
+                    }
                 )
             );
     }

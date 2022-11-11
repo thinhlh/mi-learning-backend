@@ -1,3 +1,4 @@
+import { Type } from "class-transformer";
 import { Column, DeleteDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Role } from "../role/role";
 import { Student } from "../student/student.entity";
@@ -23,12 +24,14 @@ export class User {
     occupation: string;
 
     @Column("timestamptz")
+    @Type(() => Number)
     birthday: Date;
 
     @Column()
     avatar: string;
 
     @DeleteDateColumn()
+    @Type(() => Number)
     deletedDate: Date
 
     @Column({

@@ -12,13 +12,10 @@ import { StudentCourseModule } from './student_course/student_course.module';
 import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { MulterModule } from '@nestjs/platform-express';
+import { RatingModule } from './rating/rating.module';
 
 @Module({
   imports: [
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '..', 'client'),
-    //   exclude: ['/api*'],
-    // }),
     MulterModule.register({
       dest: "./upload"
     }),
@@ -33,6 +30,8 @@ import { MulterModule } from '@nestjs/platform-express';
       database: process.env.POSTGRES_DB,
       port: +process.env.POSTGRES_PORT,
       type: 'postgres',
+      logger: "advanced-console",
+      logging: process.env.NODE_ENV === 'dev' ? true : false,
       autoLoadEntities: true,
       synchronize: process.env.NODE_ENV === 'dev' ? true : false,
     }),
@@ -42,6 +41,7 @@ import { MulterModule } from '@nestjs/platform-express';
     LessonModule,
     SectionModule,
     StudentCourseModule,
+    RatingModule,
   ],
 
   controllers: [CommonController]

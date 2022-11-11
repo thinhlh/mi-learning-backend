@@ -1,4 +1,4 @@
-import { Exclude, Expose } from "class-transformer";
+import { Exclude, Expose, Transform, Type } from "class-transformer";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Category } from "../category/category.entity";
 
@@ -17,10 +17,12 @@ export class Article {
     thumbnail: string;
 
     @CreateDateColumn()
+    @Type(() => Number)
     createdAt: Date;
 
     @DeleteDateColumn()
-    deletedAt: Date;
+    @Type(() => Number)
+    deletedAt?: Date;
 
     @Column()
     url: string;

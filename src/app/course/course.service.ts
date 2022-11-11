@@ -1,8 +1,9 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { In, Repository } from "typeorm";
+import { EntityManager, In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
 import { CategoryService } from "../category/category.service";
+import { Lesson } from "../lesson/lesson.entity";
 import { Section } from "../section/section.entity";
 import { Course } from "./course.entity";
 import { CreateCourseDTO } from "./dto/create-course.dto";
@@ -12,10 +13,22 @@ import { UpdateCourseDTO } from "./dto/update-course.dto";
 @Injectable()
 export class CourseService {
     constructor(
+        private readonly entityManager: EntityManager,
         @InjectRepository(Course) private readonly courseRepository: Repository<Course>,
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
         private readonly categoryService: CategoryService,
     ) { }
+
+    async getCurrentNumberOfLesson(courseId: string): Promise<number> {
+        return await this.entityManager
+            .countBy(Lesson, {
+                section: {
+                    course: {
+                        id: courseId
+                    }
+                }
+            })
+    }
 
     async getCourse(id?: string): Promise<Course> {
         if (id == null) return null

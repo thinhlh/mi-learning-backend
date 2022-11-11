@@ -1,7 +1,8 @@
-import { ArgumentsHost, BadRequestException, Catch, ExceptionFilter, HttpException, HttpStatus } from "@nestjs/common";
+import { ArgumentsHost, BadRequestException, Catch, ExceptionFilter, HttpException, HttpStatus, NotFoundException } from "@nestjs/common";
 import { classToPlain } from "class-transformer";
 import { isArray, isObject } from "class-validator";
 import { Request, Response } from "express";
+import { stat } from "fs";
 import { QueryFailedError, TypeORMError } from "typeorm";
 import { BaseResponse } from "../dto/base.response";
 
@@ -18,10 +19,22 @@ export class CustomExceptionFilter implements ExceptionFilter {
 
 
         switch (exception.constructor) {
+            case NotFoundException:
+                const response = (exception as NotFoundException).getResponse()
+
+                if (isObject(response)) {
+                    message = (response as any).message;
+                    status = (response as any).statusCode;
+                } else {
+                    message = response.toString()
+                    status = (exception as NotFoundException).getStatus()
+                }
+
+                break;
+
             case BadRequestException:
                 status = (exception as BadRequestException).getStatus();
                 var exceptionResponse = (exception as BadRequestException).getResponse()
-
                 if (isObject(exceptionResponse)) {
                     const rawMessage = (exceptionResponse as any).message
                     if (isArray(rawMessage)) {
@@ -61,7 +74,7 @@ export class CustomExceptionFilter implements ExceptionFilter {
             data: null,
         }
         response
-            .status(HttpStatus.INTERNAL_SERVER_ERROR)
+            .status(status)
             .json(body);
 
     }

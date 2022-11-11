@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { StudentCourse } from "../student_course/student_course.entity";
 
 @Entity()
 export class Rating {
@@ -11,6 +12,6 @@ export class Rating {
     @Column({ nullable: false, type: "int" })
     value: number;
 
-    // @ManyToOne(fetch = FetchType.LAZY)
-    // private StudentCourse studentCourse;
+    @ManyToOne(() => StudentCourse)
+    studentCourse: StudentCourse
 }

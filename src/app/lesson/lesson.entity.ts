@@ -11,7 +11,7 @@ export class Lesson {
     })
     title: string;
 
-    @Column("integer")
+    @Column("integer", { nullable: false })
     lessonOrder: number;
 
     @ManyToOne(() => Section, section => section.lessons)
