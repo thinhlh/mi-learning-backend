@@ -16,7 +16,8 @@ async function bootstrap() {
 }
 
 async function appConfig(app: NestExpressApplication) {
-  app.setGlobalPrefix("/api")
+  app.enableShutdownHooks();
+  app.setGlobalPrefix("/api");
   app.useGlobalInterceptors(
     new ClassSerializerInterceptor(app.get(Reflector), {
 

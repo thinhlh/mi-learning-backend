@@ -27,6 +27,6 @@ export class Article {
     @Column()
     url: string;
 
-    @ManyToOne(() => Category, category => category.id, { cascade: true })
+    @ManyToOne(() => Category, category => category.id, { cascade: true, nullable: false })
     category: Category;
 }

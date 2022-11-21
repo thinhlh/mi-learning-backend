@@ -17,7 +17,6 @@ export class CustomExceptionFilter implements ExceptionFilter {
         let status = HttpStatus.INTERNAL_SERVER_ERROR;
         let message = "Internal Server Error!";
 
-
         switch (exception.constructor) {
             case NotFoundException:
                 const response = (exception as NotFoundException).getResponse()
@@ -56,7 +55,7 @@ export class CustomExceptionFilter implements ExceptionFilter {
                 message = (exception as TypeORMError).message
                 break;
             case QueryFailedError:
-                message = ((exception as QueryFailedError).driverError.detail)
+                message = (exception as QueryFailedError).message
                 status = HttpStatus.BAD_REQUEST
                 break;
             case String:

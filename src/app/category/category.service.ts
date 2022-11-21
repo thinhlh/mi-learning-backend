@@ -21,6 +21,11 @@ export class CategoryService {
         return this.categoryRepository.findOneBy({ id: id });
     }
 
+    async getCategoryByTitle(title?: string): Promise<Category> {
+        if (title == null) return
+        return this.categoryRepository.findOneBy({ title: title });
+    }
+
     async createCategory(createCategoryDTO: CreateCategoryDTO): Promise<Category> {
 
         const category = this.categoryRepository.create(createCategoryDTO);

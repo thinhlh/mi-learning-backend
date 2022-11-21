@@ -1,8 +1,8 @@
-import { MiddlewareConsumer, Module, NestModule, OnModuleInit, RequestMethod } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule, OnApplicationShutdown, OnModuleDestroy, OnModuleInit, RequestMethod } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoggerMiddleware } from 'src/config/middlewares/logger.middleware';
 import { CommonController } from './common/common.controller';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { CategoryModule } from './category/category.module';
 import { ArticleModule } from './article/article.module';
 import { CourseModule } from './course/course.module';
@@ -13,6 +13,7 @@ import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { MulterModule } from '@nestjs/platform-express';
 import { RatingModule } from './rating/rating.module';
+import { EntityManager } from 'typeorm';
 
 @Module({
   imports: [
@@ -31,12 +32,12 @@ import { RatingModule } from './rating/rating.module';
       port: +process.env.POSTGRES_PORT,
       type: 'postgres',
       logger: "advanced-console",
-      logging: process.env.NODE_ENV === 'dev' ? true : false,
+      // logging: process.env.NODE_ENV === 'dev' ? true : false,
       autoLoadEntities: true,
       synchronize: process.env.NODE_ENV === 'dev' ? true : false,
     }),
-    ArticleModule,
     CategoryModule,
+    ArticleModule,
     CourseModule,
     LessonModule,
     SectionModule,
@@ -46,7 +47,19 @@ import { RatingModule } from './rating/rating.module';
 
   controllers: [CommonController]
 })
-export class AppModule implements NestModule {
+export class AppModule implements NestModule, OnModuleDestroy {
+
+  constructor(private readonly manager: EntityManager, private readonly configService: ConfigService) { }
+  async onModuleDestroy() {
+    if (this.configService.get("NODE_ENV") === 'test') {
+      const entities = this.manager.connection.entityMetadatas
+
+      for (const entity of entities) {
+        const repository = this.manager.getRepository(entity.name);
+        await repository.query(`TRUNCATE ${entity.tableName} RESTART IDENTITY CASCADE;`);
+      }
+    }
+  }
 
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(
