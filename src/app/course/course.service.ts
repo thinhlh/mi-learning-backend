@@ -4,7 +4,9 @@ import { EntityManager, In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
 import { CategoryService } from "../category/category.service";
 import { Lesson } from "../lesson/lesson.entity";
+import { CreateSectionDTO } from "../section/dto/create-section.dto";
 import { Section } from "../section/section.entity";
+import { SectionService } from "../section/section.service";
 import { Course } from "./course.entity";
 import { CreateCourseDTO } from "./dto/create-course.dto";
 import { GetCourseQuery } from "./dto/get-course.query";
@@ -17,6 +19,7 @@ export class CourseService {
         @InjectRepository(Course) private readonly courseRepository: Repository<Course>,
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
         private readonly categoryService: CategoryService,
+        // private readonly sectionService: SectionService,
     ) { }
 
     async getCurrentNumberOfLesson(courseId: string): Promise<number> {
@@ -59,13 +62,19 @@ export class CourseService {
         if (!category) {
             throw new NotFoundException("Category not found!")
         }
+
+
         let course = this.courseRepository.create({
             ...createCourseDTO,
             category: category,
             sections: [],
         });
 
-        return await this.courseRepository.save(course);
+        course = await this.courseRepository.save(course);
+
+        createCourseDTO.sections
+
+        return course;
 
     }
 

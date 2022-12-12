@@ -1,4 +1,5 @@
-import { IsCurrency, IsDecimal, IsNumber, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator";
+import { IsArray, IsCurrency, IsDecimal, IsNumber, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator";
+import { CreateSectionDTO } from "src/app/section/dto/create-section.dto";
 
 export class CreateCourseDTO {
     @IsString()
@@ -20,6 +21,9 @@ export class CreateCourseDTO {
     @IsNumber()
     @Min(0)
     price: number;
+
+    @IsArray()
+    sections: string[];
 
     @IsUUID()
     @IsOptional()

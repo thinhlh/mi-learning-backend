@@ -1,6 +1,6 @@
 import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
+import { DeepPartial, Repository } from "typeorm";
 import { CourseService } from "../course/course.service";
 import { CreateSectionDTO } from "./dto/create-section.dto";
 import { UpdateSectionDTO } from "./dto/update-section.dto";

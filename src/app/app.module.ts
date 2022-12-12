@@ -14,12 +14,14 @@ import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module
 import { MulterModule } from '@nestjs/platform-express';
 import { RatingModule } from './rating/rating.module';
 import { EntityManager } from 'typeorm';
+import { CourseService } from './course/course.service';
 
 @Module({
   imports: [
-    MulterModule.register({
-      dest: "./upload"
-    }),
+    // MulterModule.register({
+    //   dest: "./static",
+    //   preservePath: true,
+    // }),
     ConfigModule.forRoot({
       envFilePath:
         `./env/${process.env.NODE_ENV}.env`,
@@ -47,9 +49,19 @@ import { EntityManager } from 'typeorm';
 
   controllers: [CommonController]
 })
-export class AppModule implements NestModule, OnModuleDestroy {
+export class AppModule implements NestModule, OnModuleDestroy, OnModuleInit {
 
-  constructor(private readonly manager: EntityManager, private readonly configService: ConfigService) { }
+  constructor(
+    private readonly manager: EntityManager,
+    private readonly configService: ConfigService,
+    private readonly courseService: CourseService) {
+
+  }
+
+
+  onModuleInit() {
+    // this.courseService.createCourse()
+  }
   async onModuleDestroy() {
     if (this.configService.get("NODE_ENV") === 'test') {
       const entities = this.manager.connection.entityMetadatas

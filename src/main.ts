@@ -40,9 +40,9 @@ async function appConfig(app: NestExpressApplication) {
     defaultVersion: ["1"]
   })
 
-  app.useStaticAssets(join(__dirname, '..', 'static'), {
+  app.useStaticAssets(join(__dirname, '..', 'statics'), {
     fallthrough: true,
-    prefix: "/public",
+    prefix: "/statics",
   })
 
   app.enableCors()
