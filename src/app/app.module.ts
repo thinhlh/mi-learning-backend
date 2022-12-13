@@ -15,6 +15,7 @@ import { MulterModule } from '@nestjs/platform-express';
 import { RatingModule } from './rating/rating.module';
 import { EntityManager } from 'typeorm';
 import { CourseService } from './course/course.service';
+import { DataInitializerModule } from 'src/data/data-initializer.module';
 
 @Module({
   imports: [
@@ -36,7 +37,7 @@ import { CourseService } from './course/course.service';
       logger: "advanced-console",
       // logging: process.env.NODE_ENV === 'dev' ? true : false,
       autoLoadEntities: true,
-      synchronize: process.env.NODE_ENV === 'dev' ? true : false,
+      // synchronize: process.env.NODE_ENV === 'dev' ? true : false,
     }),
     CategoryModule,
     ArticleModule,
@@ -45,6 +46,7 @@ import { CourseService } from './course/course.service';
     SectionModule,
     StudentCourseModule,
     RatingModule,
+    DataInitializerModule,
   ],
 
   controllers: [CommonController]
@@ -54,13 +56,13 @@ export class AppModule implements NestModule, OnModuleDestroy, OnModuleInit {
   constructor(
     private readonly manager: EntityManager,
     private readonly configService: ConfigService,
-    private readonly courseService: CourseService) {
+    private readonly courseService: CourseService,
+  ) {
 
   }
 
 
   onModuleInit() {
-    // this.courseService.createCourse()
   }
   async onModuleDestroy() {
     if (this.configService.get("NODE_ENV") === 'test') {

@@ -1,5 +1,5 @@
 import { Exclude, Expose, Transform, Type } from "class-transformer";
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Category } from "../category/category.entity";
 
 @Entity()

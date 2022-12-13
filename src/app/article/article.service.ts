@@ -21,6 +21,14 @@ export class ArticleService {
         });
     }
 
+    async createArticles(createArticleDTOs: CreateArticleDTO[]): Promise<Article[]> {
+        const articles: Article[] = []
+        createArticleDTOs.forEach(async createArticleDTO => {
+            articles.push(await this.createArticle(createArticleDTO))
+        });
+        return articles
+    }
+
     async createArticle(createArticleDTO: CreateArticleDTO): Promise<Article> {
         const article = this.articleRepository.create(createArticleDTO);
 
@@ -30,7 +38,6 @@ export class ArticleService {
                 article.category = category;
             }
         }
-
 
         return await this.articleRepository.save(article);
 

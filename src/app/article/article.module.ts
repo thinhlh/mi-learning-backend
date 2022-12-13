@@ -13,6 +13,7 @@ import { ArticleService } from "./article.service";
     ],
     controllers: [ArticleController],
     providers: [ArticleService],
+    exports: [ArticleService]
 })
 export class ArticleModule implements OnModuleInit {
     constructor(
@@ -20,13 +21,13 @@ export class ArticleModule implements OnModuleInit {
         private readonly categoryService: CategoryService
     ) { }
     async onModuleInit() {
-        this.articleService.createArticle({
-            author: "Le Hoang Thinh",
-            thumbnail: "https://avatars.githubusercontent.com/in/15368?s=64&v=4",
-            title: "This is a new article",
-            url: "https://www.hoangthinh.me",
-            categoryId: (await this.categoryService.getCategoryByTitle("Flutter")).id,
-        })
+        // this.articleService.createArticle({
+        //     author: "Le Hoang Thinh",
+        //     thumbnail: "https://avatars.githubusercontent.com/in/15368?s=64&v=4",
+        //     title: "This is a new article",
+        //     url: "https://www.hoangthinh.me",
+        //     categoryId: (await this.categoryService.getCategoryByTitle("Flutter")).id,
+        // })
     }
 
 }

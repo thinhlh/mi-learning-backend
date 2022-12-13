@@ -33,6 +33,16 @@ export class CategoryService {
         return this.categoryRepository.save(category);
     }
 
+    async createCategories(createCategoryDTOs: CreateCategoryDTO[]): Promise<Category[]> {
+        createCategoryDTOs.forEach(async createCategoryDTO => {
+            const exists = await this.categoryRepository.findOne({ where: { title: createCategoryDTO.title } })
+            if (!exists) {
+                this.categoryRepository.save(this.categoryRepository.create({ ...createCategoryDTO }))
+            }
+        })
+        return
+    }
+
     async updateCategory(id: string, updateCategoryDTO: UpdateCategoryDTO): Promise<Category> {
         const category = await this.categoryRepository.preload({
             id: id,

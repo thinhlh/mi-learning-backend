@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Flutter",
+    "background": "https://docs.flutter.dev/assets/images/flutter-logo-sharing.png"
+  },
+  {
+    "title": "Python",
+    "background": "https://vietnix.vn/wp-content/uploads/2021/07/python-la-gi.webp"
+  },
+  {
+    "title": "Web3",
+    "background": "https://assets.entrepreneur.com/content/3x2/2000/1652275872-new34.jpg"
+  },
+  {
+    "title": "IOS",
+    "background": "https://developer.apple.com/swift/images/swift-og.png"
+  },
+  {
+    "title": "Django",
+    "background": "https://www.tma.vn/Media/Default/BaiDang/6-2.jpg"
+  },
+  {
+    "title": "Fast API",
+    "background": "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png"
+  },
+  {
+    "title": "Machine Learning",
+    "background": "https://funix.edu.vn/wp-content/uploads/2021/08/machine-learning.jpg"
+  },
+  {
+    "title": "Architecture",
+    "background": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/800px-Amazon_Web_Services_Logo.svg.png"
+  }
+]

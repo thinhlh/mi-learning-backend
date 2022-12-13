@@ -72,8 +72,6 @@ export class CourseService {
 
         course = await this.courseRepository.save(course);
 
-        createCourseDTO.sections
-
         return course;
 
     }

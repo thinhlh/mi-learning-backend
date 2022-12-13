@@ -15,9 +15,9 @@ export class CategoryModule implements OnModuleInit {
         private readonly categoryService: CategoryService
     ) { }
     async onModuleInit() {
-        await this.categoryService.createCategory({
-            title: "Flutter",
-            background: "https://storage.googleapis.com/cms-storage-bucket/70760bf1e88b184bb1bc.png"
-        })
+        // await this.categoryService.createCategory({
+        //     title: "Flutter",
+        //     background: "https://storage.googleapis.com/cms-storage-bucket/70760bf1e88b184bb1bc.png"
+        // })
     }
 }
