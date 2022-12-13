@@ -16,14 +16,30 @@ export class CategoryService {
         return this.categoryRepository.find({});
     }
 
-    async getCategory(id?: string): Promise<Category> {
-        if (id == null) return
-        return this.categoryRepository.findOneBy({ id: id });
+    async getOrCreateCategory(category: CreateCategoryDTO | string): Promise<Category> {
+        let result: Category
+
+        if (typeof category === "string") {
+            result = await this.categoryRepository.findOneBy({ id: category });
+        } else {
+            result = await this.categoryRepository.findOneBy({ title: category.title })
+        }
+
+
+
+        if (result == null) {
+            const createdCategory = this.categoryRepository.create({ ...(category as CreateCategoryDTO) })
+            result = await this.categoryRepository.save(createdCategory);
+        }
+
+        return result
     }
 
     async getCategoryByTitle(title?: string): Promise<Category> {
         if (title == null) return
-        return this.categoryRepository.findOneBy({ title: title });
+
+
+        return await this.categoryRepository.findOneBy({ title: title });
     }
 
     async createCategory(createCategoryDTO: CreateCategoryDTO): Promise<Category> {

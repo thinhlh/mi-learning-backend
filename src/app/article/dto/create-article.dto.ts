@@ -18,7 +18,7 @@ export class CreateArticleDTO {
     @IsNotEmpty()
     readonly url: string;
 
-    @IsUUID()
+    @IsString()
     @IsOptional()
-    readonly categoryId?: string;
+    readonly categoryTitle?: string;
 }

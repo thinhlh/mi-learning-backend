@@ -1,13 +1,16 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { I18nService } from "nestjs-i18n";
 import { EntityManager, In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
 import { CategoryService } from "../category/category.service";
+import { CreateCategoryDTO } from "../category/dto/create-category.dto";
 import { Lesson } from "../lesson/lesson.entity";
 import { CreateSectionDTO } from "../section/dto/create-section.dto";
 import { Section } from "../section/section.entity";
 import { SectionService } from "../section/section.service";
 import { Course } from "./course.entity";
+import { CreateCourseBulkDTO } from "./dto/create-course-bulk.dto";
 import { CreateCourseDTO } from "./dto/create-course.dto";
 import { GetCourseQuery } from "./dto/get-course.query";
 import { UpdateCourseDTO } from "./dto/update-course.dto";
@@ -20,6 +23,8 @@ export class CourseService {
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
         private readonly categoryService: CategoryService,
         // private readonly sectionService: SectionService,
+        private readonly i18n: I18nService,
+
     ) { }
 
     async getCurrentNumberOfLesson(courseId: string): Promise<number> {
@@ -57,12 +62,31 @@ export class CourseService {
         });
     }
 
+    async createCourseBulk(createCourseBulkDTO: CreateCourseBulkDTO): Promise<Course> {
+        const categoryDTO = createCourseBulkDTO.category
+        let category: Category;
+
+        category = await this.categoryService.getOrCreateCategory(categoryDTO)
+
+        var course = await this.courseRepository.findOneBy({ title: createCourseBulkDTO.title })
+
+        if (course == null) {
+            course = this.courseRepository.create({
+                ...createCourseBulkDTO,
+                sections: [],
+                category: category,
+            })
+        }
+
+        return this.courseRepository.save(course)
+
+    }
+
     async createCourse(createCourseDTO: CreateCourseDTO): Promise<Course> {
-        const category = await this.categoryService.getCategory(createCourseDTO.categoryId)
+        const category = await this.categoryService.getOrCreateCategory(createCourseDTO.categoryId)
         if (!category) {
             throw new NotFoundException("Category not found!")
         }
-
 
         let course = this.courseRepository.create({
             ...createCourseDTO,
@@ -82,7 +106,7 @@ export class CourseService {
             id: id,
             ...updateCourseDTO,
             sections: await this.loadSections(updateCourseDTO.sections),
-            category: await this.categoryService.getCategory(updateCourseDTO.categoryId),
+            category: await this.categoryService.getOrCreateCategory(updateCourseDTO.categoryId),
         })
 
         if (course) {

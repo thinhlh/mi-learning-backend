@@ -7,6 +7,10 @@ import { CategoryService } from "src/app/category/category.service";
 import { CourseModule } from "src/app/course/course.module";
 import { CourseService } from "src/app/course/course.service";
 import * as CATEGORIES_JSON from "src/data/categories.json";
+import * as ARTICLES_JSON from "src/data/articles.json";
+import * as COURSES_JSON from "src/data/courses.json";
+import { I18n, I18nContext, I18nModule } from "nestjs-i18n";
+import { CreateCourseBulkDTO } from "src/app/course/dto/create-course-bulk.dto";
 
 @Module({
     imports: [ArticleModule, CourseModule, CategoryModule]
@@ -18,8 +22,9 @@ export class DataInitializerModule implements OnModuleInit {
         private readonly courseService: CourseService,
     ) { }
     async onModuleInit() {
-        // const categories = await this.createCategories();
-        // const articles = await this.createArticles(categories);
+        const categories = await this.createCategories();
+        const articles = await this.createArticles();
+        const courses = await this.createCourses();
     }
 
     private async createCategories() {
@@ -28,7 +33,13 @@ export class DataInitializerModule implements OnModuleInit {
         )
     }
 
-    private async createArticles(categories: Category[]) {
+    private async createArticles() {
+        return await this.articleService.createArticles(ARTICLES_JSON)
+    }
 
+    private async createCourses() {
+        for (const createCourseBulkDTO of COURSES_JSON) {
+            await this.courseService.createCourseBulk(createCourseBulkDTO);
+        }
     }
 }

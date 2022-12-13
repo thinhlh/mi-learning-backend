@@ -9,13 +9,14 @@ import { CourseModule } from './course/course.module';
 import { LessonModule } from './lesson/lesson.module';
 import { SectionModule } from './section/section.module';
 import { StudentCourseModule } from './student_course/student_course.module';
-import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static/dist/serve-static.module';
 import { MulterModule } from '@nestjs/platform-express';
+import * as path from "path"
 import { RatingModule } from './rating/rating.module';
 import { EntityManager } from 'typeorm';
 import { CourseService } from './course/course.service';
 import { DataInitializerModule } from 'src/data/data-initializer.module';
+import { AcceptLanguageResolver, I18n, I18nContext, I18nModule, I18nService, QueryResolver } from 'nestjs-i18n';
 
 @Module({
   imports: [
@@ -27,6 +28,15 @@ import { DataInitializerModule } from 'src/data/data-initializer.module';
       envFilePath:
         `./env/${process.env.NODE_ENV}.env`,
     }),
+    I18nModule.forRoot({
+      fallbackLanguage: "en",
+      loaderOptions: {
+        path: path.join(__dirname, "../i18n/"),
+        watch: true,
+      },
+      resolvers: [AcceptLanguageResolver, QueryResolver],
+      logging: true,
+    }),
     TypeOrmModule.forRoot({
       host: process.env.POSTGRES_HOST,
       username: process.env.POSTGRES_USER,
@@ -37,7 +47,7 @@ import { DataInitializerModule } from 'src/data/data-initializer.module';
       logger: "advanced-console",
       // logging: process.env.NODE_ENV === 'dev' ? true : false,
       autoLoadEntities: true,
-      // synchronize: process.env.NODE_ENV === 'dev' ? true : false,
+      synchronize: process.env.NODE_ENV === 'dev' ? true : false,
     }),
     CategoryModule,
     ArticleModule,
@@ -65,14 +75,7 @@ export class AppModule implements NestModule, OnModuleDestroy, OnModuleInit {
   onModuleInit() {
   }
   async onModuleDestroy() {
-    if (this.configService.get("NODE_ENV") === 'test') {
-      const entities = this.manager.connection.entityMetadatas
-
-      for (const entity of entities) {
-        const repository = this.manager.getRepository(entity.name);
-        await repository.query(`TRUNCATE ${entity.tableName} RESTART IDENTITY CASCADE;`);
-      }
-    }
+    // 
   }
 
   configure(consumer: MiddlewareConsumer) {

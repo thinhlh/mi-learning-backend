@@ -3,11 +3,12 @@ import { } from "src/config/interceptors/error-response.interceptor";
 import { diskStorage } from 'multer';
 import { extname } from "path";
 import { FileInterceptor } from "@nestjs/platform-express";
+import { I18n, I18nContext } from "nestjs-i18n";
 @Controller()
 export class CommonController {
 
     @Get("/")
-    root() {
+    async root() {
         return "Success!";
     }
 

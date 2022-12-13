@@ -1,5 +1,6 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { ConsoleLogger, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { I18nService } from "nestjs-i18n";
 import { Repository } from "typeorm";
 import { Category } from "../category/category.entity";
 import { CategoryService } from "../category/category.service";
@@ -11,6 +12,7 @@ export class ArticleService {
     constructor(
         @InjectRepository(Article) private readonly articleRepository: Repository<Article>,
         private readonly categoryService: CategoryService,
+
     ) { }
 
     async getArticles(): Promise<Article[]> {
@@ -32,10 +34,12 @@ export class ArticleService {
     async createArticle(createArticleDTO: CreateArticleDTO): Promise<Article> {
         const article = this.articleRepository.create(createArticleDTO);
 
-        if (createArticleDTO.categoryId != null) {
-            const category = await this.preloadCategory(createArticleDTO.categoryId);
+        if (createArticleDTO.categoryTitle != null) {
+            const category = await this.preloadCategory(createArticleDTO.categoryTitle);
             if (category) {
                 article.category = category;
+            } else {
+                return
             }
         }
 
@@ -66,8 +70,9 @@ export class ArticleService {
         return null;
     }
 
-    private async preloadCategory(categoryId?: string): Promise<Category> {
-        return this.categoryService.getCategory(categoryId)
+    private async preloadCategory(categoryTitle?: string): Promise<Category> {
+        const category = await this.categoryService.getCategoryByTitle(categoryTitle)
+        return category
     }
 
 }
