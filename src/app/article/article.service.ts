@@ -25,9 +25,9 @@ export class ArticleService {
 
     async createArticles(createArticleDTOs: CreateArticleDTO[]): Promise<Article[]> {
         const articles: Article[] = []
-        createArticleDTOs.forEach(async createArticleDTO => {
+        for (const createArticleDTO of createArticleDTOs) {
             articles.push(await this.createArticle(createArticleDTO))
-        });
+        }
         return articles
     }
 

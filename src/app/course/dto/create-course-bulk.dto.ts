@@ -1,5 +1,6 @@
 import { IsArray, IsNumber, IsObject, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator/types/decorator/decorators";
 import { CreateCategoryDTO } from "src/app/category/dto/create-category.dto";
+import { CreateSectionBulkDTO } from "src/app/section/dto/create-section-bulk.dto";
 import { CreateSectionDTO } from "src/app/section/dto/create-section.dto";
 
 export class CreateCourseBulkDTO {
@@ -25,7 +26,7 @@ export class CreateCourseBulkDTO {
     price: number;
 
     @IsArray()
-    sections?: (string | CreateSectionDTO)[] = [];
+    sections?: (string | CreateSectionBulkDTO)[] = [];
 
     @IsUUID()
     @IsOptional()

@@ -6,6 +6,7 @@ import { CategoryService } from "../category/category.service";
 import { Lesson } from "../lesson/lesson.entity";
 import { Schedule } from "../schedule/schedule.entity";
 import { Section } from "../section/section.entity";
+import { SectionModule } from "../section/section.module";
 import { Student } from "../student/student.entity";
 import { Teacher } from "../teacher/teacher.entity";
 import { User } from "../user/user.entity";

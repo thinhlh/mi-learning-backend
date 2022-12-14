@@ -10,6 +10,14 @@
       "title": "Flutter",
       "background": "Flutter"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
   },
   {
@@ -23,6 +31,14 @@
       "title": "Python",
       "background": "Python"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
   },
   {
@@ -36,6 +52,14 @@
       "title": "Flutter",
       "background": "Flutter"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
   },
   {
@@ -49,6 +73,14 @@
       "title": "FastAPI",
       "background": "FastAPI"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
   },
   {
@@ -62,6 +94,14 @@
       "title": "Web3",
       "background": "Web3"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
   },
   {
@@ -75,6 +115,14 @@
       "title": "Django",
       "background": "Django"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
   },
   {
@@ -88,6 +136,14 @@
       "title": "FastAPI",
       "background": "FastAPI"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"
   },
   {
@@ -101,6 +157,14 @@
       "title": "IOS",
       "background": "IOS"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
   },
   {
@@ -114,6 +178,14 @@
       "title": "Machine Learning",
       "background": "Machine Learning"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"
   },
   {
@@ -127,6 +199,14 @@
       "title": "Flutter",
       "background": "Flutter"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
   },
   {
@@ -140,6 +220,14 @@
       "title": "IOS",
       "background": "IOS"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
   },
   {
@@ -153,6 +241,14 @@
       "title": "IOS",
       "background": "IOS"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"
   },
   {
@@ -166,6 +262,14 @@
       "title": "Flutter",
       "background": "Flutter"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
   },
   {
@@ -179,6 +283,14 @@
       "title": "Machine Learning",
       "background": "Machine Learning"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
   },
   {
@@ -192,6 +304,14 @@
       "title": "Flutter",
       "background": "Flutter"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
   },
   {
@@ -205,6 +325,14 @@
       "title": "Python",
       "background": "Python"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
   },
   {
@@ -218,6 +346,14 @@
       "title": "Django",
       "background": "Django"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
   },
   {
@@ -231,6 +367,14 @@
       "title": "IOS",
       "background": "IOS"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
   },
   {
@@ -244,6 +388,14 @@
       "title": "Flutter",
       "background": "Flutter"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
   },
   {
@@ -257,6 +409,14 @@
       "title": "FastAPI",
       "background": "FastAPI"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
   },
   {
@@ -270,6 +430,14 @@
       "title": "Web3",
       "background": "Web3"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
   },
   {
@@ -283,6 +451,14 @@
       "title": "Flutter",
       "background": "Flutter"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
   },
   {
@@ -296,6 +472,14 @@
       "title": "Python",
       "background": "Python"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
   },
   {
@@ -309,6 +493,14 @@
       "title": "Web3",
       "background": "Web3"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
   },
   {
@@ -322,6 +514,14 @@
       "title": "Machine Learning",
       "background": "Machine Learning"
     },
+    "sections": [
+      {
+        "title": "Section 1"
+      },
+      {
+        "title": "Section 2"
+      }
+    ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"
   }
 ]

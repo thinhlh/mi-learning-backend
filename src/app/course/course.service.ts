@@ -22,7 +22,6 @@ export class CourseService {
         @InjectRepository(Course) private readonly courseRepository: Repository<Course>,
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
         private readonly categoryService: CategoryService,
-        // private readonly sectionService: SectionService,
         private readonly i18n: I18nService,
 
     ) { }
@@ -60,6 +59,7 @@ export class CourseService {
                 },
             },
         });
+
     }
 
     async createCourseBulk(createCourseBulkDTO: CreateCourseBulkDTO): Promise<Course> {
@@ -68,14 +68,54 @@ export class CourseService {
 
         category = await this.categoryService.getOrCreateCategory(categoryDTO)
 
-        var course = await this.courseRepository.findOneBy({ title: createCourseBulkDTO.title })
+        var course = await this.courseRepository.findOne({ where: { title: createCourseBulkDTO.title }, relations: { sections: true } })
+
+        const sections: Section[] = []
+
+        for (const createSectionDTO of createCourseBulkDTO.sections) {
+            var section: Section
+
+            if (course == null) {
+                if (typeof createSectionDTO == "string") {
+                    section = await this.sectionRepository.findOneBy({ id: createSectionDTO });
+                    sections.push(section);
+                } else {
+                    const createdSection = this.sectionRepository.create({ ...createSectionDTO, lessons: [] });
+                    section = await this.sectionRepository.save(createdSection);
+                    sections.push(createdSection);
+                }
+            } else {
+
+                if (typeof createSectionDTO == "string") {
+                    const sectionExistsInCouse = course.sections.find((section) => section.id == createSectionDTO)
+
+                    if (sectionExistsInCouse) {
+                        sections.push(sectionExistsInCouse)
+                    } else {
+                        // Section not found => skip
+                    }
+                } else {
+                    const sectionExistsInCouse = course.sections.find((section) => section.title == createSectionDTO.title)
+                    if (sectionExistsInCouse) {
+                        sections.push(sectionExistsInCouse)
+                    } else {
+                        const createdSection = this.sectionRepository.create({ ...createSectionDTO, lessons: [] });
+                        section = await this.sectionRepository.save(createdSection);
+                        sections.push(createdSection);
+                    }
+
+                }
+            }
+        }
 
         if (course == null) {
             course = this.courseRepository.create({
                 ...createCourseBulkDTO,
-                sections: [],
+                sections: sections,
                 category: category,
             })
+        } else {
+            course.sections = sections
         }
 
         return this.courseRepository.save(course)
