@@ -9,22 +9,28 @@ import { CourseService } from "src/app/course/course.service";
 import * as CATEGORIES_JSON from "src/data/categories.json";
 import * as ARTICLES_JSON from "src/data/articles.json";
 import * as COURSES_JSON from "src/data/courses.json";
+import * as USERS_JSON from "src/data/users.json";
 import { I18n, I18nContext, I18nModule } from "nestjs-i18n";
 import { CreateCourseBulkDTO } from "src/app/course/dto/create-course-bulk.dto";
+import { UserService } from "src/app/user/user.service";
+import { UserModule } from "src/app/user/user.module";
+import { Role } from "src/app/role/role";
 
 @Module({
-    imports: [ArticleModule, CourseModule, CategoryModule]
+    imports: [ArticleModule, CourseModule, CategoryModule, UserModule]
 })
 export class DataInitializerModule implements OnModuleInit {
     constructor(
         private readonly articleService: ArticleService,
         private readonly categoryService: CategoryService,
         private readonly courseService: CourseService,
+        private readonly userService: UserService,
     ) { }
     async onModuleInit() {
         const categories = await this.createCategories();
         const articles = await this.createArticles();
         const courses = await this.createCourses();
+        const users = await this.createUsers();
     }
 
     private async createCategories() {
@@ -40,6 +46,12 @@ export class DataInitializerModule implements OnModuleInit {
     private async createCourses() {
         for (const createCourseBulkDTO of COURSES_JSON) {
             await this.courseService.createCourseBulk(createCourseBulkDTO);
+        }
+    }
+
+    private async createUsers() {
+        for (const createUserDto of USERS_JSON) {
+            await this.userService.createUser({ ...createUserDto, role: createUserDto.role as Role })
         }
     }
 }

@@ -17,6 +17,7 @@ import { EntityManager } from 'typeorm';
 import { CourseService } from './course/course.service';
 import { DataInitializerModule } from 'src/data/data-initializer.module';
 import { AcceptLanguageResolver, I18n, I18nContext, I18nModule, I18nService, QueryResolver } from 'nestjs-i18n';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -26,7 +27,7 @@ import { AcceptLanguageResolver, I18n, I18nContext, I18nModule, I18nService, Que
     // }),
     ConfigModule.forRoot({
       envFilePath:
-        `./env/${process.env.NODE_ENV}.env`,
+        `./env/${process.env.ENV}.env`,
     }),
     I18nModule.forRoot({
       fallbackLanguage: "en",
@@ -45,9 +46,9 @@ import { AcceptLanguageResolver, I18n, I18nContext, I18nModule, I18nService, Que
       port: +process.env.POSTGRES_PORT,
       type: 'postgres',
       logger: "advanced-console",
-      // logging: process.env.NODE_ENV === 'dev' ? true : false,
+      // logging: process.env.ENV === 'dev' ? true : false,
       autoLoadEntities: true,
-      synchronize: process.env.NODE_ENV === 'dev' ? true : false,
+      synchronize: process.env.ENV === 'dev' ? true : false,
     }),
     CategoryModule,
     ArticleModule,
@@ -56,6 +57,7 @@ import { AcceptLanguageResolver, I18n, I18nContext, I18nModule, I18nService, Que
     SectionModule,
     StudentCourseModule,
     RatingModule,
+    UserModule,
     DataInitializerModule,
   ],
 

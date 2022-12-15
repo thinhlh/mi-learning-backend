@@ -36,5 +36,10 @@ lerna-debug.log*
 
 # ENV 
 *.env
+!template.env
 
 upload/
+__pycache__
+
+# Python
+env/

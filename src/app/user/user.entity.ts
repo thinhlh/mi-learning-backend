@@ -1,4 +1,4 @@
-import { Type } from "class-transformer";
+import { Exclude, Transform, Type } from "class-transformer";
 import { Column, DeleteDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Role } from "../role/role";
 import { Student } from "../student/student.entity";
@@ -15,15 +15,16 @@ export class User {
     name: string;
 
     @Column()
+    @Exclude()
     password: string;
 
-    @Column({ nullable: false })
+    @Column({ nullable: false, unique: true })
     email: string;
 
     @Column()
     occupation: string;
 
-    @Column("timestamptz")
+    @Column("timestamp without time zone")
     @Type(() => Number)
     birthday: Date;
 
@@ -32,7 +33,7 @@ export class User {
 
     @DeleteDateColumn()
     @Type(() => Number)
-    deletedDate: Date
+    deletedAt: Date
 
     @Column({
         type: "enum",

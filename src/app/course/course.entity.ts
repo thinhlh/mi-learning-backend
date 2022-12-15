@@ -19,9 +19,7 @@ export class Course {
     @Column()
     description: string;
 
-    @Column({
-        type: "bigint",
-    })
+    @Column()
     length: number;
 
     @Column()
