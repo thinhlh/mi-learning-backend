@@ -7,4 +7,8 @@ export class CreateLessonBulkDTO {
 
     @IsUrl()
     url: string;
+
+    @IsNumber()
+    @Min(0)
+    lessonOrder: number;
 }

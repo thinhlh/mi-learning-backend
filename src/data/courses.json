@@ -12,10 +12,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
@@ -33,10 +107,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
@@ -54,10 +202,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
@@ -75,10 +297,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
@@ -96,10 +392,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
@@ -117,10 +487,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
@@ -138,10 +582,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"
@@ -159,10 +677,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
@@ -180,10 +772,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"
@@ -201,10 +867,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
@@ -222,10 +962,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
@@ -243,10 +1057,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"
@@ -264,10 +1152,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
@@ -285,10 +1247,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
@@ -306,10 +1342,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
@@ -327,10 +1437,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
@@ -348,10 +1532,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
@@ -369,10 +1627,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "905eb0bf-ff07-45a3-955e-aaca40ac236a"
@@ -390,10 +1722,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
@@ -411,10 +1817,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
@@ -432,10 +1912,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "0df36097-3bbc-479c-a922-2ffc6d54dd63"
@@ -453,10 +2007,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
@@ -474,10 +2102,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "5013c7e2-9da1-4371-b48d-8b43c00c1219"
@@ -495,10 +2197,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "3f4b3d2f-d890-42b0-9822-09b31e1352bf"
@@ -516,10 +2292,84 @@
     },
     "sections": [
       {
-        "title": "Section 1"
+        "title": "Section 1",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [1] – Explanation & Project Structure",
+            "url": "https://storage.googleapis.com/favorable-logic-351800.appspot.com/Flutter%20Firebase%20%26%20DDD%20Course%20%5B1%5D%20%E2%80%93%20Domain-Driven%20Design%20Principles.mp4",
+            "lessonOrder": 1
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [2] – Entities & Use Cases",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B2%5D%20%E2%80%93%20Entities%20%26%20Use%20Cases.mp4",
+            "lessonOrder": 2
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [3] – Domain Layer Refactoring",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 3
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [4] – Data Layer Overview & Models",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B3%5D%20%E2%80%93%20Domain%20Layer%20Refactoring.mp4",
+            "lessonOrder": 4
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [5] – Contracts of Data Sources",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B5%5D%20%E2%80%93%20Contracts%20of%20Data%20Sources.mp4",
+            "lessonOrder": 5
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [6] – Repository Implementation",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B6%5D%20%E2%80%93%20Repository%20Implementation.mp4",
+            "lessonOrder": 6
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [7] – Network Info",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B7%5D%20%E2%80%93%20Network%20Info.mp4",
+            "lessonOrder": 7
+          }
+        ]
       },
       {
-        "title": "Section 2"
+        "title": "Section 2",
+        "lessons": [
+          {
+            "title": "Flutter TDD Clean Architecture Course [8] – Local Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B8%5D%20%E2%80%93%20Local%20Data%20Source.mp4",
+            "lessonOrder": 8
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [9] – Remote Data Source",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B9%5D%20%E2%80%93%20Remote%20Data%20Source.mp4",
+            "lessonOrder": 9
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [10] – Bloc Scaffolding & Input Conversion",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B10%5D%20%E2%80%93%20Bloc%20Scaffolding%20%26%20Input%20Conversion.mp4",
+            "lessonOrder": 10
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [11] – Bloc Implementation 1/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B11%5D%20%E2%80%93%20Bloc%20Implementation%201_2.mp4",
+            "lessonOrder": 11
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [12] – Bloc Implementation 2/2",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B12%5D%20%E2%80%93%20Bloc%20Implementation%202_2.mp4",
+            "lessonOrder": 12
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [13] – Dependency Injection",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B13%5D%20%E2%80%93%20Dependency%20Injection.mp4",
+            "lessonOrder": 13
+          },
+          {
+            "title": "Flutter TDD Clean Architecture Course [14] – User Interface",
+            "url": "https://storage.googleapis.com/mi-learning.appspot.com/Flutter%20TDD%20Clean%20Architecture%20Course%20%5B14%5D%20%E2%80%93%20User%20Interface.mp4",
+            "lessonOrder": 14
+          }
+        ]
       }
     ],
     "teacherId": "2dde6437-ae60-4469-9824-f9991bbede60"

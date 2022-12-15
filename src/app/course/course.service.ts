@@ -5,7 +5,9 @@ import { EntityManager, In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
 import { CategoryService } from "../category/category.service";
 import { CreateCategoryDTO } from "../category/dto/create-category.dto";
+import { CreateLessonBulkDTO } from "../lesson/dto/create-lesson-bulk.dto";
 import { Lesson } from "../lesson/lesson.entity";
+import { CreateSectionBulkDTO } from "../section/dto/create-section-bulk.dto";
 import { CreateSectionDTO } from "../section/dto/create-section.dto";
 import { Section } from "../section/section.entity";
 import { SectionService } from "../section/section.service";
@@ -21,6 +23,7 @@ export class CourseService {
         private readonly entityManager: EntityManager,
         @InjectRepository(Course) private readonly courseRepository: Repository<Course>,
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
+        @InjectRepository(Lesson) private readonly lessonRepository: Repository<Lesson>,
         private readonly categoryService: CategoryService,
         private readonly i18n: I18nService,
 
@@ -76,16 +79,17 @@ export class CourseService {
             var section: Section
 
             if (course == null) {
+                // No course before
                 if (typeof createSectionDTO == "string") {
                     section = await this.sectionRepository.findOneBy({ id: createSectionDTO });
-                    sections.push(section);
+                    if (!section) {
+                        sections.push(section);
+                    }
                 } else {
-                    const createdSection = this.sectionRepository.create({ ...createSectionDTO, lessons: [] });
-                    section = await this.sectionRepository.save(createdSection);
-                    sections.push(createdSection);
+                    sections.push(await this.createSection(createSectionDTO));
                 }
             } else {
-
+                // Already has course
                 if (typeof createSectionDTO == "string") {
                     const sectionExistsInCouse = course.sections.find((section) => section.id == createSectionDTO)
 
@@ -99,11 +103,8 @@ export class CourseService {
                     if (sectionExistsInCouse) {
                         sections.push(sectionExistsInCouse)
                     } else {
-                        const createdSection = this.sectionRepository.create({ ...createSectionDTO, lessons: [] });
-                        section = await this.sectionRepository.save(createdSection);
-                        sections.push(createdSection);
+                        sections.push(await this.createSection(createSectionDTO));
                     }
-
                 }
             }
         }
@@ -119,7 +120,45 @@ export class CourseService {
         }
 
         return this.courseRepository.save(course)
+    }
 
+    private async createSection(createSectionDTO: CreateSectionBulkDTO): Promise<Section> {
+        const createdSection = this.sectionRepository.create({ ...createSectionDTO, lessons: await this.createLessons(createSectionDTO.lessons) });
+        const section = await this.sectionRepository.save(createdSection);
+
+        return section
+    }
+
+    private async createLessons(createLessonDTOs: (string | CreateLessonBulkDTO)[]): Promise<Lesson[]> {
+        const lessons: Lesson[] = []
+        for (const createLessonDTO of createLessonDTOs) {
+            let lesson: Lesson
+            if (typeof createLessonDTO == "string") {
+                lesson = await this.lessonRepository.findOneBy({ id: createLessonDTO });
+
+                if (lessons.some((lessonInList) => lessonInList.title == lesson.title)) {
+                    // Already exist in section
+                    continue;
+                } else {
+
+                }
+            } else {
+                const createdLesson = this.lessonRepository.create({ ...createLessonDTO })
+
+                if (lessons.some((lessonInList) => lessonInList.title == createdLesson.title)) {
+                    // Already exist in section
+                    continue;
+                } else {
+                    lesson = await this.lessonRepository.save(createdLesson);
+                }
+            }
+
+            if (lesson) {
+                lessons.push(lesson);
+            }
+        }
+
+        return lessons
     }
 
     async createCourse(createCourseDTO: CreateCourseDTO): Promise<Course> {
