@@ -7,7 +7,6 @@ const app_module_1 = require("./app/app.module");
 const custom_exception_filter_1 = require("./config/filters/custom-exception.filter");
 const response_interceptor_1 = require("./config/interceptors/response.interceptor");
 const path_1 = require("path");
-const auth_guard_1 = require("./config/guard/auth.guard");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     await appConfig(app);
@@ -26,7 +25,6 @@ async function appConfig(app) {
             enableImplicitConversion: true
         }
     }));
-    app.useGlobalGuards(new auth_guard_1.AppGuard());
     app.enableVersioning({
         type: common_1.VersioningType.URI,
         defaultVersion: ["1"]

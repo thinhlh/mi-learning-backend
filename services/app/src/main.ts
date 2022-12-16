@@ -6,7 +6,6 @@ import { AppModule } from './app/app.module';
 import { CustomExceptionFilter } from './config/filters/custom-exception.filter';
 import { ResponseTransformInterceptor } from './config/interceptors/response.interceptor';
 import { join } from 'path';
-import { AppGuard } from './config/guard/auth.guard';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -35,7 +34,7 @@ async function appConfig(app: NestExpressApplication) {
       enableImplicitConversion: true
     }
   }))
-  app.useGlobalGuards(new AppGuard());
+  // app.useGlobalGuards(new AppGuard(new Reflector()));
 
   app.enableVersioning({
     type: VersioningType.URI,

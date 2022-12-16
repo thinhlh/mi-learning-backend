@@ -28,6 +28,9 @@ const course_service_1 = require("./course/course.service");
 const data_initializer_module_1 = require("../data/data-initializer.module");
 const nestjs_i18n_1 = require("nestjs-i18n");
 const user_module_1 = require("./user/user.module");
+const axios_1 = require("@nestjs/axios");
+const core_1 = require("@nestjs/core");
+const auth_guard_1 = require("../config/guard/auth.guard");
 let AppModule = class AppModule {
     constructor(manager, configService, courseService) {
         this.manager = manager;
@@ -52,6 +55,7 @@ AppModule = __decorate([
                 envFilePath: `../../env/${process.env.ENV}.env`,
                 isGlobal: true,
             }),
+            axios_1.HttpModule.register({}),
             nestjs_i18n_1.I18nModule.forRoot({
                 fallbackLanguage: "en",
                 loaderOptions: {
@@ -60,22 +64,6 @@ AppModule = __decorate([
                 },
                 resolvers: [nestjs_i18n_1.AcceptLanguageResolver, nestjs_i18n_1.QueryResolver],
                 logging: true,
-            }),
-            typeorm_1.TypeOrmModule.forRootAsync({
-                inject: [config_1.ConfigService],
-                async useFactory(configService) {
-                    return {
-                        host: process.env.POSTGRES_HOST,
-                        username: process.env.POSTGRES_USER,
-                        password: process.env.POSTGRES_PASSWORD,
-                        database: process.env.POSTGRES_DB,
-                        port: +process.env.POSTGRES_PORT,
-                        type: 'postgres',
-                        logger: "advanced-console",
-                        autoLoadEntities: true,
-                        synchronize: process.env.ENV === 'dev' ? true : false,
-                    };
-                },
             }),
             typeorm_1.TypeOrmModule.forRoot({
                 host: process.env.POSTGRES_HOST,
@@ -98,7 +86,11 @@ AppModule = __decorate([
             user_module_1.UserModule,
             data_initializer_module_1.DataInitializerModule,
         ],
-        controllers: [common_controller_1.CommonController]
+        controllers: [common_controller_1.CommonController],
+        providers: [{
+                provide: core_1.APP_GUARD,
+                useClass: auth_guard_1.AppGuard,
+            }]
     }),
     __metadata("design:paramtypes", [typeorm_2.EntityManager,
         config_1.ConfigService,

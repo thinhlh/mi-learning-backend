@@ -1,4 +1,4 @@
 export declare class CommonController {
-    root(): Promise<string>;
+    root(me: string): Promise<string>;
     upload(file: any): any;
 }

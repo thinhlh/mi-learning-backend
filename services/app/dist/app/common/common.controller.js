@@ -19,7 +19,7 @@ const multer_1 = require("multer");
 const path_1 = require("path");
 const platform_express_1 = require("@nestjs/platform-express");
 let CommonController = class CommonController {
-    async root() {
+    async root(me) {
         return "Success!";
     }
     upload(file) {
@@ -29,8 +29,9 @@ let CommonController = class CommonController {
 __decorate([
     (0, common_1.Get)("/"),
     openapi.ApiResponse({ status: 200, type: String }),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CommonController.prototype, "root", null);
 __decorate([

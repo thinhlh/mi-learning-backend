@@ -1,14 +1,17 @@
-import { Controller, Get, MaxFileSizeValidator, ParseFilePipe, Post, UploadedFile, UseInterceptors } from "@nestjs/common";
+import { Body, Controller, Get, Header, Headers, MaxFileSizeValidator, ParseFilePipe, Post, UploadedFile, UseGuards, UseInterceptors } from "@nestjs/common";
 import { diskStorage } from 'multer';
 import { extname } from "path";
 import { FileInterceptor } from "@nestjs/platform-express";
 import { I18n, I18nContext } from "nestjs-i18n";
+import { Roles } from "src/config/guard/role.decorator";
+import { Role } from "../role/role";
+import { AppGuard, USER_KEY } from "src/config/guard/auth.guard";
 @Controller()
 export class CommonController {
 
     @Get("/")
-    async root() {
-        return "Success!";
+    async root(@Body() me: string) {
+        return "Success!"
     }
 
     @Post("/upload")

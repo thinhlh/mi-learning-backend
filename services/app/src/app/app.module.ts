@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module, NestModule, OnApplicationShutdown, OnModuleDestroy, OnModuleInit, RequestMethod } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule, OnApplicationShutdown, OnModuleDestroy, OnModuleInit, RequestMethod, Scope } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { LoggerMiddleware } from '../config/middlewares/logger.middleware';
 import { CommonController } from './common/common.controller';
@@ -18,7 +18,9 @@ import { CourseService } from './course/course.service';
 import { DataInitializerModule } from '../data/data-initializer.module';
 import { AcceptLanguageResolver, I18n, I18nContext, I18nModule, I18nService, QueryResolver } from 'nestjs-i18n';
 import { UserModule } from './user/user.module';
-import { HttpModule } from '@nestjs/axios';
+import { HttpModule, HttpService } from '@nestjs/axios';
+import { APP_GUARD } from '@nestjs/core';
+import { AppGuard } from 'src/config/guard/auth.guard';
 
 @Module({
   imports: [
@@ -31,6 +33,7 @@ import { HttpModule } from '@nestjs/axios';
         `../../env/${process.env.ENV}.env`,
       isGlobal: true,
     }),
+    HttpModule.register({}),
     I18nModule.forRoot({
       fallbackLanguage: "en",
       loaderOptions: {
@@ -39,23 +42,6 @@ import { HttpModule } from '@nestjs/axios';
       },
       resolvers: [AcceptLanguageResolver, QueryResolver],
       logging: true,
-    }),
-    TypeOrmModule.forRootAsync({
-      inject: [ConfigService],
-      async useFactory(configService: ConfigService): Promise<TypeOrmModuleOptions> {
-        return {
-          host: process.env.POSTGRES_HOST,
-          username: process.env.POSTGRES_USER,
-          password: process.env.POSTGRES_PASSWORD,
-          database: process.env.POSTGRES_DB,
-          port: +process.env.POSTGRES_PORT,
-          type: 'postgres',
-          logger: "advanced-console",
-          // logging: process.env.ENV === 'dev' ? true : false,
-          autoLoadEntities: true,
-          synchronize: process.env.ENV === 'dev' ? true : false,
-        }
-      },
     }),
     TypeOrmModule.forRoot({
       host: process.env.POSTGRES_HOST,
@@ -80,7 +66,11 @@ import { HttpModule } from '@nestjs/axios';
     DataInitializerModule,
   ],
 
-  controllers: [CommonController]
+  controllers: [CommonController],
+  providers: [{
+    provide: APP_GUARD,
+    useClass: AppGuard,
+  }]
 })
 export class AppModule implements NestModule, OnModuleDestroy, OnModuleInit {
 
