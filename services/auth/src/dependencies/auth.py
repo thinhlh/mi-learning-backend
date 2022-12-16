@@ -7,7 +7,7 @@ from src.models.token import Token
 from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from src.models import user
-from src.crud.user import UserCRUD
+from ..crud.user import UserCRUD
 from src.router import user
 from src.models.user import User
 from src.schemas.user import UserOut
@@ -24,17 +24,6 @@ oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl="login",
     description="Auth Scheme",
 )
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-
-def verify_password(plain_password, hashed_password):
-    return plain_password == hashed_password
-    return pwd_context.verify(plain_password, hashed_password)
-
-
-def get_password_hash(password):
-    return pwd_context.hash(password)
 
 
 def get_current_user(
@@ -89,7 +78,7 @@ def authenticate_user(email: str, password: str, db: Session):
     if not user:
         return False
     else:
-        if not verify_password(password, user.password):
+        if not user_crud.verify_password(password, user.password):
             return False
         else:
             return user
