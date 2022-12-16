@@ -49,7 +49,6 @@ let CustomExceptionFilter = class CustomExceptionFilter {
             case common_1.HttpException:
                 status = exception.getStatus() ? exception.getStatus() : common_1.HttpStatus.INTERNAL_SERVER_ERROR;
                 message = exception.message;
-                console.log(message);
                 break;
             case typeorm_1.TypeORMError:
                 status = common_1.HttpStatus.BAD_REQUEST;

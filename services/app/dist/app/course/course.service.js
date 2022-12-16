@@ -40,21 +40,49 @@ let CourseService = class CourseService {
             }
         });
     }
-    async getCourse(id) {
+    async getCourseById(id) {
         if (id == null)
             return null;
         return this.courseRepository.findOne({
             where: {
-                id: id
+                id: id,
             },
             relations: {
-                sections: true
+                category: true,
+                sections: true,
             }
         });
     }
+    async getCourse(user, courseId) {
+        if (courseId == null)
+            return null;
+        const course = await this.courseRepository.findOne({
+            where: {
+                studentCourses: {
+                    courseId: courseId,
+                    studentId: user
+                }
+            },
+            select: {
+                studentCourses: {
+                    enrolled: true,
+                    saved: true,
+                }
+            },
+            relations: {
+                studentCourses: false,
+                category: true,
+                sections: {
+                    lessons: true
+                },
+            }
+        });
+        const response = (Object.assign(Object.assign({}, course), { sections: course.sections.map((section) => (Object.assign(Object.assign({}, section), { finishedLesson: 0, totalLesson: section.lessons.length, length: 3600 }))), enrolled: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.enrolled), saved: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.saved) }));
+        return response;
+    }
     async getCourses(query) {
         var _a;
-        return this.courseRepository.find({
+        const courses = await this.courseRepository.find({
             relations: {
                 category: true,
                 sections: query.loadSections == null ? false : {
@@ -62,6 +90,7 @@ let CourseService = class CourseService {
                 },
             },
         });
+        return courses;
     }
     async createCourseBulk(createCourseBulkDTO) {
         const categoryDTO = createCourseBulkDTO.category;

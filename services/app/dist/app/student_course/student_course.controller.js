@@ -8,16 +8,35 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StudentCourseController = void 0;
 const openapi = require("@nestjs/swagger");
 const common_1 = require("@nestjs/common");
 const student_course_service_1 = require("./student_course.service");
+const role_decorator_1 = require("../../config/guard/role.decorator");
+const role_1 = require("../role/role");
+const auth_guard_1 = require("../../config/guard/auth.guard");
 let StudentCourseController = class StudentCourseController {
     constructor(studentCourseService) {
         this.studentCourseService = studentCourseService;
     }
+    async enrollCourse(user, courseId) {
+        return this.studentCourseService.purchaseCourse(user, courseId);
+    }
 };
+__decorate([
+    (0, common_1.Post)("/purchase/:courseId"),
+    (0, role_decorator_1.Roles)(role_1.Role.STUDENT),
+    openapi.ApiResponse({ status: 201, type: Boolean }),
+    __param(0, (0, common_1.Headers)(auth_guard_1.USER_KEY)),
+    __param(1, (0, common_1.Param)('courseId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], StudentCourseController.prototype, "enrollCourse", null);
 StudentCourseController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [student_course_service_1.StudentCourseService])

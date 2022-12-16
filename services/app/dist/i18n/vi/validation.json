@@ -5,6 +5,7 @@
     "course": "Course Not Found!"
   },
   "duplicated": {
-    "email": "Email is duplicated!"
+    "email": "Email is duplicated!",
+    "joined-course": "Student already joined course!"
   }
 }

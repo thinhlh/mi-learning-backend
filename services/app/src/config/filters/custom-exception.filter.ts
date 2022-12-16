@@ -48,7 +48,6 @@ export class CustomExceptionFilter implements ExceptionFilter {
             case HttpException:
                 status = exception.getStatus() ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
                 message = (exception as HttpException).message
-                console.log(message)
                 break;
             case TypeORMError:
                 status = HttpStatus.BAD_REQUEST

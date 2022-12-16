@@ -6,8 +6,9 @@ import { Section } from "../section/section.entity";
 import { Course } from "./course.entity";
 import { CreateCourseBulkDTO } from "./dto/create-course-bulk.dto";
 import { CreateCourseDTO } from "./dto/create-course.dto";
-import { GetCourseQuery } from "./dto/get-course.query";
 import { UpdateCourseDTO } from "./dto/update-course.dto";
+import { CourseResponseDTO } from "./dto/course-response.dto";
+import { GetCoursesQuery } from "./dto/get-course.query";
 export declare class CourseService {
     private readonly entityManager;
     private readonly courseRepository;
@@ -17,8 +18,9 @@ export declare class CourseService {
     private readonly i18n;
     constructor(entityManager: EntityManager, courseRepository: Repository<Course>, sectionRepository: Repository<Section>, lessonRepository: Repository<Lesson>, categoryService: CategoryService, i18n: I18nService);
     getCurrentNumberOfLesson(courseId: string): Promise<number>;
-    getCourse(id?: string): Promise<Course>;
-    getCourses(query: GetCourseQuery): Promise<Course[]>;
+    getCourseById(id: string): Promise<Course>;
+    getCourse(user?: string, courseId?: string): Promise<CourseResponseDTO>;
+    getCourses(query: GetCoursesQuery): Promise<Course[]>;
     createCourseBulk(createCourseBulkDTO: CreateCourseBulkDTO): Promise<Course>;
     private createSection;
     private createLessons;

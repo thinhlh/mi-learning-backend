@@ -42,7 +42,7 @@ let SectionService = class SectionService {
         });
     }
     async createSection(createSectionDTO) {
-        const course = await this.courseService.getCourse(createSectionDTO.courseId);
+        const course = await this.courseService.getCourseById(createSectionDTO.courseId);
         if (!course) {
             throw new common_1.NotFoundException("Course not found!");
         }

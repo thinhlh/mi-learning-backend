@@ -9,28 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GetCourseQuery = exports.GetCourseType = void 0;
+exports.GetCoursesQuery = exports.GetCourseType = void 0;
 const class_validator_1 = require("class-validator");
 var GetCourseType;
 (function (GetCourseType) {
     GetCourseType["FOR_YOU"] = "FOR_YOU";
     GetCourseType["ME"] = "ME";
 })(GetCourseType = exports.GetCourseType || (exports.GetCourseType = {}));
-class GetCourseQuery {
+class GetCoursesQuery {
 }
 __decorate([
     (0, class_validator_1.IsBoolean)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Boolean)
-], GetCourseQuery.prototype, "loadSections", void 0);
+], GetCoursesQuery.prototype, "loadSections", void 0);
 __decorate([
     (0, class_validator_1.IsBoolean)(),
     (0, class_validator_1.IsOptional)(),
     __metadata("design:type", Boolean)
-], GetCourseQuery.prototype, "loadLessons", void 0);
+], GetCoursesQuery.prototype, "loadLessons", void 0);
 __decorate([
     (0, class_validator_1.IsEnum)(GetCourseType),
     __metadata("design:type", String)
-], GetCourseQuery.prototype, "type", void 0);
-exports.GetCourseQuery = GetCourseQuery;
+], GetCoursesQuery.prototype, "type", void 0);
+exports.GetCoursesQuery = GetCoursesQuery;
 //# sourceMappingURL=get-course.query.js.map

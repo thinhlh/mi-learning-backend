@@ -19,13 +19,18 @@ const course_service_1 = require("./course.service");
 const create_course_dto_1 = require("./dto/create-course.dto");
 const get_course_query_1 = require("./dto/get-course.query");
 const update_course_dto_1 = require("./dto/update-course.dto");
+const auth_guard_1 = require("../../config/guard/auth.guard");
+const role_decorator_1 = require("../../config/guard/role.decorator");
+const role_1 = require("../role/role");
 let CourseController = class CourseController {
     constructor(courseService) {
         this.courseService = courseService;
     }
     async getCourses(query) {
-        await this.courseService.getCurrentNumberOfLesson("15fd3d17-6c40-489d-a5c4-a7e8bd418b38");
         return this.courseService.getCourses(query);
+    }
+    async getCourseDetail(user, courseId) {
+        return this.courseService.getCourse(user, courseId);
     }
     async createCourse(createCourseDTO) {
         return this.courseService.createCourse(createCourseDTO);
@@ -45,9 +50,19 @@ __decorate([
     openapi.ApiResponse({ status: 200, type: [require("./course.entity").Course] }),
     __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [get_course_query_1.GetCourseQuery]),
+    __metadata("design:paramtypes", [get_course_query_1.GetCoursesQuery]),
     __metadata("design:returntype", Promise)
 ], CourseController.prototype, "getCourses", null);
+__decorate([
+    (0, common_1.Get)("/course/:id"),
+    (0, role_decorator_1.Roles)(role_1.Role.STUDENT),
+    openapi.ApiResponse({ status: 200, type: require("./dto/course-response.dto").CourseResponseDTO }),
+    __param(0, (0, common_1.Headers)(auth_guard_1.USER_KEY)),
+    __param(1, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], CourseController.prototype, "getCourseDetail", null);
 __decorate([
     (0, common_1.Post)("/course"),
     openapi.ApiResponse({ status: 201, type: require("./course.entity").Course }),

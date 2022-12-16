@@ -22,7 +22,9 @@ async function appConfig(app) {
         forbidNonWhitelisted: true,
         transform: true,
         transformOptions: {
-            enableImplicitConversion: true
+            enableImplicitConversion: true,
+            excludeExtraneousValues: true,
+            exposeUnsetFields: false,
         }
     }));
     app.enableVersioning({

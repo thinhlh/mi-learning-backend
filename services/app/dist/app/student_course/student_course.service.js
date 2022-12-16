@@ -17,15 +17,34 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const student_course_entity_1 = require("./student_course.entity");
+const nestjs_i18n_1 = require("nestjs-i18n");
 let StudentCourseService = class StudentCourseService {
-    constructor(studentCourseRepository) {
+    constructor(studentCourseRepository, i18nService) {
         this.studentCourseRepository = studentCourseRepository;
+        this.i18nService = i18nService;
+    }
+    async purchaseCourse(studentId, courseId) {
+        var studentCourse = await this.studentCourseRepository.findOneBy({ courseId: courseId, studentId: studentId });
+        if (studentCourse) {
+            if (studentCourse.enrolled) {
+                throw new common_1.HttpException(this.i18nService.translate("validation.duplicated.joined-course"), common_1.HttpStatus.BAD_REQUEST);
+            }
+            else {
+                studentCourse.enrolled = true;
+            }
+        }
+        else {
+            studentCourse = this.studentCourseRepository.create({ courseId: courseId, studentId: studentId, enrolled: true });
+        }
+        const result = await this.studentCourseRepository.save(studentCourse);
+        return true;
     }
 };
 StudentCourseService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(student_course_entity_1.StudentCourse)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        nestjs_i18n_1.I18nService])
 ], StudentCourseService);
 exports.StudentCourseService = StudentCourseService;
 //# sourceMappingURL=student_course.service.js.map

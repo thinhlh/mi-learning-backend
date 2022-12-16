@@ -10,11 +10,16 @@ exports.StudentCourseModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const student_course_entity_1 = require("./student_course.entity");
+const student_course_controller_1 = require("./student_course.controller");
+const student_course_service_1 = require("./student_course.service");
 let StudentCourseModule = class StudentCourseModule {
 };
 StudentCourseModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([student_course_entity_1.StudentCourse])]
+        imports: [typeorm_1.TypeOrmModule.forFeature([student_course_entity_1.StudentCourse])],
+        controllers: [student_course_controller_1.StudentCourseController],
+        providers: [student_course_service_1.StudentCourseService],
+        exports: [student_course_service_1.StudentCourseService]
     })
 ], StudentCourseModule);
 exports.StudentCourseModule = StudentCourseModule;

@@ -1,9 +1,14 @@
-import { Body, Controller, Delete, Get, Param, ParseUUIDPipe, Patch, Post, Query } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Headers, Param, ParseUUIDPipe, Patch, Post, Query, UseInterceptors } from "@nestjs/common";
 import { Course } from "./course.entity";
 import { CourseService } from "./course.service";
 import { CreateCourseDTO } from "./dto/create-course.dto";
-import { GetCourseQuery } from "./dto/get-course.query";
+import { GetCoursesQuery } from "./dto/get-course.query";
 import { UpdateCourseDTO } from "./dto/update-course.dto";
+import { USER_KEY } from "src/config/guard/auth.guard";
+import { Roles } from "src/config/guard/role.decorator";
+import { Role } from "../role/role";
+import { CourseResponseDTO } from "./dto/course-response.dto";
+import { ResponseMapperInterceptor } from "src/config/interceptors/response-mapper.interceptor";
 
 @Controller()
 export class CourseController {
@@ -11,9 +16,14 @@ export class CourseController {
     constructor(private readonly courseService: CourseService) { }
 
     @Get("/courses")
-    async getCourses(@Query() query: GetCourseQuery): Promise<Course[]> {
-        await this.courseService.getCurrentNumberOfLesson("15fd3d17-6c40-489d-a5c4-a7e8bd418b38")
+    async getCourses(@Query() query: GetCoursesQuery): Promise<Course[]> {
         return this.courseService.getCourses(query);
+    }
+
+    @Get("/course/:id")
+    @Roles(Role.STUDENT)
+    async getCourseDetail(@Headers(USER_KEY) user: string, @Param('id') courseId: string): Promise<CourseResponseDTO> {
+        return this.courseService.getCourse(user, courseId);
     }
 
     @Post("/course")

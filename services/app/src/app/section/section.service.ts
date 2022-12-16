@@ -34,7 +34,7 @@ export class SectionService {
     }
 
     async createSection(createSectionDTO: CreateSectionDTO): Promise<Section> {
-        const course = await this.courseService.getCourse(createSectionDTO.courseId);
+        const course = await this.courseService.getCourseById(createSectionDTO.courseId);
 
         if (!course) {
             throw new NotFoundException("Course not found!")

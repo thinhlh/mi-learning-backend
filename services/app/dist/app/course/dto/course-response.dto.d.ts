@@ -6,9 +6,11 @@ export declare class CourseResponseDTO {
     description: string;
     length: number;
     background: string;
-    icon: string;
+    icon?: string;
     price: number;
     sections: SectionResponseDTO[];
     category: Category;
+    enrolled: boolean;
+    saved: boolean;
     deletedAt: Date;
 }

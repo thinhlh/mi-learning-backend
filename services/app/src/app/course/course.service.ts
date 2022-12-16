@@ -14,8 +14,11 @@ import { SectionService } from "../section/section.service";
 import { Course } from "./course.entity";
 import { CreateCourseBulkDTO } from "./dto/create-course-bulk.dto";
 import { CreateCourseDTO } from "./dto/create-course.dto";
-import { GetCourseQuery } from "./dto/get-course.query";
 import { UpdateCourseDTO } from "./dto/update-course.dto";
+import { CourseResponseDTO } from "./dto/course-response.dto";
+import { SectionResponseDTO } from "../section/dto/section-response.dto";
+import { classToPlain, plainToClass } from "class-transformer";
+import { GetCoursesQuery } from "./dto/get-course.query";
 
 @Injectable()
 export class CourseService {
@@ -40,22 +43,63 @@ export class CourseService {
             })
     }
 
-    async getCourse(id?: string): Promise<Course> {
+    async getCourseById(id: string): Promise<Course> {
         if (id == null) return null
 
         return this.courseRepository.findOne({
             where: {
-                id: id
+                id: id,
             },
             relations: {
-                sections: true
+                category: true,
+                sections: true,
             }
         })
     }
 
-    async getCourses(query: GetCourseQuery): Promise<Course[]> {
-        return this.courseRepository.find({
+    async getCourse(user?: string, courseId?: string): Promise<CourseResponseDTO> {
+        if (courseId == null) return null
+
+        const course = await this.courseRepository.findOne({
+            where: {
+                studentCourses: {
+                    courseId: courseId,
+                    studentId: user
+                }
+            },
+            select: {
+                studentCourses: {
+                    enrolled: true,
+                    saved: true,
+                }
+            },
             relations: {
+                studentCourses: false,
+                category: true,
+                sections: {
+                    lessons: true
+                },
+            }
+        })
+        const response: CourseResponseDTO = ({
+            ...course,
+            sections: course.sections.map<SectionResponseDTO>((section) => ({
+                ...section,
+                finishedLesson: 0,
+                totalLesson: section.lessons.length,
+                length: 3600
+            })),
+            enrolled: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.enrolled),
+            saved: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.saved)
+        })
+
+        return response
+    }
+
+    async getCourses(query: GetCoursesQuery): Promise<Course[]> {
+        const courses = await this.courseRepository.find({
+            relations: {
+                // studentCourses: true,
                 category: true,
                 sections: query.loadSections == null ? false : {
                     lessons: query.loadLessons ?? false
@@ -63,6 +107,15 @@ export class CourseService {
             },
         });
 
+        return courses;
+
+        // courses.map<CourseResponseDTO>(
+        //     (course) => ({
+        //         ...course,
+        //         sections: course.sections.map<SectionResponseDTO>((section) => ({
+        //             ...section,
+        //         }))
+        //     }));
     }
 
     async createCourseBulk(createCourseBulkDTO: CreateCourseBulkDTO): Promise<Course> {

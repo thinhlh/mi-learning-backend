@@ -6,6 +6,7 @@ import { AppModule } from './app/app.module';
 import { CustomExceptionFilter } from './config/filters/custom-exception.filter';
 import { ResponseTransformInterceptor } from './config/interceptors/response.interceptor';
 import { join } from 'path';
+import { ResponseMapperInterceptor } from './config/interceptors/response-mapper.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -31,7 +32,9 @@ async function appConfig(app: NestExpressApplication) {
     forbidNonWhitelisted: true,
     transform: true, // Automatically transform to desired type,
     transformOptions: {
-      enableImplicitConversion: true
+      enableImplicitConversion: true,
+      excludeExtraneousValues: true,
+      exposeUnsetFields: false,
     }
   }))
   // app.useGlobalGuards(new AppGuard(new Reflector()));

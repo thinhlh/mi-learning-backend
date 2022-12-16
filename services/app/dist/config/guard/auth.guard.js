@@ -29,8 +29,8 @@ let AppGuard = class AppGuard {
         if (!requiredRoles)
             return true;
         const request = context.switchToHttp().getRequest();
-        const token = request.headers.authorization.trim();
         try {
+            const token = request.headers.authorization.trim();
             const result = await (0, rxjs_1.lastValueFrom)(this.httpService.get('http://localhost:8000/check-permissions', {
                 data: requiredRoles.map(role => role.toString()),
                 headers: {

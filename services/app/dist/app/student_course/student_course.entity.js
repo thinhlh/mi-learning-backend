@@ -17,7 +17,7 @@ const rating_entity_1 = require("../rating/rating.entity");
 const student_entity_1 = require("../student/student.entity");
 let StudentCourse = class StudentCourse {
     static _OPENAPI_METADATA_FACTORY() {
-        return { studentId: { required: true, type: () => String }, courseId: { required: true, type: () => String }, student: { required: true, type: () => require("../student/student.entity").Student }, course: { required: true, type: () => require("../course/course.entity").Course }, ratings: { required: true, type: () => [require("../rating/rating.entity").Rating] } };
+        return { studentId: { required: true, type: () => String }, courseId: { required: true, type: () => String }, saved: { required: true, type: () => Boolean }, enrolled: { required: true, type: () => Boolean }, student: { required: true, type: () => require("../student/student.entity").Student }, course: { required: true, type: () => require("../course/course.entity").Course }, ratings: { required: true, type: () => [require("../rating/rating.entity").Rating] } };
     }
 };
 __decorate([
@@ -28,6 +28,14 @@ __decorate([
     (0, typeorm_1.PrimaryColumn)("uuid"),
     __metadata("design:type", String)
 ], StudentCourse.prototype, "courseId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: false, default: false }),
+    __metadata("design:type", Boolean)
+], StudentCourse.prototype, "saved", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: false, default: false }),
+    __metadata("design:type", Boolean)
+], StudentCourse.prototype, "enrolled", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => student_entity_1.Student, (student) => student.studentCourses),
     __metadata("design:type", student_entity_1.Student)
