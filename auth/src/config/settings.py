@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     postgres_db: str = "postgres"
     postgres_user: str = "postgres"
     postgres_password: str = "postgres"
+    algorithm: str = 'HS256'
+    secret_key: str
 
     class Config:
         env_file = f"../env/{os.getenv('ENV', 'dev')}.env"

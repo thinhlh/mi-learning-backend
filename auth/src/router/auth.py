@@ -1,25 +1,61 @@
-from fastapi import APIRouter, Query, HTTPException
+from fastapi import APIRouter, Query, HTTPException, Body, Security
+from fastapi.security import SecurityScopes
 from datetime import timedelta
+from ..models.token_payload import TokenPayload
+from sqlalchemy.orm import Session
 from fastapi import Depends
 from ..models.user import User
-from ..schemas.user import UserOut
+from ..models.role import Role
+from ..schemas.user import UserOut, UserCreate
 from ..dependencies import auth
-from ..models.token import Token
+from ..config.database import get_db
+from ..models.token import Token, TokenType
+from ..crud import user
 
 router = APIRouter(prefix="")
 
+user_crud = user.UserCRUD()
 
-@router.get("login")
-async def login(email: str = Query(), password: str = Query()) -> Token:
-    user = auth.authenticate_user(email=email, password=password)
+
+@router.post("/login")
+async def login(email: str = Body(), password: str = Body(), db: Session = Depends(get_db)):
+    user = auth.authenticate_user(email=email, password=password, db=db)
 
     if not user:
         raise HTTPException(401, "Incorrect username or password")
     else:
-        return Token('access', 'refresh', token_type='bearer')
-        # return Token(access_token=auth.create_token(payload={"sub": "1"}))
+        access_token = auth.create_token(
+            TokenPayload(
+                sub=str(user.id),
+                scopes=[user.role]
+            ),
+            token_expire=timedelta(minutes=60)
+        )
+        refesh_token = auth.create_token(
+            TokenPayload(
+                sub=str(user.id),
+                scopes=[user.role]
+            ),
+            token_expire=timedelta(hours=60)
+        )
+
+        return Token(
+            access_token=access_token,
+            refresh_token=refesh_token,
+            token_type=TokenType.BEARER
+        )
 
 
-@router.get("/check-permission", response_model=UserOut)
-async def check_permission(user: User = Depends(auth.get_current_user)) -> User:
+@router.post("/register", response_model=UserOut)
+async def register(user_create: UserCreate = Body(), db: Session = Depends(get_db)):
+    return user_crud.create_user(user_create, db=db)
+
+
+@router.get("/check-permissions", response_model=UserOut)
+async def check_permission(scopes: list[str] = Body(), db: Session = Depends(get_db), token: str = Depends(auth.oauth2_scheme)) -> User:
+    user = auth.get_current_user(
+        security_scopes=SecurityScopes(scopes),
+        db=db,
+        token=token
+    )
     return user

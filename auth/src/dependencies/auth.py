@@ -1,9 +1,10 @@
 from datetime import timedelta
 import datetime
-from jose import jwt
-from fastapi import Depends, FastAPI, HTTPException
-from fastapi.security import OAuth2PasswordBearer, OAuth2
+from jose import jwt, JWTError
+from fastapi import Depends, FastAPI, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer, OAuth2, SecurityScopes
 from src.models.token import Token
+from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from src.models import user
 from src.crud.user import UserCRUD
@@ -12,44 +13,104 @@ from src.models.user import User
 from src.schemas.user import UserOut
 from src.config.database import get_db
 from src.models.token_payload import TokenPayload
+from ..config.settings import settings
 
 user_crud = UserCRUD()
-SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
-ALGORITHM = "HS256"
+
 TOKEN_EXPIRE_MINUTES = 60
 
 
 oauth2_scheme = OAuth2PasswordBearer(
     tokenUrl="login",
-    description="Auth Scheme"
+    description="Auth Scheme",
 )
 
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-def get_current_user(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme),):
-    user = user_crud.get_user_by_id(db=db, id=token)
+
+def verify_password(plain_password, hashed_password):
+    return plain_password == hashed_password
+    return pwd_context.verify(plain_password, hashed_password)
+
+
+def get_password_hash(password):
+    return pwd_context.hash(password)
+
+
+def get_current_user(
+        security_scopes: SecurityScopes,
+        db: Session,
+        token: str = Depends(oauth2_scheme)
+):
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": "Bearer"},
+    )
+
+    try:
+        payload = jwt.decode(
+            token,
+            settings.secret_key,
+            algorithms=[settings.algorithm]
+        )
+
+        id = payload.get("sub")
+        token_scopes = payload.get("scopes", [])
+
+        if not id:
+            raise credentials_exception
+    except JWTError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid token credential",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
+
+    user = user_crud.get_user_by_id(db=db, id=id)
+
     if not user:
-        raise HTTPException(404, 'User not found!')
+        raise credentials_exception
+
+    # We will loop throw the scopes defined in this route, if the scope not in token's scope => 403
+    for scope in security_scopes.scopes:
+        if scope not in token_scopes:
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Not enough permission",
+                headers={"WWW-Authenticate": "Bearer"},
+            )
     return user
 
 
-def authenticate_user(email: str, password: str, db: Session = Depends(get_db)):
+def authenticate_user(email: str, password: str, db: Session):
     user = user_crud.get_user_by_email(email=email, db=db)
 
     if not user:
         return False
     else:
-        if user.password != password:
+        if not verify_password(password, user.password):
             return False
         else:
             return user
 
 
-def create_token(payload: TokenPayload) -> str:
-    token_expire = timedelta(minutes=TOKEN_EXPIRE_MINUTES)
+def create_token(payload: TokenPayload, token_expire: timedelta) -> str:
 
-    to_encode = payload.copy()
-    expire = datetime.utcnow() + token_expire
+    if not token_expire:
+        token_expire = timedelta(minutes=TOKEN_EXPIRE_MINUTES)
 
+    to_encode = payload.dict().copy()
+    expire = datetime.datetime.utcnow() + token_expire
+
+    # Add exp field to payload
     to_encode.update({"exp": expire})
-    encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
+    # Encode JWT
+    encoded_jwt = jwt.encode(
+        to_encode,
+        settings.secret_key,
+        algorithm=settings.algorithm
+    )
+
     return encoded_jwt
