@@ -2,7 +2,7 @@ import { ApiQuery, OmitType } from "@nestjs/swagger"
 import { Expose } from "class-transformer"
 import { IsBoolean, IsEnum, IsOptional } from "class-validator"
 
-export enum GetCourseType {
+export enum GetCoursesType {
     FOR_YOU = 'FOR_YOU',
     ME = 'ME'
 }
@@ -17,6 +17,6 @@ export class GetCoursesQuery {
     @IsOptional()
     loadLessons?: boolean
 
-    @IsEnum(GetCourseType)
-    type: GetCourseType
+    // @IsEnum(GetCoursesType)
+    type: GetCoursesType
 }

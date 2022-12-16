@@ -9,11 +9,13 @@ import { Roles } from "src/config/guard/role.decorator";
 import { Role } from "../role/role";
 import { CourseResponseDTO } from "./dto/course-response.dto";
 import { ResponseMapperInterceptor } from "src/config/interceptors/response-mapper.interceptor";
+import { TeacherService } from "../teacher/teacher.service";
+import * as COURSE from "../../data/courses.json";
 
 @Controller()
 export class CourseController {
 
-    constructor(private readonly courseService: CourseService) { }
+    constructor(private readonly courseService: CourseService, private readonly teacherService: TeacherService) { }
 
     @Get("/courses")
     async getCourses(@Query() query: GetCoursesQuery): Promise<Course[]> {

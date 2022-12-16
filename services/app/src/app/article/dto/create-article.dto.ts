@@ -1,4 +1,4 @@
-import { IsEmpty, IsNotEmpty, IsOptional, IsString, IsUUID } from "class-validator";
+import { IsEmail, IsEmpty, IsNotEmpty, IsOptional, IsString, IsUUID } from "class-validator";
 
 export class CreateArticleDTO {
 

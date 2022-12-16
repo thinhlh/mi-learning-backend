@@ -1,4 +1,4 @@
-import { IsArray, IsCurrency, IsDecimal, IsNumber, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator";
+import { IsArray, IsCurrency, IsDecimal, IsEmail, IsNumber, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator";
 
 export class CreateCourseDTO {
     @IsString()
@@ -24,9 +24,9 @@ export class CreateCourseDTO {
     @IsArray()
     sections: string[];
 
-    @IsUUID()
+    @IsEmail()
     @IsOptional()
-    teacherId: string;
+    teacherEmail: string;
 
     @IsUUID()
     categoryId: string;

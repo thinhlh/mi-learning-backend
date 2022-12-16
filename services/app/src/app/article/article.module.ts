@@ -5,11 +5,13 @@ import { CategoryService } from "../category/category.service";
 import { ArticleController } from "./article.controller";
 import { Article } from "./article.entity";
 import { ArticleService } from "./article.service";
+import { TeacherModule } from "../teacher/teacher.module";
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([Article]),
         CategoryModule,
+        TeacherModule,
     ],
     controllers: [ArticleController],
     providers: [ArticleService],

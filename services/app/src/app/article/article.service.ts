@@ -7,6 +7,8 @@ import { CategoryService } from "../category/category.service";
 import { Article } from "./article.entity";
 import { CreateArticleDTO } from "./dto/create-article.dto";
 import { UpdateArticleDTO } from "./dto/update-article.dto";
+import { TeacherService } from "../teacher/teacher.service";
+import { Teacher } from "../teacher/teacher.entity";
 
 export class ArticleService {
     constructor(
@@ -74,5 +76,4 @@ export class ArticleService {
         const category = await this.categoryService.getCategoryByTitle(categoryTitle)
         return category
     }
-
 }

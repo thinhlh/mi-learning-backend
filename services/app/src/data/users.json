@@ -52,5 +52,41 @@
     "avatar": "https://source.unsplash.com/random/1080x720/?avatar&sig=",
     "birthday": 1671083315171,
     "role": "teacher"
+  },
+  {
+    "name": "Nhan Cao",
+    "password": "nhancao",
+    "email": "nhancv@gmail.com",
+    "occupation": "teacher",
+    "avatar": "https://source.unsplash.com/random/1080x720/?avatar&sig=",
+    "birthday": 1671083315171,
+    "role": "teacher"
+  },
+  {
+    "name": "Reso Coder",
+    "password": "resocoder",
+    "email": "resocoder@gmail.com",
+    "occupation": "teacher",
+    "avatar": "https://source.unsplash.com/random/1080x720/?avatar&sig=",
+    "birthday": 1671083315171,
+    "role": "teacher"
+  },
+  {
+    "name": "Agela Yu",
+    "password": "angelayu",
+    "email": "angelayu@gmail.com",
+    "occupation": "teacher",
+    "avatar": "https://source.unsplash.com/random/1080x720/?avatar&sig=",
+    "birthday": 1671083315171,
+    "role": "teacher"
+  },
+  {
+    "name": "Cater Peggy",
+    "password": "caterpeggy",
+    "email": "caterpeggy@gmail.com",
+    "occupation": "teacher",
+    "avatar": "https://source.unsplash.com/random/1080x720/?avatar&sig=",
+    "birthday": 1671083315171,
+    "role": "teacher"
   }
 ]

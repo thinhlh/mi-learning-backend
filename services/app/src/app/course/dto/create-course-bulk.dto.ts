@@ -1,4 +1,4 @@
-import { IsArray, IsNumber, IsObject, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator/types/decorator/decorators";
+import { IsArray, IsEmail, IsNumber, IsObject, IsOptional, IsPositive, IsString, IsUrl, IsUUID, Min } from "class-validator/types/decorator/decorators";
 import { CreateCategoryDTO } from "src/app/category/dto/create-category.dto";
 import { CreateSectionBulkDTO } from "src/app/section/dto/create-section-bulk.dto";
 
@@ -27,9 +27,9 @@ export class CreateCourseBulkDTO {
     @IsArray()
     sections?: (string | CreateSectionBulkDTO)[] = [];
 
-    @IsUUID()
+    @IsEmail()
     @IsOptional()
-    teacherId: string;
+    teacherEmail: string;
 
     category: string | CreateCategoryDTO;
 }

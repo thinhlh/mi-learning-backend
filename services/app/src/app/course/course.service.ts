@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { I18nService } from "nestjs-i18n";
-import { EntityManager, In, Repository } from "typeorm";
+import { ArrayContains, EntityManager, In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
 import { CategoryService } from "../category/category.service";
 import { CreateCategoryDTO } from "../category/dto/create-category.dto";
@@ -19,6 +19,8 @@ import { CourseResponseDTO } from "./dto/course-response.dto";
 import { SectionResponseDTO } from "../section/dto/section-response.dto";
 import { classToPlain, plainToClass } from "class-transformer";
 import { GetCoursesQuery } from "./dto/get-course.query";
+import { TeacherService } from "../teacher/teacher.service";
+import { Teacher } from "../teacher/teacher.entity";
 
 @Injectable()
 export class CourseService {
@@ -28,6 +30,7 @@ export class CourseService {
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
         @InjectRepository(Lesson) private readonly lessonRepository: Repository<Lesson>,
         private readonly categoryService: CategoryService,
+        private readonly teacherService: TeacherService,
         private readonly i18n: I18nService,
 
     ) { }
@@ -62,25 +65,30 @@ export class CourseService {
 
         const course = await this.courseRepository.findOne({
             where: {
-                studentCourses: {
-                    courseId: courseId,
-                    studentId: user
-                }
+                id: courseId,
+                // studentCourses: {
+                //     courseId: courseId,
+                //     // studentId: user
+                // }
             },
             select: {
                 studentCourses: {
                     enrolled: true,
                     saved: true,
-                }
+                },
             },
             relations: {
                 studentCourses: false,
+                teacher: true,
                 category: true,
                 sections: {
                     lessons: true
                 },
             }
         })
+
+        this.teacherService
+
         const response: CourseResponseDTO = ({
             ...course,
             sections: course.sections.map<SectionResponseDTO>((section) => ({
@@ -89,6 +97,11 @@ export class CourseService {
                 totalLesson: section.lessons.length,
                 length: 3600
             })),
+            teacher: {
+                ...course.teacher,
+                name: course.teacher.user.name,
+                avatar: course.teacher.user.avatar
+            },
             enrolled: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.enrolled),
             saved: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.saved)
         })
@@ -166,6 +179,7 @@ export class CourseService {
             course = this.courseRepository.create({
                 ...createCourseBulkDTO,
                 sections: sections,
+                teacher: await this.teacherService.getTeacherByEmail(createCourseBulkDTO.teacherEmail),
                 category: category,
             })
         } else {
@@ -219,10 +233,10 @@ export class CourseService {
         if (!category) {
             throw new NotFoundException("Category not found!")
         }
-
         let course = this.courseRepository.create({
             ...createCourseDTO,
             category: category,
+            teacher: await this.teacherService.getTeacherByEmail(createCourseDTO.teacherEmail),
             sections: [],
         });
 

@@ -27,8 +27,8 @@ export class DataInitializerModule implements OnModuleInit {
     async onModuleInit() {
         const categories = await this.createCategories();
         const articles = await this.createArticles();
-        const courses = await this.createCourses();
         const users = await this.createUsers();
+        const courses = await this.createCourses();
     }
 
     private async createCategories() {

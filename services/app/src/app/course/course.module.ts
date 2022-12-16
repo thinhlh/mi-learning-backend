@@ -13,11 +13,12 @@ import { User } from "../user/user.entity";
 import { CourseController } from "./course.controller";
 import { Course } from "./course.entity";
 import { CourseService } from "./course.service";
+import { TeacherModule } from "../teacher/teacher.module";
 
 @Module({
     providers: [CourseService],
     controllers: [CourseController],
-    imports: [TypeOrmModule.forFeature([Course, Section, Lesson, Teacher, User, Student, Schedule]), CategoryModule],
+    imports: [TypeOrmModule.forFeature([Course, Section, Lesson, User, Student, Schedule]), CategoryModule, TeacherModule],
     exports: [CourseService],
 })
 export class CourseModule {

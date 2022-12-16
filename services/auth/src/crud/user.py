@@ -47,13 +47,10 @@ class UserCRUD():
                 db.add(student)
             elif user.role == Role.TEACHER:
                 teacher = Teacher()
-                student.id = user.id
-
+                teacher.id = user.id
                 db.add(teacher)
 
             db.commit()
-            db.refresh(user)
-            db.refresh(student)
 
             return user
 
