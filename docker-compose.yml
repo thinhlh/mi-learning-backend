@@ -11,3 +11,20 @@ services:
       - ./env/dev.env
     ports:
       - 5433:5432
+
+  auth:
+    build: 
+      context: .
+      dockerfile: ./docker/auth/Dockerfile
+    restart: always
+    container_name: mi-learning-auth
+    env_file: 
+      - ./env/dev.env
+    depends_on:
+      - db
+    ports:
+      - 8000:80
+      
+      
+
+
