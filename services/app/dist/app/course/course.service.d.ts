@@ -1,0 +1,30 @@
+import { I18nService } from "nestjs-i18n";
+import { EntityManager, Repository } from "typeorm";
+import { CategoryService } from "../category/category.service";
+import { Lesson } from "../lesson/lesson.entity";
+import { Section } from "../section/section.entity";
+import { Course } from "./course.entity";
+import { CreateCourseBulkDTO } from "./dto/create-course-bulk.dto";
+import { CreateCourseDTO } from "./dto/create-course.dto";
+import { GetCourseQuery } from "./dto/get-course.query";
+import { UpdateCourseDTO } from "./dto/update-course.dto";
+export declare class CourseService {
+    private readonly entityManager;
+    private readonly courseRepository;
+    private readonly sectionRepository;
+    private readonly lessonRepository;
+    private readonly categoryService;
+    private readonly i18n;
+    constructor(entityManager: EntityManager, courseRepository: Repository<Course>, sectionRepository: Repository<Section>, lessonRepository: Repository<Lesson>, categoryService: CategoryService, i18n: I18nService);
+    getCurrentNumberOfLesson(courseId: string): Promise<number>;
+    getCourse(id?: string): Promise<Course>;
+    getCourses(query: GetCourseQuery): Promise<Course[]>;
+    createCourseBulk(createCourseBulkDTO: CreateCourseBulkDTO): Promise<Course>;
+    private createSection;
+    private createLessons;
+    createCourse(createCourseDTO: CreateCourseDTO): Promise<Course>;
+    updateCourse(id: string, updateCourseDTO: UpdateCourseDTO): Promise<Course>;
+    deleteCourse(id: string): Promise<any>;
+    restoreDeletedCourse(id: string): Promise<any>;
+    private loadSections;
+}

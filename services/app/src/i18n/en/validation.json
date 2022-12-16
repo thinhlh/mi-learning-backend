@@ -1,0 +1,10 @@
+{
+  "notfound": {
+    "article": "Article Not Found!",
+    "category": "Category Not Found!",
+    "course": "Course Not Found!"
+  },
+  "duplicated": {
+    "email": "Email is duplicated!"
+  }
+}
