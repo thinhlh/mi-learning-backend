@@ -21,6 +21,8 @@ import { classToPlain, plainToClass } from "class-transformer";
 import { GetCoursesQuery } from "./dto/get-course.query";
 import { TeacherService } from "../teacher/teacher.service";
 import { Teacher } from "../teacher/teacher.entity";
+import { Rating } from "../rating/rating.entity";
+import { VideoLesson } from "../lesson/dto/lesson-response.dto";
 
 @Injectable()
 export class CourseService {
@@ -72,14 +74,15 @@ export class CourseService {
                 // }
             },
             select: {
-                studentCourses: {
-                    enrolled: true,
-                    saved: true,
-                },
+                studentCourses: false,
             },
             relations: {
-                studentCourses: false,
-                teacher: true,
+                studentCourses: {
+                    ratings: true
+                },
+                teacher: {
+                    user: true
+                },
                 category: true,
                 sections: {
                     lessons: true
@@ -87,26 +90,7 @@ export class CourseService {
             }
         })
 
-        this.teacherService
-
-        const response: CourseResponseDTO = ({
-            ...course,
-            sections: course.sections.map<SectionResponseDTO>((section) => ({
-                ...section,
-                finishedLesson: 0,
-                totalLesson: section.lessons.length,
-                length: 3600
-            })),
-            teacher: {
-                ...course.teacher,
-                name: course.teacher.user.name,
-                avatar: course.teacher.user.avatar
-            },
-            enrolled: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.enrolled),
-            saved: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.saved)
-        })
-
-        return response
+        return this.mapCourseToDTO(course)
     }
 
     async getCourses(query: GetCoursesQuery): Promise<Course[]> {
@@ -121,14 +105,25 @@ export class CourseService {
         });
 
         return courses;
+    }
 
-        // courses.map<CourseResponseDTO>(
-        //     (course) => ({
-        //         ...course,
-        //         sections: course.sections.map<SectionResponseDTO>((section) => ({
-        //             ...section,
-        //         }))
-        //     }));
+    async getCoursesBulk(): Promise<CourseResponseDTO[]> {
+        const courses = await this.courseRepository.find({
+            relations: {
+                studentCourses: {
+                    ratings: true
+                },
+                teacher: {
+                    user: true
+                },
+                category: true,
+                sections: {
+                    lessons: true
+                },
+            }
+        });
+
+        return courses.map((course) => this.mapCourseToDTO(course));
     }
 
     async createCourseBulk(createCourseBulkDTO: CreateCourseBulkDTO): Promise<Course> {
@@ -278,5 +273,62 @@ export class CourseService {
                 id: In(ids)
             }
         })
+    }
+
+    private mapCourseToDTO(course: Course): CourseResponseDTO {
+        const ratings = course
+            .studentCourses
+            .map((studentCourse) => studentCourse.ratings)
+            .reduce((previos, current) => {
+                previos.push(...current);
+                return previos;
+            }, [])
+        const ratingByStars = [0, 0, 0, 0, 0] // From 1->5
+
+        for (const rating of ratings) {
+            ratingByStars[rating.value - 1] += 1
+        }
+
+        const totalRatings = ratings.reduce((prev, cur) => prev + cur.value, 0)
+
+        const response: CourseResponseDTO = ({
+            id: course.id,
+            title: course.title,
+            background: course.background,
+            deletedAt: course.deletedAt,
+            description: course.description,
+            length: course.length,
+            price: course.price,
+            icon: course.icon,
+            sections: course.sections.map<SectionResponseDTO>((section) => ({
+                id: section.id,
+                title: section.title,
+                lessons: section.lessons.map((lesson) => ({
+                    id: lesson.id,
+                    lessonOrder: lesson.lessonOrder,
+                    title: lesson.title,
+                    videoLesson: ({ length: 0, videoUrl: lesson.url }),
+                    metadata: ({ finished: Math.random() >= 0.5, notes: [], playback: 0 })
+                })),
+                finishedLesson: 0,
+                totalLesson: section.lessons.length,
+                length: 3600
+            })),
+            courseRatings: {
+                ratings: ratings,
+                average: ratings.length == 0 ? 0 : totalRatings / ratings.length,
+                // Count the appearnce of each rating value and divide by the total of rating
+                ratingAverageByStar: ratingByStars.map((numberOfRatingByStar) => Math.floor((numberOfRatingByStar / (ratings.length == 0 ? 1 : ratings.length)) * 100))
+            },
+            teacher: {
+                id: course.teacher.id,
+                name: course.teacher.user.name,
+                avatar: course.teacher.user.avatar
+            },
+            category: course.category.title,
+            enrolled: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.enrolled),
+            saved: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.saved)
+        })
+        return response;
     }
 }

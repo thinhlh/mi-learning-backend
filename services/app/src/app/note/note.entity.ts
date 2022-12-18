@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Type } from "class-transformer";
+import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity()
 export class Note {
@@ -8,11 +9,9 @@ export class Note {
     @Column()
     content: string;
 
-    @Column({
-        default: 0,
-        type: "int"
-    })
-    updatedAt: string;
+    @UpdateDateColumn()
+    @Type(() => Number)
+    updatedAt: Date;
 
     // @ManyToOne(fetch = FetchType.LAZY)
     // @Getter(value = AccessLevel.NONE)

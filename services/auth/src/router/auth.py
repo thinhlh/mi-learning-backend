@@ -39,23 +39,57 @@ async def login(email: str = Body(), password: str = Body(), db: Session = Depen
             token_expire=timedelta(hours=60)
         )
 
-        return Token(
-            access_token=access_token,
-            refresh_token=refesh_token,
-            token_type=TokenType.BEARER
+        return {
+            "success": True,
+            "message": None,
+            "data": Token(
+                access_token=access_token,
+                refresh_token=refesh_token,
+                token_type=TokenType.BEARER
+            )
+        }
+
+
+@router.post("/register")
+async def register(user_create: UserCreate = Body(), db: Session = Depends(get_db)):
+    user = user_crud.create_user(user_create, db=db)
+
+    if user:
+        access_token = auth.create_token(
+            TokenPayload(
+                sub=str(user.id),
+                scopes=[user.role]
+            ),
+            token_expire=timedelta(minutes=60)
+        )
+        refesh_token = auth.create_token(
+            TokenPayload(
+                sub=str(user.id),
+                scopes=[user.role]
+            ),
+            token_expire=timedelta(hours=60)
         )
 
+        return {
+            "success": True,
+            "message": None,
+            "data": Token(
+                access_token=access_token,
+                refresh_token=refesh_token,
+                token_type=TokenType.BEARER
+            )
+        }
 
-@router.post("/register", response_model=UserOut)
-async def register(user_create: UserCreate = Body(), db: Session = Depends(get_db)):
-    return user_crud.create_user(user_create, db=db)
 
-
-@router.get("/check-permissions", response_model=UserOut)
+@router.get("/check-permissions")
 async def check_permission(scopes: list[str] = Body(), db: Session = Depends(get_db), token: str = Depends(auth.oauth2_scheme)) -> User:
     user = auth.get_current_user(
         security_scopes=SecurityScopes(scopes),
         db=db,
         token=token
     )
-    return user
+    return {
+        "success": True,
+        "message": None,
+        "data": user
+    }

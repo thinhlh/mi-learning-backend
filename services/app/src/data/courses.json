@@ -2,7 +2,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/822444_a6db.jpg",
     "description": "Welcome to the best online course for learning how to create websites using Python and Django! In this course we take you from zero to hero in web development with Django! Whether you want to change career paths, expand your current skill set, start your own entrepreneurial business, become a consultant, or just want to learn, this is the course for you!",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/822444_a6db.jpg",
     "length": 68400,
     "price": 20.99,
     "title": "Django 4 and Python Full-Stack Developer Masterclass",
@@ -97,7 +97,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/480x270/2776760_f176_10.jpg",
     "description": "Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/480x270/2776760_f176_10.jpg",
     "length": 216000,
     "price": 72.99,
     "title": "100 Days of Code: The Complete Python Pro Bootcamp for 2022",
@@ -192,7 +192,7 @@
   {
     "background": "https://i0.wp.com/resocoder.com/wp-content/uploads/2019/10/thumbnail-5.png?fit=300%2C169&",
     "description": "State management is needed by every app. No matter the size of your project, you need to store and do something with all the data present in your app. If you're building something small, you might be able to pull it off with StatefulWidgets. As the difficulty of the project starts to grow, you have to start looking for more maintainable solutions...The flutter_bloc package is a reactive and predictable way to manage your app's state. This package takes everything that's awesome about the BLoC (business logic component) pattern and puts it into a simple-to-use library with amazing tooling. After many months of development, the Bloc package has arrived at its first stable version - 1.0.0.",
-    "icon": "",
+    "icon": "https://i0.wp.com/resocoder.com/wp-content/uploads/2019/10/thumbnail-5.png?fit=300%2C169&",
     "length": 36000,
     "price": 15.99,
     "title": "Flutter Bloc Library Tutorial - Reactive State Management",
@@ -287,7 +287,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/4015616_32a9_2.jpg",
     "description": "Learn FastAPI, Python, REST APIs, Bootstrap, SQLite, Jinja, and web security; all while creating 3 full-stack web apps!",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/4015616_32a9_2.jpg",
     "length": 97200,
     "price": 20.99,
     "title": "The FastAPI SuperGuide: Create 3 Real-World FastAPI Apps",
@@ -382,7 +382,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/1172526_e914_8.jpg",
     "description": "Welcome to the Ethereum Blockchain Developer Bootcamp With Solidity. The only course you'll need to become an Ethereum blockchain developer. With over 1,900 5 stars reviews, this course is one of the highest-rated Ethereum blockchain development courses online.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/1172526_e914_8.jpg",
     "length": 43200,
     "price": 55.99,
     "title": "Ethereum Blockchain Developer Bootcamp With Solidity (2022)",
@@ -477,7 +477,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
     "description": "Welcome to the Python and Django Full Stack Web Developer Bootcamp! In this course we cover everything you need to know to build a website using Python, Django, and many more web technologies! Whether you want to change career paths, expand your current skill set, start your own entrepreneurial business, become a consultant, or just want to learn, this is the course for you!",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
     "length": 90000,
     "price": 20.99,
     "title": "Python and Django Full Stack Web Developer Bootcamp",
@@ -572,7 +572,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/4265666_cd12_10.jpg",
     "description": "FastAPI is one of the most modern, fast and efficient framework for building APIs. If you want to learn how to built high performance APIs then FastAPI should be your go to framework. In this course we will learn FastAPI right from scratch and by then end of the course you will be able to build a complete API which supports authentication, JWT tokens, relational models and protected API routes.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/4265666_cd12_10.jpg",
     "length": 54000,
     "price": 30.99,
     "title": "The Complete FastAPI Course With OAuth & JWT Authentication",
@@ -667,7 +667,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/1289478_5831_10.jpg",
     "description": "Welcome to the Complete iOS App Development Bootcamp. With over 39,000 5 star ratings and a 4.8 average my iOS course is the HIGHEST RATED iOS Course in the history of Udemy! At 55+ hours, this iOS 13 course is the most comprehensive iOS development course online! This Swift 5.1 course is based on our in-person app development bootcamp in London, where we've perfected the curriculum over 4 years of in-person teaching. Our complete app development bootcamp teaches you how to code using Swift 5.1 and build beautiful iOS 13 apps for iPhone and iPad. Even if you have ZERO programming experience. I'll take you step-by-step through engaging and fun video tutorials and teach you everything you need to know to succeed as an iOS app developer. The course includes 55+ hours of HD video tutorials and builds your programming knowledge while making real world apps. e.g. Pokemon Go, Whatsapp, QuizUp and Yahoo Weather.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/1289478_5831_10.jpg",
     "length": 198000,
     "price": 55.99,
     "title": "iOS 11 & Swift 4 - The Complete iOS App Development Bootcamp",
@@ -762,7 +762,7 @@
   {
     "background": "https://goldinlocks.github.io/Introduction-to-A-B-testing-in-python/abpro.png",
     "description": "This course is all about A/B testing. A/B testing is used everywhere. Marketing, retail, newsfeeds, online advertising, and more. A/B testing is all about comparing things. If you’re a data scientist, and you want to tell the rest of the company, “logo A is better than logo B”, well you can’t just say that without proving it using numbers and statistics. Traditional A/B testing has been around for a long time, and it’s full of approximations and confusing definitions. In this course, while we will do traditional A/B testing in order to appreciate its complexity, what we will eventually get to is the Bayesian machine learning way of doing things.",
-    "icon": "",
+    "icon": "https://goldinlocks.github.io/Introduction-to-A-B-testing-in-python/abpro.png",
     "length": 36000,
     "price": 7.99,
     "title": "Bayesian Machine Learning in Python: A/B Testing",
@@ -857,7 +857,7 @@
   {
     "background": "https://i0.wp.com/resocoder.com/wp-content/uploads/2019/08/thumbnail-3.png?resize=300%2C169&ssl=1",
     "description": "Keeping your code clean and tested are the two most important development practices. In Flutter, this is even more true than with other frameworks. On one hand, it's nice to hack a quick app together, on the other hand, larger projects start falling apart when you mix the business logic everywhere. Even state management patterns like BLoC are not sufficient in themselves to allow for easily extendable codebase. While the essence of clean architecture remains the same for every framework, the devil lies in the details. Principles like SOLID and YAGNI sound nice, you may even understand what they mean, but it won't do you any good if you don't know how to start writing clean code.",
-    "icon": "",
+    "icon": "https://i0.wp.com/resocoder.com/wp-content/uploads/2019/08/thumbnail-3.png?resize=300%2C169&ssl=1",
     "length": 86400,
     "price": 20.99,
     "title": "Flutter TDD Clean Architecture Course",
@@ -952,7 +952,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
     "description": "This course aims to give student fundamental knowledge about ios development with swift language.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
     "length": 198000,
     "price": 55.99,
     "title": "iOS & Swift - The Complete iOS App Development Bootcamp for Developer",
@@ -1047,7 +1047,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/1693472_e1d5_13.jpg",
     "description": "Visually learn SwiftUI 3 and build top-notch iOS 15, iPadOS mobile apps, Apple Watch apps, and even macOS desktop applications. This complete iOS application development course is designed to teach you how to become an advanced multiplatform app developer using Apple's native user interface framework: SwiftUI. This class takes learning programming concepts through a project-based approach. By taking this class, you will improve your app design and development skills while creating many hands-on applications.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/1693472_e1d5_13.jpg",
     "length": 108000,
     "price": 19.99,
     "title": "SwiftUI Masterclass 2022 - iOS 15 App Development & Swift 5",
@@ -1142,7 +1142,7 @@
   {
     "background": "https://i0.wp.com/resocoder.com/wp-content/uploads/2022/03/thumbnail_flutter_testing_2.png?fit=300%2C169&",
     "description": "How can you make sure that an app does exactly what it should do without any weird unexpected surprises? Well, you test it, of course. You could test everything manually by launching the app, using it, and trying your best to make the app blow up with errors. Or you can write a bunch of automated tests, which is arguably a more time-efficient and thorough way to test your apps. Let’s take a look at unit, widget, and integration tests in the video tutorial above.",
-    "icon": "",
+    "icon": "https://i0.wp.com/resocoder.com/wp-content/uploads/2022/03/thumbnail_flutter_testing_2.png?fit=300%2C169&",
     "length": 14400,
     "price": 4.99,
     "title": "Flutter Testing Guide for Beginners",
@@ -1237,7 +1237,7 @@
   {
     "background": "https://funix.edu.vn/wp-content/uploads/2021/08/machine-learning.jpg",
     "description": "Learn Data Science, Data Analysis, Machine Learning (Artificial Intelligence) and Python with Tensorflow, Pandas & more!",
-    "icon": "",
+    "icon": "https://funix.edu.vn/wp-content/uploads/2021/08/machine-learning.jpg",
     "length": 57600,
     "price": 80.99,
     "title": "Complete Machine Learning & Data Science Bootcamp 2022",
@@ -1332,7 +1332,7 @@
   {
     "background": "https://i0.wp.com/resocoder.com/wp-content/uploads/2022/04/riverpod2_thumbnail.jpeg?fit=1921%2C1081&",
     "description": "If you’ve been at least a bit active when it comes to Flutter packages in the last year or so, you’ve surely heard about Riverpod, a reactive caching and data-binding, or as some would say, state management package that is sort of an upgrade of the beloved Provider. I actually covered it with a tutorial quite some time ago when its API was still unstable.Riverpod has come a long way since then - it’s much more mature, helpful, and versatile. All these changes naturally mean that it’s time for a new tutorial to prepare you to fully utilize the power of Riverpod 2.0 and, most likely, also its upcoming versions.",
-    "icon": "",
+    "icon": "https://i0.wp.com/resocoder.com/wp-content/uploads/2022/04/riverpod2_thumbnail.jpeg?fit=1921%2C1081&",
     "length": 3600,
     "price": 2.99,
     "title": "Riverpod 2.0 – Complete Guide (Flutter Tutorial)",
@@ -1427,7 +1427,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/629302_8a2d_2.jpg",
     "description": "This course is aimed at complete beginners who have never programmed before, as well as existing programmers who want to increase their career options by learning Python. The fact is, Python is one of the most popular programming languages in the world – Huge companies like Google use it in mission critical applications like Google Search. And Python is the number one language choice for machine learning, data science and artificial intelligence. To get those high paying jobs you need an expert knowledge of Python, and that’s what you will get from this course.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/629302_8a2d_2.jpg",
     "length": 252000,
     "price": 99.99,
     "title": "Learn Python Programming Masterclass",
@@ -1522,7 +1522,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/4015616_32a9_2.jpg",
     "description": "And to make that easier, you would typically use a framework like Django - simply because that allows you to focus on your core business logic and you don't need to re-invent the wheel and implement all the nitty-gritty technical details from scratch. And this course is about Django - the most popular Python web development framework out there!",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/4015616_32a9_2.jpg",
     "length": 82800,
     "price": 20.99,
     "title": "Python Django - The Practical Guide",
@@ -1617,7 +1617,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
     "description": "Welcome to the Complete iOS App Development Bootcamp. With over 39,000 5 star ratings and a 4.8 average my iOS course is the HIGHEST RATED iOS Course in the history of Udemy! At 55+ hours, this iOS 13 course is the most comprehensive iOS development course online! This Swift 5.1 course is based on our in-person app development bootcamp in London, where we've perfected the curriculum over 4 years of in-person teaching. Our complete app development bootcamp teaches you how to code using Swift 5.1 and build beautiful iOS 13 apps for iPhone and iPad. Even if you have ZERO programming experience. I'll take you step-by-step through engaging and fun video tutorials and teach you everything you need to know to succeed as an iOS app developer. The course includes 55+ hours of HD video tutorials and builds your programming knowledge while making real world apps. e.g. Pokemon Go, Whatsapp, QuizUp and Yahoo Weather.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
     "length": 176400,
     "price": 84.99,
     "title": "iOS & Swift - The Complete iOS App Development Bootcamp",
@@ -1712,7 +1712,7 @@
   {
     "background": "https://i0.wp.com/resocoder.com/wp-content/uploads/2020/02/thumbnail_environments.png?fit=300%2C169&",
     "description": "You are tweaking an app which is already in production. You are implementing code that allows a user to delete his data. All of a sudden, you realize that you made a huge mistake! By providing a wrong ID, you accidentally deleted data of an actual user! Horror stories like this one can truly become a reality if you don't have separate production and development environments. Thankfully, it's very easy to set all of this up with Codemagic which is a CI/CD service dedicated specifically for Flutter apps.",
-    "icon": "",
+    "icon": "https://i0.wp.com/resocoder.com/wp-content/uploads/2020/02/thumbnail_environments.png?fit=300%2C169&",
     "length": 3600,
     "price": 2.99,
     "title": "Environments (Flavors) in Flutter with Codemagic CI/CD",
@@ -1807,7 +1807,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/4355412_2065_5.jpg",
     "description": "FastAPI and Python are two of the hottest technologies in the market for building high performing APIs. By the end of this course, you will have built production ready RESTful APIs, a production ready Full Stack application, setup production ready databases, and deployed your FastAPI application so the world can use YOUR app.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/4355412_2065_5.jpg",
     "length": 122400,
     "price": 62.99,
     "title": "FastAPI - The Complete Course 2022 (Beginner + Advanced)",
@@ -1902,7 +1902,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/480x270/4211990_0ea9_2.jpg",
     "description": "Welcome to the Complete iOS App Development Bootcamp. With over 39,000 5 star ratings and a 4.8 average my iOS course is the HIGHEST RATED iOS Course in the history of Udemy! At 55+ hours, this iOS 13 course is the most comprehensive iOS development course online! This Swift 5.1 course is based on our in-person app development bootcamp in London, where we've perfected the curriculum over 4 years of in-person teaching. Our complete app development bootcamp teaches you how to code using Swift 5.1 and build beautiful iOS 13 apps for iPhone and iPad. Even if you have ZERO programming experience. I'll take you step-by-step through engaging and fun video tutorials and teach you everything you need to know to succeed as an iOS app developer. The course includes 55+ hours of HD video tutorials and builds your programming knowledge while making real world apps. e.g. Pokemon Go, Whatsapp, QuizUp and Yahoo Weather.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/480x270/4211990_0ea9_2.jpg",
     "length": 57600,
     "price": 9.99,
     "title": "Complete DApp - Solidity & React - Blockchain Development",
@@ -1997,7 +1997,7 @@
   {
     "background": "https://i0.wp.com/resocoder.com/wp-content/uploads/2020/03/thumbnail_ddd_1.png?fit=1920%2C1080&",
     "description": "Flutter apps need structure that is easy to orient yourself in, testable and maintainable. It also wouldn't hurt if the way you architect your Flutter apps allows for adding new features without a headache. Especially with a client-centric service such as Firebase Firestore, it's extremely important to keep your code clean. Let's do it by following the principles of Domain-Driven Design.",
-    "icon": "",
+    "icon": "https://i0.wp.com/resocoder.com/wp-content/uploads/2020/03/thumbnail_ddd_1.png?fit=1920%2C1080&",
     "length": 43200,
     "price": 18.99,
     "title": "Flutter Firebase & DDD Course – Domain-Driven Design Principles",
@@ -2092,7 +2092,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/480x270/2776760_f176_10.jpg",
     "description": "Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/480x270/2776760_f176_10.jpg",
     "length": 50400,
     "price": 72.99,
     "title": "10 Days of Code: The Complete Python Pro Bootcamp for 2023",
@@ -2187,7 +2187,7 @@
   {
     "background": "https://img-b.udemycdn.com/course/240x135/4698152_7a45_3.jpg",
     "description": "Tokens are often touted as investment opportunities but the primary role of tokens on web3 platforms is to capture the value generated by the platforms and distribute value and control among the network participants to incentivize them so that they behave in a way that contributes to the smooth functioning and growth of the ecosystem itself.",
-    "icon": "",
+    "icon": "https://img-b.udemycdn.com/course/240x135/4698152_7a45_3.jpg",
     "length": 3600,
     "price": 10.99,
     "title": "Introduction to Token Engineering for Web3 Platforms",
@@ -2282,7 +2282,7 @@
   {
     "background": "https://img-c.udemycdn.com/course/240x135/2769460_e60c.jpg",
     "description": "Complete Data Science Training: Mathematics, Statistics, Python, Advanced Statistics in Python, Machine & Deep Learning",
-    "icon": "",
+    "icon": "https://img-c.udemycdn.com/course/240x135/2769460_e60c.jpg",
     "length": 32400,
     "price": 43.99,
     "title": "The Data Science Course 2022: Complete Data Science Bootcamp",

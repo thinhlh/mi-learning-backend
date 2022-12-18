@@ -54,6 +54,14 @@ export class UserService {
     });
   }
 
+  async findAllStudents(): Promise<User[]> {
+    return this.userRepository.find({
+      where: {
+        role: Role.STUDENT
+      }
+    })
+  }
+
   async findOne(id: string): Promise<User> {
     return this.userRepository.findOneBy({ id: id });
   }

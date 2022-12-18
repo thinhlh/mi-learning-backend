@@ -22,6 +22,11 @@ export class CourseController {
         return this.courseService.getCourses(query);
     }
 
+    @Get("/courses/bulk")
+    async getCoursesBulk(): Promise<CourseResponseDTO[]> {
+        return this.courseService.getCoursesBulk()
+    }
+
     @Get("/course/:id")
     @Roles(Role.STUDENT)
     async getCourseDetail(@Headers(USER_KEY) user: string, @Param('id') courseId: string): Promise<CourseResponseDTO> {

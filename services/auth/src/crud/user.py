@@ -55,6 +55,5 @@ class UserCRUD():
             return user
 
         except sqlalchemy.exc.SQLAlchemyError as e:
-            print(e)
             err = ' '.join(e.args)
             raise HTTPException(status_code=400, detail=err)

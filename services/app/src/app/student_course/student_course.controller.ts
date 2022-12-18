@@ -10,9 +10,9 @@ export class StudentCourseController {
 
     }
 
-    @Post("/purchase/:courseId")
+    @Post("/purchase")
     @Roles(Role.STUDENT)
-    async enrollCourse(@Headers(USER_KEY) user: string, @Param('courseId') courseId: string) {
+    async enrollCourse(@Headers(USER_KEY) user: string, @Query('courseId') courseId: string) {
         return this.studentCourseService.purchaseCourse(user, courseId)
     }
 }

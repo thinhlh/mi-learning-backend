@@ -1,7 +1,8 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Header, Headers } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { USER_KEY } from 'src/config/guard/auth.guard';
 
 @Controller()
 export class UserController {
@@ -15,6 +16,11 @@ export class UserController {
   @Get("/users")
   findAll() {
     return this.userService.findAll();
+  }
+
+  @Get("/user/me")
+  getUserDetail(@Headers(USER_KEY) user: string) {
+    return this.userService.findOne(user)
   }
 
   @Get('/user/:id')
