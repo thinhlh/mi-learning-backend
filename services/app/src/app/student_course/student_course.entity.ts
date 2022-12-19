@@ -6,10 +6,10 @@ import { Student } from "../student/student.entity";
 @Entity()
 export class StudentCourse {
 
-    @PrimaryColumn("uuid")
+    @PrimaryColumn("uuid", { name: "student_id" })
     studentId: string
 
-    @PrimaryColumn("uuid")
+    @PrimaryColumn("uuid", { name: "course_id" })
     courseId: string
 
     @Column({ nullable: false, default: false })
@@ -19,9 +19,11 @@ export class StudentCourse {
     enrolled: boolean
 
     @ManyToOne(() => Student, (student) => student.studentCourses)
+    @JoinColumn({ name: "student_id" })
     student: Student
 
     @ManyToOne(() => Course, (course) => course.studentCourses)
+    @JoinColumn({ name: "course_id" })
     course: Course
 
     @OneToMany(() => Rating, (rating) => rating.studentCourse)

@@ -2,6 +2,7 @@ import { Column, Entity, JoinColumn, OneToMany, OneToOne, PrimaryColumn, Primary
 import { Schedule } from "../schedule/schedule.entity";
 import { StudentCourse } from "../student_course/student_course.entity";
 import { User } from "../user/user.entity";
+import { StudentLesson } from "../student_lesson/student_lesson.entity";
 
 @Entity()
 export class Student {
@@ -18,4 +19,7 @@ export class Student {
 
     @OneToMany(() => StudentCourse, (studentCourse) => studentCourse.student)
     studentCourses: StudentCourse[];
+
+    @OneToMany(() => StudentLesson, (studentLesson) => studentLesson.student)
+    studentLessons: StudentLesson[];
 }

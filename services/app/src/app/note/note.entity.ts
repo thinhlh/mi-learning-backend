@@ -1,5 +1,6 @@
 import { Type } from "class-transformer";
-import { Column, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { StudentLesson } from "../student_lesson/student_lesson.entity";
 
 @Entity()
 export class Note {
@@ -12,6 +13,9 @@ export class Note {
     @UpdateDateColumn()
     @Type(() => Number)
     updatedAt: Date;
+
+    @ManyToOne(() => StudentLesson, (studentLesson) => studentLesson.notes)
+    studentLesson: StudentLesson;
 
     // @ManyToOne(fetch = FetchType.LAZY)
     // @Getter(value = AccessLevel.NONE)

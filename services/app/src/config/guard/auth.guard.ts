@@ -18,9 +18,7 @@ export class AppGuard implements CanActivate {
         const requiredRoles = this.reflector.getAllAndOverride<Role[]>(ROLES_KEY, [
             context.getHandler(),
             context.getClass(),
-        ]);
-
-        if (!requiredRoles) return true;
+        ]) ?? [];
 
         const request = context.switchToHttp().getRequest() as Request;
         try {
@@ -36,10 +34,14 @@ export class AppGuard implements CanActivate {
 
 
             if (result.status >= 200 && result.status < 300) {
-                request.headers[USER_KEY] = result.data.id
+                request.headers[USER_KEY] = result.data.data.id
                 return true
             } else {
-                return false
+                if (requiredRoles.length == 0) {
+                    return true
+                } else {
+                    return false
+                }
             }
         } catch (e) {
             return false

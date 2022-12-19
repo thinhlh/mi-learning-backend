@@ -13,6 +13,16 @@ export class StudentCourseService {
 
     }
 
+    async isStudentEnrolledCourse(studentId: string, courseId: string): Promise<boolean> {
+        const studentCourse = await this.studentCourseRepository.findOneBy({ courseId: courseId, studentId: studentId });
+
+        if (!studentCourse) {
+            return false
+        } else {
+            return studentCourse.enrolled
+        }
+    }
+
 
     async purchaseCourse(studentId: string, courseId: string): Promise<boolean> {
         var studentCourse = await this.getOrCreateStudentCourse(studentId, courseId);
@@ -39,6 +49,9 @@ export class StudentCourseService {
             studentCourse = this.studentCourseRepository.create({ courseId: courseId, studentId: studentId })
             return this.studentCourseRepository.save(studentCourse)
         }
+    }
+
+    async getJoinedCourseIds(studentId: string): Promise<any> {
 
     }
 }

@@ -3,6 +3,8 @@ import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { USER_KEY } from 'src/config/guard/auth.guard';
+import { ROLES_KEY, Roles } from 'src/config/guard/role.decorator';
+import { Role } from '../role/role';
 
 @Controller()
 export class UserController {
@@ -20,6 +22,7 @@ export class UserController {
 
   @Get("/user/me")
   getUserDetail(@Headers(USER_KEY) user: string) {
+    console.log(user)
     return this.userService.findOne(user)
   }
 

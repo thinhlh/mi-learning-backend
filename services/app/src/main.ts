@@ -33,8 +33,7 @@ async function appConfig(app: NestExpressApplication) {
     transform: true, // Automatically transform to desired type,
     transformOptions: {
       enableImplicitConversion: true,
-      excludeExtraneousValues: true,
-      exposeUnsetFields: false,
+      // excludeExtraneousValues: true,
     }
   }))
   // app.useGlobalGuards(new AppGuard(new Reflector()));

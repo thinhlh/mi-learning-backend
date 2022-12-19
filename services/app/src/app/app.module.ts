@@ -21,6 +21,9 @@ import { UserModule } from './user/user.module';
 import { HttpModule, HttpService } from '@nestjs/axios';
 import { APP_GUARD } from '@nestjs/core';
 import { AppGuard } from 'src/config/guard/auth.guard';
+import { NoteModule } from './note/note.module';
+import { StudentLessonModule } from './student_lesson/student_lesson.module';
+import { StudentModule } from './student/student.module';
 
 @Module({
   imports: [
@@ -58,9 +61,12 @@ import { AppGuard } from 'src/config/guard/auth.guard';
     CategoryModule,
     ArticleModule,
     CourseModule,
+    NoteModule,
     LessonModule,
     SectionModule,
+    StudentModule,
     StudentCourseModule,
+    StudentLessonModule,
     RatingModule,
     UserModule,
     DataInitializerModule,

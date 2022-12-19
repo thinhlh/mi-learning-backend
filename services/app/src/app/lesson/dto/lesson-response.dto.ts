@@ -6,7 +6,7 @@ export class VideoLesson {
 }
 export class TestLesson { }
 
-export class LesosnMetaData {
+export class LessonMetaData {
     notes: Note[];
     finished: boolean;
     playback: number
@@ -16,5 +16,5 @@ export class LessonResposeDTO {
     title: string;
     lessonOrder: number;
     videoLesson: VideoLesson;
-    metadata: LesosnMetaData
+    metadata: LessonMetaData
 }

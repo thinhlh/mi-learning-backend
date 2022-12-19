@@ -1,7 +1,8 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { Not } from "typeorm"
 import { I18nService } from "nestjs-i18n";
-import { ArrayContains, EntityManager, In, Repository } from "typeorm";
+import { ArrayContains, EntityManager, FindOperator, FindOptionsUtils, In, Repository } from "typeorm";
 import { Category } from "../category/category.entity";
 import { CategoryService } from "../category/category.service";
 import { CreateCategoryDTO } from "../category/dto/create-category.dto";
@@ -18,11 +19,12 @@ import { UpdateCourseDTO } from "./dto/update-course.dto";
 import { CourseResponseDTO } from "./dto/course-response.dto";
 import { SectionResponseDTO } from "../section/dto/section-response.dto";
 import { classToPlain, plainToClass } from "class-transformer";
-import { GetCoursesQuery } from "./dto/get-course.query";
+import { GetCoursesQuery, GetCoursesType } from "./dto/get-course.query";
 import { TeacherService } from "../teacher/teacher.service";
 import { Teacher } from "../teacher/teacher.entity";
 import { Rating } from "../rating/rating.entity";
 import { VideoLesson } from "../lesson/dto/lesson-response.dto";
+import { StudentCourseService } from "../student_course/student_course.service";
 
 @Injectable()
 export class CourseService {
@@ -31,6 +33,7 @@ export class CourseService {
         @InjectRepository(Course) private readonly courseRepository: Repository<Course>,
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
         @InjectRepository(Lesson) private readonly lessonRepository: Repository<Lesson>,
+        private readonly studentCourseService: StudentCourseService,
         private readonly categoryService: CategoryService,
         private readonly teacherService: TeacherService,
         private readonly i18n: I18nService,
@@ -68,10 +71,6 @@ export class CourseService {
         const course = await this.courseRepository.findOne({
             where: {
                 id: courseId,
-                // studentCourses: {
-                //     courseId: courseId,
-                //     // studentId: user
-                // }
             },
             select: {
                 studentCourses: false,
@@ -107,8 +106,37 @@ export class CourseService {
         return courses;
     }
 
-    async getCoursesBulk(): Promise<CourseResponseDTO[]> {
+    async getCoursesBulk(studentId: string, getCourseQuery: GetCoursesQuery): Promise<CourseResponseDTO[]> {
+        const notJoinedCoursesIds = (await this.courseRepository.query(
+            `(
+                SELECT id FROM COURSE
+                EXCEPT
+                SELECT course_id FROM student_course where student_id = $1
+            )
+
+            UNION
+
+            (SELECT course_id from student_course where student_id = $1 and enrolled = false);`, [studentId]
+        )).map((res) => res.id)
+
+
+        const joinedCoursesIds = (await this.courseRepository.find({
+            select: {
+                id: true
+            },
+            where: {
+                studentCourses: {
+                    studentId: studentId,
+                    enrolled: true
+                }
+            }
+        })).map(course => course.id)
+
+
         const courses = await this.courseRepository.find({
+            where: {
+                id: In(getCourseQuery.type == GetCoursesType.ME ? joinedCoursesIds : notJoinedCoursesIds)
+            },
             relations: {
                 studentCourses: {
                     ratings: true
