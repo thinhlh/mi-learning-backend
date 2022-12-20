@@ -6,3 +6,5 @@ psycopg2
 python-dotenv
 python-jose
 passlib[bcrypt]
+httpx
+pytest

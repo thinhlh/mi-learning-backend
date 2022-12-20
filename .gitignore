@@ -45,3 +45,4 @@ __pycache__
 
 # Python
 env/
+__init__.py
