@@ -29,3 +29,23 @@ services:
       - 8000:80
     links:
       - db
+
+  # app:
+  #   build: 
+  #     context: .
+  #     dockerfile: ./docker/app/Dockerfile
+  #   image: app
+  #   container_name: mi-learning-app
+  #   env_file:
+  #     - "./env/dev.env"
+  #   environment:
+  #     - POSTGRES_HOST=db
+  #     - AUTH_HOST=auth
+  #   depends_on:
+  #     - auth
+  #   ports:
+  #     - 8080:3000
+  #   links: 
+  #     - db
+  #     - auth
+  #   restart: on-failure 

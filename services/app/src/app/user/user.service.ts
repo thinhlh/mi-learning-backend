@@ -33,7 +33,7 @@ export class UserService {
 
     try {
       const result = await lastValueFrom(
-        this.httpService.post('http://localhost:8000/register', createdUser)
+        this.httpService.post(`http://${process.env.AUTH_HOST ?? 'localhost'}:8000/register`, createdUser)
       )
 
       if (result.status >= 200 && result.status < 400) {

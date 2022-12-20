@@ -24,7 +24,7 @@ export class AppGuard implements CanActivate {
         try {
             const token = request.headers.authorization.trim();
             const result = await lastValueFrom(
-                this.httpService.get('http://localhost:8000/check-permissions', {
+                this.httpService.get(`http://${process.env.AUTH_HOST ?? 'localhost'}:8000/check-permissions`, {
                     data: requiredRoles.map(role => role.toString()),
                     headers: {
                         "Authorization": token
