@@ -12,9 +12,6 @@ services:
     ports:
       - 5433:5432
       - 5432:5432
-    profiles:
-      - db
-      - deps
 
   auth:
     build: 
@@ -32,5 +29,3 @@ services:
       - 8000:80
     links:
       - db
-    profiles:
-      - deps

@@ -22,7 +22,6 @@ export class UserController {
 
   @Get("/user/me")
   getUserDetail(@Headers(USER_KEY) user: string) {
-    console.log(user)
     return this.userService.findOne(user)
   }
 

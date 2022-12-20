@@ -26,6 +26,8 @@ import { Rating } from "../rating/rating.entity";
 import { VideoLesson } from "../lesson/dto/lesson-response.dto";
 import { StudentCourseService } from "../student_course/student_course.service";
 import { NoteService } from "../note/note.service";
+import { StudentLesson } from "../student_lesson/student_lesson.entity";
+import { StudentLessonService } from "../student_lesson/student_lesson.service";
 
 @Injectable()
 export class CourseService {
@@ -35,6 +37,7 @@ export class CourseService {
         @InjectRepository(Section) private readonly sectionRepository: Repository<Section>,
         @InjectRepository(Lesson) private readonly lessonRepository: Repository<Lesson>,
         private readonly studentCourseService: StudentCourseService,
+        private readonly studentLessonService: StudentLessonService,
         private readonly categoryService: CategoryService,
         private readonly teacherService: TeacherService,
         private readonly noteService: NoteService,
@@ -73,9 +76,12 @@ export class CourseService {
         const course = await this.courseRepository.findOne({
             where: {
                 id: courseId,
+                studentCourses: {
+                    studentId: user
+                }
             },
             select: {
-                studentCourses: false,
+                studentCourses: true,
             },
             relations: {
                 studentCourses: {
@@ -109,43 +115,78 @@ export class CourseService {
     }
 
     async getCoursesBulk(studentId: string, getCourseQuery: GetCoursesQuery): Promise<CourseResponseDTO[]> {
-        const notJoinedCoursesIds = (await this.courseRepository.query(
-            `(
-                SELECT id FROM COURSE
-                EXCEPT
-                SELECT course_id FROM student_course where student_id = $1
-            )
 
-            UNION
+        let courseIds: string[] = []
+        switch (getCourseQuery.type) {
+            case GetCoursesType.ALL:
+            case GetCoursesType.FOR_YOU: {
+                courseIds = (await this.courseRepository.query(
+                    `(
+                        SELECT id FROM COURSE
+                        EXCEPT
+                        SELECT course_id FROM student_course where student_id = $1
+                    )
+        
+                    UNION
+        
+                    (SELECT course_id from student_course where student_id = $1 and enrolled = false)` + (getCourseQuery.type == GetCoursesType.FOR_YOU ? `LIMIT 3` : ''), [studentId]
 
-            (SELECT course_id from student_course where student_id = $1 and enrolled = false)` + (getCourseQuery.type == GetCoursesType.FOR_YOU ? `LIMIT 3` : ''), [studentId]
-
-        )).map((res) => res.id)
-
-
-        const joinedCoursesIds = (await this.courseRepository.find({
-            select: {
-                id: true
-            },
-            where: {
-                studentCourses: {
-                    studentId: studentId,
-                    enrolled: true
-                }
+                )).map((res) => res.id)
+                break;
+            } case GetCoursesType.ME: {
+                courseIds = (await this.courseRepository.find({
+                    select: {
+                        id: true
+                    },
+                    where: {
+                        studentCourses: {
+                            studentId: studentId,
+                            enrolled: true
+                        }
+                    }
+                })).map(course => course.id)
+                break;
+            } case GetCoursesType.SAVED: {
+                courseIds = (await this.courseRepository.find({
+                    select: {
+                        id: true
+                    },
+                    where: {
+                        studentCourses: {
+                            studentId: studentId,
+                            saved: true
+                        }
+                    }
+                })).map((res) => res.id)
+                break;
             }
-        })).map(course => course.id)
+            default: {
+                courseIds = (await this.courseRepository.find({
+                    select: {
+                        id: true
+                    },
+                })).map(course => course.id)
+                break;
+            }
+        }
 
 
         const courses = await this.courseRepository.find({
             where: {
-                id: In(getCourseQuery.type == GetCoursesType.ME ? joinedCoursesIds : notJoinedCoursesIds),
+                id: In(courseIds),
                 category: {
                     id: getCourseQuery.categoryId
                 }
             },
             relations: {
                 studentCourses: {
-                    ratings: true
+                    ratings: {
+                        studentCourse: {
+                            student: {
+                                user: true
+                            }
+                        }
+                    }
                 },
                 teacher: {
                     user: true
@@ -156,6 +197,7 @@ export class CourseService {
                 },
             }
         });
+
 
         return Promise.all(courses.map(async (course) => await this.mapCourseToDTO(course, studentId)));
     }
@@ -309,6 +351,8 @@ export class CourseService {
         })
     }
 
+    private
+
     private async mapCourseToDTO(course: Course, studentId?: string): Promise<CourseResponseDTO> {
         const ratings = course
             .studentCourses
@@ -322,6 +366,7 @@ export class CourseService {
         for (const rating of ratings) {
             ratingByStars[rating.value - 1] += 1
         }
+
 
         const totalRatings = ratings.reduce((prev, cur) => prev + cur.value, 0)
 
@@ -341,9 +386,12 @@ export class CourseService {
                     id: lesson.id,
                     lessonOrder: lesson.lessonOrder,
                     title: lesson.title,
-                    videoLesson: ({ length: 0, videoUrl: lesson.url }),
+                    videoLesson: ({
+                        length: Math.random() * 3600,
+                        videoUrl: lesson.url,
+                    }),
                     metadata: ({
-                        finished: Math.random() >= 0.5,
+                        finished: await this.studentLessonService.checkStudentFinishedLesson(studentId, lesson.id),
                         notes: await this.noteService.getNotesOfStudentOnLesson(studentId, lesson.id),
                         playback: 0
                     })
@@ -353,7 +401,13 @@ export class CourseService {
                 length: 3600
             }))),
             courseRatings: {
-                ratings: ratings,
+                ratings: ratings.map((rating) => ({
+                    id: rating.id,
+                    content: rating.content,
+                    value: rating.value,
+                    avatar: rating.studentCourse.student.user.avatar,
+                    name: rating.studentCourse.student.user.name,
+                })),
                 average: ratings.length == 0 ? 0 : totalRatings / ratings.length,
                 // Count the appearnce of each rating value and divide by the total of rating
                 ratingAverageByStar: ratingByStars.map((numberOfRatingByStar) => Math.floor((numberOfRatingByStar / (ratings.length == 0 ? 1 : ratings.length)) * 100))

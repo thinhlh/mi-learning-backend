@@ -33,8 +33,7 @@ export class DataInitializerModule implements OnModuleInit {
     async onModuleInit() {
         const categories = await this.createCategories();
         const articles = await this.createArticles();
-        let users = await this.userService.findAllStudents()
-
+        let users = await this.userService.findAll()
         if (users.length == 0) {
             users = await this.createUsers();
             users = await this.userService.findAllStudents()

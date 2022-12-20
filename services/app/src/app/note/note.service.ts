@@ -56,7 +56,6 @@ export class NoteService {
             await this.noteRepository.save(note);
             return true;
         } catch (e) {
-            console.log(e)
             throw new HttpException("Unable to update note", HttpStatus.BAD_REQUEST);
 
         }

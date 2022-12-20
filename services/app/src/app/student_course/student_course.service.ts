@@ -51,7 +51,12 @@ export class StudentCourseService {
         }
     }
 
-    async getJoinedCourseIds(studentId: string): Promise<any> {
+    async toggleSaveCourse(studnetId: string, courseId: string): Promise<boolean> {
+        var studentCourse = await this.getOrCreateStudentCourse(studnetId, courseId);
 
+        studentCourse.saved = !studentCourse.saved
+        this.studentCourseRepository.save(studentCourse);
+
+        return true;
     }
 }

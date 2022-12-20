@@ -1,4 +1,4 @@
-import { Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryColumn } from "typeorm";
 import { Student } from "../student/student.entity";
 import { Lesson } from "../lesson/lesson.entity";
 import { Note } from "../note/note.entity";
@@ -19,4 +19,7 @@ export class StudentLesson {
 
     @OneToMany(() => Note, (note) => note.studentLesson)
     notes: Note[]
+
+    @Column({ default: false })
+    finished: boolean
 }

@@ -15,4 +15,10 @@ export class StudentCourseController {
     async enrollCourse(@Headers(USER_KEY) user: string, @Query('courseId') courseId: string) {
         return this.studentCourseService.purchaseCourse(user, courseId)
     }
+
+    @Post("/course/save")
+    @Roles(Role.STUDENT)
+    async toggleSaveCourse(@Headers(USER_KEY) user: string, @Query('courseId') courseId: string) {
+        return this.studentCourseService.toggleSaveCourse(user, courseId);
+    }
 }

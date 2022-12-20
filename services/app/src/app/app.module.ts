@@ -24,6 +24,7 @@ import { AppGuard } from 'src/config/guard/auth.guard';
 import { NoteModule } from './note/note.module';
 import { StudentLessonModule } from './student_lesson/student_lesson.module';
 import { StudentModule } from './student/student.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
@@ -67,6 +68,7 @@ import { StudentModule } from './student/student.module';
     StudentModule,
     StudentCourseModule,
     StudentLessonModule,
+    ScheduleModule,
     RatingModule,
     UserModule,
     DataInitializerModule,
