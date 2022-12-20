@@ -7,8 +7,8 @@
     "price": 20.99,
     "title": "Django 4 and Python Full-Stack Developer Masterclass",
     "category": {
-      "title": "Flutter",
-      "background": "Flutter"
+      "title": "FastAPI",
+      "background": "FastAPI"
     },
     "sections": [
       {

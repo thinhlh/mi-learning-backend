@@ -25,6 +25,7 @@ import { Teacher } from "../teacher/teacher.entity";
 import { Rating } from "../rating/rating.entity";
 import { VideoLesson } from "../lesson/dto/lesson-response.dto";
 import { StudentCourseService } from "../student_course/student_course.service";
+import { NoteService } from "../note/note.service";
 
 @Injectable()
 export class CourseService {
@@ -36,6 +37,7 @@ export class CourseService {
         private readonly studentCourseService: StudentCourseService,
         private readonly categoryService: CategoryService,
         private readonly teacherService: TeacherService,
+        private readonly noteService: NoteService,
         private readonly i18n: I18nService,
 
     ) { }
@@ -89,7 +91,7 @@ export class CourseService {
             }
         })
 
-        return this.mapCourseToDTO(course)
+        return this.mapCourseToDTO(course, user)
     }
 
     async getCourses(query: GetCoursesQuery): Promise<Course[]> {
@@ -116,7 +118,8 @@ export class CourseService {
 
             UNION
 
-            (SELECT course_id from student_course where student_id = $1 and enrolled = false);`, [studentId]
+            (SELECT course_id from student_course where student_id = $1 and enrolled = false)` + (getCourseQuery.type == GetCoursesType.FOR_YOU ? `LIMIT 3` : ''), [studentId]
+
         )).map((res) => res.id)
 
 
@@ -135,7 +138,10 @@ export class CourseService {
 
         const courses = await this.courseRepository.find({
             where: {
-                id: In(getCourseQuery.type == GetCoursesType.ME ? joinedCoursesIds : notJoinedCoursesIds)
+                id: In(getCourseQuery.type == GetCoursesType.ME ? joinedCoursesIds : notJoinedCoursesIds),
+                category: {
+                    id: getCourseQuery.categoryId
+                }
             },
             relations: {
                 studentCourses: {
@@ -151,7 +157,7 @@ export class CourseService {
             }
         });
 
-        return courses.map((course) => this.mapCourseToDTO(course));
+        return Promise.all(courses.map(async (course) => await this.mapCourseToDTO(course, studentId)));
     }
 
     async createCourseBulk(createCourseBulkDTO: CreateCourseBulkDTO): Promise<Course> {
@@ -303,7 +309,7 @@ export class CourseService {
         })
     }
 
-    private mapCourseToDTO(course: Course): CourseResponseDTO {
+    private async mapCourseToDTO(course: Course, studentId?: string): Promise<CourseResponseDTO> {
         const ratings = course
             .studentCourses
             .map((studentCourse) => studentCourse.ratings)
@@ -328,20 +334,24 @@ export class CourseService {
             length: course.length,
             price: course.price,
             icon: course.icon,
-            sections: course.sections.map<SectionResponseDTO>((section) => ({
+            sections: await Promise.all(course.sections.map(async (section) => ({
                 id: section.id,
                 title: section.title,
-                lessons: section.lessons.map((lesson) => ({
+                lessons: await Promise.all(section.lessons.map(async (lesson) => ({
                     id: lesson.id,
                     lessonOrder: lesson.lessonOrder,
                     title: lesson.title,
                     videoLesson: ({ length: 0, videoUrl: lesson.url }),
-                    metadata: ({ finished: Math.random() >= 0.5, notes: [], playback: 0 })
-                })),
+                    metadata: ({
+                        finished: Math.random() >= 0.5,
+                        notes: await this.noteService.getNotesOfStudentOnLesson(studentId, lesson.id),
+                        playback: 0
+                    })
+                }))),
                 finishedLesson: 0,
                 totalLesson: section.lessons.length,
                 length: 3600
-            })),
+            }))),
             courseRatings: {
                 ratings: ratings,
                 average: ratings.length == 0 ? 0 : totalRatings / ratings.length,
@@ -354,8 +364,8 @@ export class CourseService {
                 avatar: course.teacher.user.avatar
             },
             category: course.category.title,
-            enrolled: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.enrolled),
-            saved: course.studentCourses == null ? false : course.studentCourses.some((studentCourse) => studentCourse.saved)
+            enrolled: course.studentCourses.some((studentCourse) => studentCourse.studentId == studentId && studentCourse.enrolled == true),
+            saved: course.studentCourses.some((studentCourse) => studentCourse.studentId == studentId && studentCourse.saved == true)
         })
         return response;
     }

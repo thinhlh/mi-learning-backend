@@ -16,7 +16,7 @@ export class NoteController {
     @Get("/notes/:lessonId")
     @Roles(Role.STUDENT)
     async getNotesOfStudentOnCourses(@Headers(USER_KEY) user: string, @Param('lessonId') lessonId: string): Promise<Note[]> {
-        return this.noteService.getNotesOfStudentOnCourse(user, lessonId)
+        return this.noteService.getNotesOfStudentOnLesson(user, lessonId)
     }
 
     @Post("/note")

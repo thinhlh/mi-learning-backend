@@ -10,9 +10,7 @@ export class Note {
     @Column()
     content: string;
 
-    @UpdateDateColumn()
-    @Type(() => Number)
-    updatedAt: Date;
+    createdAt: number;
 
     @ManyToOne(() => StudentLesson, (studentLesson) => studentLesson.notes)
     studentLesson: StudentLesson;

@@ -1,20 +1,21 @@
-import { Injectable } from "@nestjs/common";
+import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { Repository } from "typeorm";
 import { Note } from "./note.entity";
 import { InjectRepository } from "@nestjs/typeorm";
 import { CreateOrUpdateNoteDTO } from "./dto/create-or-update-note.dto";
+import { HttpService } from "@nestjs/axios";
+import { StudentLesson } from "../student_lesson/student_lesson.entity";
 
 @Injectable()
 export class NoteService {
     constructor(
-        @InjectRepository(Note) private readonly noteRepository: Repository<Note>
+        @InjectRepository(Note) private readonly noteRepository: Repository<Note>,
+        @InjectRepository(StudentLesson) private readonly studentLessonRepository: Repository<StudentLesson>
     ) {
 
     }
 
-    async getNotesOfStudentOnCourse(studentId: string, lessonId: string): Promise<Note[]> {
-
-
+    async getNotesOfStudentOnLesson(studentId: string, lessonId: string): Promise<Note[]> {
         return this.noteRepository.find({
             where: {
                 studentLesson: {
@@ -33,18 +34,31 @@ export class NoteService {
                     id: createOrUpdateNote.id
                 }
             })
+
+            note.content = createOrUpdateNote.content
+            note.createdAt = createOrUpdateNote.createdAt
         } else {
+            let studentLesson: StudentLesson
+            studentLesson = await this.studentLessonRepository.findOneBy({ lessonId: createOrUpdateNote.lessonId, studentId: studentId });
+            if (!studentLesson) {
+                const studentLessonCreate = this.studentLessonRepository.create({ lessonId: createOrUpdateNote.lessonId, studentId: studentId });
+                studentLesson = await this.studentLessonRepository.save(studentLessonCreate)
+            }
+
             note = this.noteRepository.create({
                 content: createOrUpdateNote.content,
-                studentLesson: {
-                    lessonId: createOrUpdateNote.lessonId,
-                    studentId: studentId
-                }
+                createdAt: createOrUpdateNote.createdAt,
+                studentLesson: studentLesson
             });
+        }
 
+        try {
             await this.noteRepository.save(note);
+            return true;
+        } catch (e) {
+            console.log(e)
+            throw new HttpException("Unable to update note", HttpStatus.BAD_REQUEST);
 
-            return true
         }
     }
 
