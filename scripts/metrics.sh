@@ -1,0 +1,1 @@
+docker run --rm -i grafana/k6 run --vus 5000 --duration 30s - <./scripts/metric-script.js

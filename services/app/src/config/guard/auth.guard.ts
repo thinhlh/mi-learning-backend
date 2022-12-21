@@ -44,7 +44,11 @@ export class AppGuard implements CanActivate {
                 }
             }
         } catch (e) {
-            return false
+            if (requiredRoles.length == 0) {
+                return true
+            } else {
+                return false
+            }
         }
     }
 
