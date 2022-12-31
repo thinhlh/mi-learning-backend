@@ -7,7 +7,7 @@ import { Teacher } from "../teacher/teacher.entity";
 @Entity()
 export class User {
     @PrimaryGeneratedColumn("uuid")
-    id: string;
+    id!: string;
 
     @Column({
         nullable: false,

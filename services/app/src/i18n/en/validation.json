@@ -2,7 +2,8 @@
   "notfound": {
     "article": "Article Not Found!",
     "category": "Category Not Found!",
-    "course": "Course Not Found!"
+    "course": "Course Not Found!",
+    "user": "User Not Found!"
   },
   "duplicated": {
     "email": "Email is duplicated!",

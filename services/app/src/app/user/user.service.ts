@@ -1,4 +1,4 @@
-import { BadRequestException, HttpStatus, Injectable } from '@nestjs/common';
+import { BadRequestException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Role } from '../role/role';
@@ -10,6 +10,7 @@ import { Http2ServerRequest } from 'http2';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom, lastValueFrom } from 'rxjs';
 import { AxiosError } from 'axios';
+import { I18n, I18nService } from 'nestjs-i18n';
 
 export type KeyOfUser = Array<keyof User>;
 
@@ -19,6 +20,7 @@ export class UserService {
   constructor(
     @InjectRepository(User) private readonly userRepository: Repository<User>,
     private readonly httpService: HttpService,
+    @I18n() private readonly i18nService: I18nService,
   ) {
   }
   async createUser(createUserDto: CreateUserDto): Promise<User> {
@@ -62,8 +64,11 @@ export class UserService {
     })
   }
 
-  async findOne(id: string): Promise<User> {
-    return this.userRepository.findOneBy({ id: id });
+  async findOne(id: string): Promise<User | null> {
+    if (id == null) {
+      throw new NotFoundException(this.i18nService.translate('validation.notfound.user'))
+    }
+    return await this.userRepository.findOneBy({ id: id });
   }
 
   async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User[]> {
