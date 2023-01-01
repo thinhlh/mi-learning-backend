@@ -17,13 +17,18 @@ export class RatingService {
     }
 
     async getRatingOfCourse(courseId: string): Promise<Rating[]> {
-        return await this.ratingRepository.find({
-            where: {
-                studentCourse: {
-                    courseId: courseId
+        if (courseId) {
+            return await this.ratingRepository.find({
+                where: {
+                    studentCourse: {
+                        courseId: courseId
+                    }
                 }
-            }
-        })
+            })
+        }
+        else {
+            return []
+        }
     }
 
     async createRating(createRatingDTO: CreateRatingDTO): Promise<Rating> {
