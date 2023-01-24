@@ -1,10 +1,12 @@
-from fastapi import APIRouter, Query, HTTPException, Body, Security
+from fastapi import APIRouter, Query, HTTPException, Body, Security, Response
+from fastapi.responses import JSONResponse
 from fastapi.security import SecurityScopes
 from datetime import timedelta
 from ..models.token_payload import TokenPayload
 from sqlalchemy.orm import Session
 from fastapi import Depends
 from ..models.user import User
+from ..models.base_response import BaseResponse
 from ..models.role import Role
 from ..schemas.user import UserOut, UserCreate
 from ..dependencies import auth
@@ -18,11 +20,17 @@ user_crud = user.UserCRUD()
 
 
 @router.post("/login")
-async def login(email: str = Body(), password: str = Body(), db: Session = Depends(get_db)):
+async def login(response: Response, email: str = Body(), password: str = Body(), db: Session = Depends(get_db),):
     user = auth.authenticate_user(email=email, password=password, db=db)
 
     if not user:
-        raise HTTPException(401, "Incorrect username or password")
+        content = BaseResponse(
+            False,
+            "Incorrect username or password",
+            None
+        )
+        response.status_code = 401
+        return content
     else:
         access_token = auth.create_token(
             TokenPayload(
@@ -82,7 +90,7 @@ async def register(user_create: UserCreate = Body(), db: Session = Depends(get_d
 
 
 @router.get("/check-permissions")
-async def check_permission(scopes: list[str] = Body(), db: Session = Depends(get_db), token: str = Depends(auth.oauth2_scheme)) -> User:
+async def check_permission(scopes: list[str] = Body(), db: Session = Depends(get_db), token: str = Depends(auth.oauth2_scheme)):
     user = auth.get_current_user(
         security_scopes=SecurityScopes(scopes),
         db=db,

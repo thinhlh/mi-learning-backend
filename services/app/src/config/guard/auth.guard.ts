@@ -1,6 +1,6 @@
 import { CanActivate, ExecutionContext, ForbiddenException, Inject, Injectable } from "@nestjs/common";
 import { Reflector } from "@nestjs/core";
-import { Observable, lastValueFrom } from "rxjs";
+import { Observable, firstValueFrom, lastValueFrom } from "rxjs";
 import { Role } from "src/app/role/role";
 import { ROLES_KEY } from "./role.decorator";
 import { Request } from "express";
@@ -44,6 +44,8 @@ export class AppGuard implements CanActivate {
                 }
             }
         } catch (e) {
+            console.log(e)
+
             if (requiredRoles.length == 0) {
                 return true
             } else {
