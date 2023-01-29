@@ -17,5 +17,5 @@ def get_user_by_id(id: str = Path(), db: Session = Depends(get_db)) -> User | No
 
 
 @router.get("/users")
-def get_users(db: Session = Depends(get_db)) -> list[User | None]:
+def get_users(db: Session = Depends(get_db)):
     return user_crud.get_users(db=db)

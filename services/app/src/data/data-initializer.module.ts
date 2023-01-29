@@ -66,7 +66,6 @@ export class DataInitializerModule implements OnModuleInit {
         for (const createUserDto of USERS_JSON) {
             res.push(await this.userService.createUser({ ...createUserDto, role: createUserDto.role as Role }))
         }
-
         return res
     }
 

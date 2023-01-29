@@ -28,7 +28,7 @@ export class User {
     @Type(() => Number)
     birthday: Date;
 
-    @Column()
+    @Column({ nullable: true })
     avatar: string;
 
     @DeleteDateColumn()

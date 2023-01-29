@@ -5,6 +5,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { USER_KEY } from 'src/config/guard/auth.guard';
 import { ROLES_KEY, Roles } from 'src/config/guard/role.decorator';
 import { Role } from '../role/role';
+import { User } from './user.entity';
 
 @Controller()
 export class UserController {
@@ -38,5 +39,11 @@ export class UserController {
   @Delete('/user/:id')
   remove(@Param('id') id: string) {
     return this.userService.removeUser(id);
+  }
+
+  @Post('/profile/update')
+  @Roles(Role.STUDENT)
+  updateUserProfile(@Headers(USER_KEY) user: string, @Body() updateUserDto: UpdateUserDto): Promise<User> {
+    return this.userService.updateUser(user, updateUserDto);
   }
 }

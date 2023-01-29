@@ -35,7 +35,7 @@ export class UserService {
 
     try {
       const result = await lastValueFrom(
-        this.httpService.post(`http://${process.env.AUTH_HOST ?? 'localhost'}:8000/register`, createdUser)
+        this.httpService.post(`http://${process.env.AUTH_HOST ?? 'localhost'}:${process.env.AUTH_PORT}/register`, createdUser)
       )
 
       if (result.status >= 200 && result.status < 400) {
@@ -71,8 +71,15 @@ export class UserService {
     return await this.userRepository.findOneBy({ id: id });
   }
 
-  async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User[]> {
-    return
+  async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User> {
+    const user = await this.userRepository.preload({ id: id, ...updateUserDto });
+
+    if (user) {
+      const result = await this.userRepository.save(user);
+
+      return result
+    }
+    throw new NotFoundException(this.i18nService.translate("validations.notfound.user"))
   }
 
   async removeUser(id: string): Promise<boolean> {

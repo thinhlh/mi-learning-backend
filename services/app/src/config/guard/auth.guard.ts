@@ -21,36 +21,38 @@ export class AppGuard implements CanActivate {
         ]) ?? [];
 
         const request = context.switchToHttp().getRequest() as Request;
+        const ignoreRole = requiredRoles.length == 0
+
         try {
-            const token = request.headers.authorization.trim();
-            const result = await lastValueFrom(
-                this.httpService.get(`http://${process.env.AUTH_HOST ?? 'localhost'}:8000/check-permissions`, {
-                    data: requiredRoles.map(role => role.toString()),
-                    headers: {
-                        "Authorization": token
-                    },
-                })
-            )
+            if (request.headers.authorization) {
+                const token = request.headers.authorization.trim();
+
+                console.log(`http://${process.env.AUTH_HOST ?? 'localhost'}:${process.env.AUTH_PORT}/check-permissions`)
+                const result = await lastValueFrom(
+                    this.httpService.get(`http://${process.env.AUTH_HOST ?? 'localhost'}:${process.env.AUTH_PORT}/check-permissions`, {
+                        data: requiredRoles.map(role => role.toString()),
+                        headers: {
+                            "Authorization": token
+                        },
+                    })
+                )
 
 
-            if (result.status >= 200 && result.status < 300) {
-                request.headers[USER_KEY] = result.data.data.id
-                return true
-            } else {
-                if (requiredRoles.length == 0) {
+                if (result.status >= 200 && result.status < 300) {
+                    request.headers[USER_KEY] = result.data.data.id
                     return true
                 } else {
-                    return false
+                    return ignoreRole;
                 }
+            } else {
+                return ignoreRole
             }
+
         } catch (e) {
             console.log(e)
 
-            if (requiredRoles.length == 0) {
-                return true
-            } else {
-                return false
-            }
+
+            return ignoreRole;
         }
     }
 
