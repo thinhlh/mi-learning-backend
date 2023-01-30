@@ -30,7 +30,7 @@
    source prod.env # To export all environment
    variables to shell
    export ENV=dev
-   docker-compose --profile prod up
+   docker-compose --env-file prod.env --profile prod up
    ```
 
 ## Option 2: Run Auth Service & App Service Separatedly
@@ -57,7 +57,7 @@
    ```
    source dev.env
    export ENV=dev
-   docker-compose up
+   docker-compose --env-file dev.env up
    ```
 
 3. Run auth service
