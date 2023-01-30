@@ -4,39 +4,75 @@
 
 # How to run application
 
-1. Create dev.env file like below template
-```
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-POSTGRES_DB=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
+## Option 1: Run all services
 
-SECRET_KEY=mi-learning
-ALGORITHM=HS256
+1. Create `prod.env` file like below template
 
-AUTH_HOST=127.0.0.1
-AUTH_PORT=8000
-```
+   ```
+   POSTGRES_HOST=db
+   POSTGRES_PORT=5432
+   POSTGRES_DB=postgres
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=postgres
 
-2. Export ENV environment
-```
-export ENV=dev
-```
+   SECRET_KEY=mi-learning
+   ALGORITHM=HS256
 
-3. Run docker services
-```
-docker compose up
-```
+   AUTH_HOST=auth
+   AUTH_PORT=80
+   ```
 
-3. Install nestjs dependencies
-```
-cd services/app
-npm i
-```
+2. Deploy stack
 
+   Shell
 
-5. Run nestjs application
-```
-npm run start:dev
-```
+   ```
+   source prod.env # To export all environment
+   variables to shell
+   export ENV=dev
+   docker-compose --profile prod up
+   ```
+
+## Option 2: Run Auth Service & App Service Separatedly
+
+1. Create `dev.env` file like below template
+
+   ```
+   POSTGRES_HOST=localhost
+   POSTGRES_PORT=5432
+   POSTGRES_DB=postgres
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=postgres
+
+   SECRET_KEY=mi-learning
+   ALGORITHM=HS256
+
+   AUTH_HOST=127.0.0.1
+   AUTH_PORT=8000
+   ```
+
+2. Innitalize dependencies and run DB service
+   `Shell`
+
+   ```
+   source dev.env
+   export ENV=dev
+   docker-compose up
+   ```
+
+3. Run auth service
+
+   ```
+   cd services/auth # Change directory to auth service
+   python3 -m venv env # To create environment
+   source env/bin/activate # To activate environment
+   uvicorn src.main:app --reload
+   ```
+
+4. Run app service
+
+   ```
+   cd services/app
+   npm i
+   npm run start:dev
+   ```

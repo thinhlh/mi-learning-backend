@@ -8,7 +8,7 @@ services:
     restart: always
     container_name: mi-learning-db
     env_file:
-      - ./env/dev.env
+      - ./env/prod.env
     ports:
       - 5433:5432
       - 5432:5432
@@ -19,8 +19,10 @@ services:
       dockerfile: ./docker/auth/Dockerfile
     restart: always
     container_name: mi-learning-auth
+    profiles:
+      - prod
     env_file: 
-      - ./env/dev.env
+      - ./env/prod.env
     depends_on:
       - db
     ports:
@@ -37,7 +39,7 @@ services:
     image: app
     container_name: mi-learning-app
     env_file:
-      - ./env/dev.env
+      - ./env/prod.env
     environment:
       - ENV=dev
     links:
@@ -46,6 +48,8 @@ services:
     depends_on:
       - db
       - auth
+    profiles:
+      - prod
     ports:
       - 8080:8080
     restart: on-failure
