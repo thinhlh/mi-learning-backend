@@ -25,13 +25,7 @@ export class UserService {
   }
   async createUser(createUserDto: CreateUserDto): Promise<User> {
 
-    // if (! await this.userRepository.findOneBy({ email: createUserDto.email })) {
     const createdUser = this.userRepository.create({ ...createUserDto, birthday: new Date(createUserDto.birthday).getTime() });
-    //   const { password, ...user } = await this.userRepository.save(createdUser)
-    //   return user as User;
-    // } else {
-    //   return
-    // }
 
     try {
       const result = await lastValueFrom(

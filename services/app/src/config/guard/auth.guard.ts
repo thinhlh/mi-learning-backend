@@ -27,7 +27,6 @@ export class AppGuard implements CanActivate {
             if (request.headers.authorization) {
                 const token = request.headers.authorization.trim();
 
-                console.log(`http://${process.env.AUTH_HOST ?? 'localhost'}:${process.env.AUTH_PORT}/check-permissions`)
                 const result = await lastValueFrom(
                     this.httpService.get(`http://${process.env.AUTH_HOST ?? 'localhost'}:${process.env.AUTH_PORT}/check-permissions`, {
                         data: requiredRoles.map(role => role.toString()),
