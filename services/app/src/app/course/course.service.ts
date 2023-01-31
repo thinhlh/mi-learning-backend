@@ -45,6 +45,28 @@ export class CourseService {
 
     ) { }
 
+
+    private loadRelationsInCourse() {
+        return {
+            studentCourses: {
+                ratings: {
+                    studentCourse: {
+                        student: {
+                            user: true
+                        }
+                    }
+                }
+            },
+            teacher: {
+                user: true
+            },
+            category: true,
+            sections: {
+                lessons: true
+            },
+        }
+    }
+
     async getCurrentNumberOfLesson(courseId: string): Promise<number> {
         return await this.entityManager
             .countBy(Lesson, {
@@ -76,25 +98,8 @@ export class CourseService {
         const course = await this.courseRepository.findOne({
             where: {
                 id: courseId,
-                studentCourses: {
-                    studentId: user
-                }
             },
-            select: {
-                studentCourses: true,
-            },
-            relations: {
-                studentCourses: {
-                    ratings: true
-                },
-                teacher: {
-                    user: true
-                },
-                category: true,
-                sections: {
-                    lessons: true
-                },
-            }
+            relations: this.loadRelationsInCourse()
         })
 
         return this.mapCourseToDTO(course, user)
@@ -178,24 +183,7 @@ export class CourseService {
                     id: getCourseQuery.categoryId
                 }
             },
-            relations: {
-                studentCourses: {
-                    ratings: {
-                        studentCourse: {
-                            student: {
-                                user: true
-                            }
-                        }
-                    }
-                },
-                teacher: {
-                    user: true
-                },
-                category: true,
-                sections: {
-                    lessons: true
-                },
-            }
+            relations: this.loadRelationsInCourse()
         });
 
 
@@ -354,6 +342,7 @@ export class CourseService {
     private
 
     private async mapCourseToDTO(course: Course, studentId?: string): Promise<CourseResponseDTO> {
+
         const ratings = course
             .studentCourses
             .map((studentCourse) => studentCourse.ratings)
@@ -369,6 +358,7 @@ export class CourseService {
 
 
         const totalRatings = ratings.reduce((prev, cur) => prev + cur.value, 0)
+
 
         const response: CourseResponseDTO = ({
             id: course.id,

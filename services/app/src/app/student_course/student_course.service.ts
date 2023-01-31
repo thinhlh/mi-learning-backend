@@ -52,11 +52,11 @@ export class StudentCourseService {
     }
 
     async toggleSaveCourse(studnetId: string, courseId: string): Promise<boolean> {
-        var studentCourse = await this.getOrCreateStudentCourse(studnetId, courseId);
+        let studentCourse = await this.getOrCreateStudentCourse(studnetId, courseId);
 
         studentCourse.saved = !studentCourse.saved
-        this.studentCourseRepository.save(studentCourse);
+        studentCourse = await this.studentCourseRepository.save(studentCourse);
 
-        return true;
+        return studentCourse.saved;
     }
 }

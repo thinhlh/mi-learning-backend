@@ -21,4 +21,4 @@ class User(Base):
     birthday = Column(DATETIME)
     avatar: str = Column(String)
     deletedAt = Column(DATETIME)
-    role: Role = Column(ENUM('admin', 'student', 'teacher'))
+    role: Role = Column(ENUM('admin', 'student', 'teacher', name='role'))

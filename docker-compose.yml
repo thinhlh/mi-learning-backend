@@ -46,8 +46,9 @@ services:
     build: 
       context: .
       dockerfile: ./docker/app/Dockerfile
-    image: app
     container_name: mi-learning-app
+    profiles:
+      - prod
     environment:
       - ENV=dev
       - POSTGRES_HOST
@@ -63,8 +64,6 @@ services:
     depends_on:
       - db
       - auth
-    profiles:
-      - prod
     ports:
       - 8080:8080
     restart: on-failure
