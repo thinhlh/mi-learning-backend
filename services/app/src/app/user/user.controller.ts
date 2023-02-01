@@ -46,4 +46,10 @@ export class UserController {
   updateUserProfile(@Headers(USER_KEY) user: string, @Body() updateUserDto: UpdateUserDto): Promise<User> {
     return this.userService.updateUser(user, updateUserDto);
   }
+
+  @Post('/profile/avatar')
+  @Roles(Role.STUDENT)
+  updateUserAvatar(@Headers(USER_KEY) user: string, @Body('url') url: string): Promise<User> {
+    return this.userService.updateUserAvatar(user, url);
+  }
 }

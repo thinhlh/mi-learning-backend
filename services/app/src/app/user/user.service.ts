@@ -66,7 +66,18 @@ export class UserService {
   }
 
   async updateUser(id: string, updateUserDto: UpdateUserDto): Promise<User> {
-    const user = await this.userRepository.preload({ id: id, ...updateUserDto });
+    const user = await this.userRepository.preload({ id: id, ...updateUserDto, birthday: new Date(updateUserDto.birthday) });
+
+    if (user) {
+      const result = await this.userRepository.save(user);
+
+      return result
+    }
+    throw new NotFoundException(this.i18nService.translate("validations.notfound.user"))
+  }
+
+  async updateUserAvatar(id: string, url: string): Promise<User> {
+    const user = await this.userRepository.preload({ id: id, avatar: url });
 
     if (user) {
       const result = await this.userRepository.save(user);
