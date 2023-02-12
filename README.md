@@ -27,7 +27,6 @@
    Shell
 
    ```
-   source prod.env # To export all environment
    variables to shell
    export ENV=dev
    docker-compose --env-file prod.env --profile prod up
